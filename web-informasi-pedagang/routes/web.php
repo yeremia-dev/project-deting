@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+//to index kurir
+Route::get(
+    '/kurir/index', 'KurirControllers@index'
+)->name('kurirIndex');
