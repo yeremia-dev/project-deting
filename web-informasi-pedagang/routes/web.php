@@ -18,5 +18,5 @@ Route::get('/', function () {
 });
 //to index kurir
 Route::get(
-    '/kurir/index', 'KurirControllers@index'
-)->name('kurirIndex');
+    '/requestKurir/index', 'RequestKurirControllers@index'
+)->name('requestKurirIndex');

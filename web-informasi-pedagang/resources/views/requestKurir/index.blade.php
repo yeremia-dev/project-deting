@@ -1,12 +1,10 @@
 @extends('layouts.master')
 @section('content')
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 <script type="module">
     import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.js'
 </script>
 
-<h1>Selamat Datang di halaman kurir</h1>
+<h1>Selamat Datang di halaman Request Daftar Kurir</h1>
 <hr>
 <div>
     <form action="test" enctype="multipart/form-data">

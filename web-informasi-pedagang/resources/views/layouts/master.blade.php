@@ -37,7 +37,7 @@
                 <!-- overview area start -->
                 @yield('content')
                 <!-- overview area end -->
-            
+
             </div>
         </div>
         <!-- main content area end -->
@@ -72,5 +72,8 @@
     <!-- others plugins -->
     <script src="{{ asset('assets/js/plugins.js')}}"></script>
     <script src="{{ asset('assets/js/scripts.js')}}"></script>
+//vue
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
 </body>
 </html>
