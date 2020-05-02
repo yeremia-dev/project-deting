@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+// Route::get('pedagangs/index', function () {
+//     return view('pedagangs.index');
+// });
+Route::get('/pedagangs/index', function () {
+	return view('pedagangs/index');
+});
