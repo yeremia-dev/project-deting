@@ -18,17 +18,18 @@ Route::get('/', function () {
 });
 //to index kurir
 Route::get(
-    '/kurir/index', 'KurirControllers@index'
+    '/kurir/index', 'RequestKurirControllers@index'
 )->name('kurirIndex');
 
 Route::get(
-    '/kurir/request', 'KurirControllers@request'
+    '/kurir/request', 'RequestKurirControllers@request'
 )->name('kurirRequest');
 
 Route::get(
-    '/kurir/requestp', 'KurirControllers@requestp'
+    '/kurir/requestp', 'RequestKurirControllers@requestp'
 )->name('kurirRequestp');
 
 Route::get(
-    '/kurir/produkd', 'KurirControllers@addp'
+    '/kurir/produkd', 'RequestKurirControllers@addp'
 )->name('kurirProdukd');
+
