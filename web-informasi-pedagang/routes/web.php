@@ -20,3 +20,15 @@ Route::get('/', function () {
 Route::get(
     '/kurir/index', 'KurirControllers@index'
 )->name('kurirIndex');
+
+Route::get(
+    '/kurir/request', 'KurirControllers@request'
+)->name('kurirRequest');
+
+Route::get(
+    '/kurir/requestp', 'KurirControllers@requestp'
+)->name('kurirRequestp');
+
+Route::get(
+    '/kurir/produkd', 'KurirControllers@addp'
+)->name('kurirProdukd');

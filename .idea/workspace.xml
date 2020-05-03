@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="88b8f723-3402-4023-9bab-095c5be0928b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/web-informasi-pedagang/resources/views/kurir/produkd.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-informasi-pedagang/resources/views/kurir/request.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-informasi-pedagang/resources/views/kurir/requestp.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-informasi-pedagang/app/Http/Controllers/KurirControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/web-informasi-pedagang/app/Http/Controllers/KurirControllers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-informasi-pedagang/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web-informasi-pedagang/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-informasi-pedagang/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web-informasi-pedagang/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-informasi-pedagang/resources/views/kurir/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/web-informasi-pedagang/resources/views/kurir/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-informasi-pedagang/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/web-informasi-pedagang/routes/web.php" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/web-informasi-pedagang/composer.json</pharConfigPath>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web-informasi-pedagang/resources/views/kurir/request.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web-informasi-pedagang/app/Http/Controllers/KurirControllers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web-informasi-pedagang/resources/views/kurir/produkd.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web-informasi-pedagang/resources/views/kurir/requestp.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web-informasi-pedagang/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/web-informasi-pedagang/database/migrations/2020_04_29_024623_create_kurir_table.php" />
+        <option value="$PROJECT_DIR$/web-informasi-pedagang/resources/views/kurir/index.blade.php" />
+        <option value="$PROJECT_DIR$/web-informasi-pedagang/resources/views/request/requestPedagang.blade.php" />
+        <option value="$PROJECT_DIR$/web-informasi-pedagang/app/Http/Controllers/KurirControllers.php" />
+        <option value="$PROJECT_DIR$/web-informasi-pedagang/resources/views/kurir/requestp.blade.php" />
+        <option value="$PROJECT_DIR$/web-informasi-pedagang/routes/web.php" />
+        <option value="$PROJECT_DIR$/web-informasi-pedagang/resources/views/kurir/request.blade.php" />
+        <option value="$PROJECT_DIR$/web-informasi-pedagang/resources/views/kurir/produkd.blade.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/fruitcake/laravel-cors" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/facade/flare-client-php" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/facade/ignition-contracts" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/composer" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/facade/ignition" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/scrivo/highlight.php" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/asm89/stack-cors" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/web-informasi-pedagang/vendor/hamcrest/hamcrest-php" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="project-deting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-deting" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project-deting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-deting" type="462c0819:PsiDirectoryNode" />
+              <item name="web-informasi-pedagang" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project-deting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-deting" type="462c0819:PsiDirectoryNode" />
+              <item name="web-informasi-pedagang" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project-deting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-deting" type="462c0819:PsiDirectoryNode" />
+              <item name="web-informasi-pedagang" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project-deting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-deting" type="462c0819:PsiDirectoryNode" />
+              <item name="web-informasi-pedagang" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project-deting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-deting" type="462c0819:PsiDirectoryNode" />
+              <item name="web-informasi-pedagang" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="author" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project-deting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-deting" type="462c0819:PsiDirectoryNode" />
+              <item name="web-informasi-pedagang" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project-deting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-deting" type="462c0819:PsiDirectoryNode" />
+              <item name="web-informasi-pedagang" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project-deting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-deting" type="462c0819:PsiDirectoryNode" />
+              <item name="web-informasi-pedagang" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project-deting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-deting" type="462c0819:PsiDirectoryNode" />
+              <item name="web-informasi-pedagang" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="kurir" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="request.blade.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/project-deting/web-informasi-pedagang/resources/views/kurir/request.blade.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.request.blade.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="88b8f723-3402-4023-9bab-095c5be0928b" name="Default Changelist" comment="" />
+      <created>1587891189274</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587891189274</updated>
+      <workItem from="1587891197147" duration="691000" />
+      <workItem from="1588123929358" duration="13604000" />
+      <workItem from="1588220413571" duration="1299000" />
+      <workItem from="1588339812711" duration="10288000" />
+      <workItem from="1588391586885" duration="11851000" />
+      <workItem from="1588480356022" duration="15385000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="53118000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3207262" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/web-informasi-pedagang/database/migrations/2019_08_19_000000_create_failed_jobs_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-103" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-informasi-pedagang/config/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-informasi-pedagang/database/migrations/2020_04_29_024623_create_kurir_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="29" column="39" lean-forward="true" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-informasi-pedagang/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-informasi-pedagang/resources/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-informasi-pedagang/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-informasi-pedagang/app/Http/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-informasi-pedagang/resources/views/kurir/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-informasi-pedagang/resources/views/request/pedagang.blade.php" />
+    <entry file="file://$PROJECT_DIR$/web-informasi-pedagang/app/Http/Controllers/KurirControllers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-informasi-pedagang/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-informasi-pedagang/resources/views/kurir/requestp.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-informasi-pedagang/public/assets/images/author/avatar.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-informasi-pedagang/resources/views/kurir/produkd.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-informasi-pedagang/resources/views/kurir/request.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
