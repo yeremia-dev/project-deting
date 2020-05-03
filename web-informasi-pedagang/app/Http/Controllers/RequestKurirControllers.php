@@ -11,4 +11,15 @@ class RequestKurirControllers extends Controller{
     public function index(){
         return view('requestKurir/index');
     }
+
+    public function request(){
+        return view('kurir/request');
+    }
+
+    public function requestp(){
+        return view('kurir/requestp');
+    }
+    public function addp(){
+        return view('kurir/produkd');
+    }
 }
