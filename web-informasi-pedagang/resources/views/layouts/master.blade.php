@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/default-css.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/quasar@1.10.0/dist/quasar.min.css" rel="stylesheet" type="text/css">
     <!-- modernizr css -->
     <script src="{{ asset('assets/js/vendor/modernizr-2.8.3.min.js')}}"></script>
 </head>
@@ -37,7 +38,7 @@
                 <!-- overview area start -->
                 @yield('content')
                 <!-- overview area end -->
-            
+
             </div>
         </div>
         <!-- main content area end -->
