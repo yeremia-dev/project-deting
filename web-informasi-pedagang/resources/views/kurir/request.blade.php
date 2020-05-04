@@ -1,72 +1,108 @@
 @extends('layouts.master')
 @section('content')
+<div id="app">
     <div class="container">
         <nav class="navbar navbar-grey bg-light">
             <span class="navbar-brand mb-0 h1">Request Mendaftar Informasi Pedagang</span>
         </nav>
-    </div><br>
-    <h6>Masukkan Data Diri</h6><br>
-    <div class="row">
-        <div class="col col-md-3">
+    </div>
+    <hr>
+    <br>
+    <h6>Masukkan Data Diri</h6>
+    <b-form @submit="formSubmit" class="row">
+        <div class="col col-md-3 ">
+            <br>
             <img class="imagePedagang" src="assets/images/author/avatar.jpg" alt="logo">
+            <input type="file">
         </div>
         <div class="col col-md-5">
             <div class="form-group">
-                <input type="text" class="col-sm-6 col-form-control" id="formGroupExampleInput" placeholder="Nama"><br>
+                <p>Data Diri:</p><br>
+                <input type="text" class="col-sm-11 form-control" id="formGroupExampleInput" placeholder="Nama"><br>
             </div>
             <div class="form-group">
-                <input type="text" class="col-sm-6 col-form-control" id="formGroupExampleInput" placeholder="Nomor HP"><br>
+                <input type="text" class="col-sm-11 form-control" id="formGroupExampleInput"
+                       placeholder="Nomor HP"><br>
             </div>
             <div class="form-group">
-                <input type="text" class="col-sm-6 col-form-control" id="formGroupExampleInput" placeholder="Nomor WA"><br>
+                <input type="text" class="col-sm-11 form-control" id="formGroupExampleInput"
+                       placeholder="Nomor WA"><br>
             </div>
             <div>
-                <select class="col-sm-6 col-custom-select">
+                <select class="col-sm-11 custom-select">
                     <option selected>Jenis Kelamin</option>
                     <option value="1">Laki-laki</option>
                     <option value="2">Perempuan</option>
                 </select>
-            </div><br>
+            </div>
+            <br>
+            <br>
             <div class="form-group">
-                <input type="text" class="col-sm-6 col-form-control" id="formGroupExampleInput" placeholder="Jenis Kendaraan"><br>
+                <input type="text" class="col-sm-11 form-control" id="formGroupExampleInput"
+                       placeholder="Jenis Kendaraan"><br>
             </div>
             <div class="form-group">
-                <input type="text" class="col-sm-6 col-form-control" id="formGroupExampleInput" placeholder="Plat Kendaraan"><br>
+                <input type="text" class="col-sm-11  form-control" id="formGroupExampleInput"
+                       placeholder="Plat Kendaraan"><br>
             </div>
             <div class="form-group">
-                <input type="text" class="col-sm-6 col-form-control" id="formGroupExampleInput" placeholder="Status"><br>
-            </div><br>
-            <a href="#"><button type="button" class="btn btn-secondary btn-sm">Kirim Request</button></a>
+                <input type="text" class="col-sm-11  form-control" id="formGroupExampleInput"
+                       placeholder="Status"><br>
+            </div>
+            <br>
+            <a href="#">
+                <b-button variant="success">Kirim Request</b-button>
+            </a>
         </div>
 
         <div class="col col-md-4">
             <div>
                 <p>Alamat:</p><br>
-                <select class="col-sm-6 col-custom-select">
+                <select class="col-sm-6 custom-select ">
                     <option selected>Kabupaten</option>
                     <option value="1">Toba</option>
                     <option value="2">Samosir</option>
                     <option value="3">Tapanuli Utara</option>
                 </select>
-            </div><br>
+            </div>
+            <br>
             <div>
-                <select class="col-sm-6 col-custom-select">
+                <select class="col-sm-6 custom-select ">
                     <option selected>Kecamatan</option>
                     <option value="1">Toba</option>
                     <option value="2">Samosir</option>
                     <option value="3">Tapanuli Utara</option>
                 </select>
-            </div><br>
+            </div>
+            <br>
             <div>
-                <select class="col-sm-6 col-custom-select">
-                    <option selected>Kelurahan</option>
+                <select class="col-sm-6 custom-select ">
+                    <option selected class="form-control">Kelurahan</option>
                     <option value="1">Toba</option>
                     <option value="2">Samosir</option>
-                    <option value="3">Tapanuli Utara</option>
+                    <option value="3" class="form-control">Tapanuli Utara</option>
+                    <br>
                 </select><br><br>
             </div>
-        </div>
-    </div>
+    </b-form>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
+<script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                test: 'data',
+            }
+        },
+        methods: {
+            formSubmit(e) {
 
+            }
+        },
+    })
+</script>
 
 @endsection
