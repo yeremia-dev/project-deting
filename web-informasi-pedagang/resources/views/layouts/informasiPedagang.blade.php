@@ -7,7 +7,7 @@
 			<label for="" class="tulisanInfo">INFORMASI PEDAGANG</label>	
 			<div class="row">
 				<div class="col-md-4">
-					<img class="imagePedagang" src="{{ asset('assets/images/author/profil.jpg') }}" alt="logo">
+					<img class="imagePedagang" src="assets/images/author/profil.jpg" alt="logo">
 					<label for="" class="tulisanFoto">Foto Pedagang</label>
 					</div>
 				<div class="col-md-8" > 

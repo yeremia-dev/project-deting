@@ -20,5 +20,21 @@ Route::get('/', function () {
 //     return view('pedagangs.index');
 // });
 Route::get('/pedagangs/index', function () {
-	return view('pedagangs/index');
+	return view('pedagangs.index');
+});
+
+Route::get('/pedagangs/tambahPedagang', function () {
+	return view('pedagangs.tambahPedagang');
+});
+
+Route::get('/pedagangs/listPedagang', function () {
+	return view('pedagangs.listPedagang');
+});
+
+Route::get('/pedagangs/editPedagang', function () {
+	return view('pedagangs.editPedagang');
+});
+
+Route::get('/pedagangs/tambahDagangan', function () {
+	return view('pedagangs.tambahDagangan');
 });

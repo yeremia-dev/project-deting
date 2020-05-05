@@ -2890,6 +2890,32 @@ table.dataTable thead td {
 .jarak{
     padding-top: 40px;
 }
+.pading{
+    padding-top: 10px;
+    padding-right: 500px;
+    padding-left: 15px;
+}
 .trcenter{
    text-align: center; 
+}
+.tulisanDataPedagang{
+    font-family: 'Calibri';
+    font-size: 25px;
+    color: #000000;
+    font-weight: bold;
+    padding-left: 20px;
+}
+.tulisanDataDiri{
+    font-family: 'Calibri';
+    font-size: 23px;
+    color: #000000;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-left: 20px;
+}
+
+.buttonPedagang{
+    padding-top: 10px;
+    padding-right: 500px;
+    padding-left: 15px;
 }

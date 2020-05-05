@@ -1,7 +1,7 @@
 <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                    <a href="index.html"><img src="assets/images/icon/logo.png" alt="logo"></a>
+                    <a href="index.html"><img src="{{ asset('assets/images/icon/logo.png') }}" alt="logo"></a>
                 </div>
             </div>
             <div class="main-menu">
@@ -12,9 +12,9 @@
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
                                 <ul class="collapse">
                                     <li class="active"><a href="{{ asset('/pedagangs/index') }}">Informasi Pedagang</a></li>
-                                    <li><a href="index2.html">Ecommerce dashboard</a></li>
-                                    <li><a href="index3.html">SEO dashboard</a></li>
-                                    <li><a href="{{ asset('/kurir') }}">Data kurir</a></li>
+                                    <li><a href="{{ asset('/pedagangs/listPedagang') }}">List Pedagang</a></li>
+                                    <li><a href="{{ asset('/pedagangs/tambahPedagang') }}">Tambah Pedagang</a></li>
+                                    <li><a href="{{ asset('/pedagangs/editPedagang') }}">Edit Pedagang</a></li>
                                 </ul>
                             </li>
                             <li>
