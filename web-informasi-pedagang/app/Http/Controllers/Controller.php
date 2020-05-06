@@ -13,4 +13,5 @@ class Controller extends BaseController
     function  index(){
         return view('kurir/index');
     }
+
 }
