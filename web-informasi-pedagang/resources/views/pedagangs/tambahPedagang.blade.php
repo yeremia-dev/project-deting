@@ -14,7 +14,12 @@
 	<input type="email" class="form-control"  id="nama" placeholder="Nama">
   </div>
   <div class="pading">
-	<input type="email" class="form-control"  id="nama" placeholder="Foto">
+  <form>
+  <div class="form-group">
+    <label for="exampleFormControlFile1"></label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+  </div>
+</form>
   </div>
   <div class="pading">
 	<input type="email" class="form-control"  id="nama" placeholder="Nomor HP">
@@ -58,7 +63,8 @@
     </div>
 </form>
 <div class="buttonPedagang">
-<a href="{{ asset('/pedagangs/tambahDagangan') }}"><button type="button" class="btn btn-primary active">BERIKUTNYA</button></a>
+<a href="{{ asset('/pedagangs/listPedagang') }}"><button type="button" class="btn btn-success">Simpan</button></a>
+<a href="{{ asset('/pedagangs/tambahProduk') }}"><button type="button" class="btn btn-primary active">Tambah Produk</button></a>
 </div>
 </div>
 @endsection

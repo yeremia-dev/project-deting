@@ -14,7 +14,7 @@
                                     <li class="active"><a href="{{ asset('/pedagangs/index') }}">Informasi Pedagang</a></li>
                                     <li><a href="{{ asset('/pedagangs/listPedagang') }}">List Pedagang</a></li>
                                     <li><a href="{{ asset('/pedagangs/tambahPedagang') }}">Tambah Pedagang</a></li>
-                                    <li><a href="{{ asset('/pedagangs/editPedagang') }}">Edit Pedagang</a></li>
+                                    <!-- <li><a href="{{ asset('/pedagangs/detailPedagang') }}">Detail Pedagang</a></li> -->
                                 </ul>
                             </li>
                             <li>

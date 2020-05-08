@@ -2,66 +2,70 @@
 @section('content')
 <div class="jarak">
 <div class="cup" >
-	<label for="" class="tulisanDataPedagang">Form Mendaftar Informasi Pedagang</label>
+	<label for="" class="tulisanDataPedagang">Tambah Pedagang</label>
 </div>
 </div>	
-<div class="jarak">
-	<label for="" class="tulisanDataDiri">Profil</label>
-	<div>
-	<table class="table table-hover">
-		<thead>
-			<tr>
-			<th scope="col">#</th>
-			<th scope="col">Nama</th>
-			<th scope="col">Foto</th>
-			<th scope="col">Nomor HP</th>
-			<th scope="col">Nomor WA</th>
-			<th scope="col">Alamat</th>
-			<th scope="col">Action</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-			<th scope="row">1</th>
-			<td>Sanny Naomi Sinaga</td>
-			<td>sanny.jpg</td>
-			<td>08324324423</td>
-			<td>@08324324423</td>
-			<td>Laguboti</td>
-			<td>
-				<button type="button" class="btn btn-primary">Edit</button>
-				<button type="button" class="btn btn-danger">Hapus</button>
-			</td>
-			</tr>
-		</tbody>
-	</table>
-	</div>
-</div>
-<div class="jarak">
-<label for="" class="tulisanDataDiri">Produk</label>
 <div>
-	<table class="table table-hover">
-		<thead>
-			<tr>
-			<th scope="col">#</th>
-			<th scope="col">Nama Produk</th>
-			<th scope="col">Kategori</th>
-			<th scope="col">Action</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-			<th scope="row">1</th>
-			<td>Andaliman</td>
-			<td>Rempah</td>
-			<td>
-				<button type="button" class="btn btn-primary">Edit</button>
-				<button type="button" class="btn btn-danger">Hapus</button>
-			</td>
-			</tr>
-		</tbody>
-	</table>
-	</div>
+<label for="" class="tulisanDataDiri">Masukkan Data Diri:</label>
+<form>
+	
+  <div class="form-group" >
+	<div class="pading">
+	<input type="email" class="form-control"  id="nama" placeholder="Nama">
+  </div>
+  <div class="pading">
+  <form>
+  <div class="form-group">
+    <label for="exampleFormControlFile1"></label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+  </div>
+</form>
+  </div>
+  <div class="pading">
+	<input type="email" class="form-control"  id="nama" placeholder="Nomor HP">
+  </div>
+  <div class="pading">
+	<input type="email" class="form-control"  id="nama" placeholder="Nomor WA">
+  </div>
+  </div>
+  <div class="form-group">
+	<label for="exampleFormControlSelect1" class="pading" >Alamat: </label>
+	<div class="pading">
+		<select class="form-control" id="exampleFormControlSelect1" placeholder="tes">
+		<option>Kabupaten</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		</select>
+ 	 </div>
+	
+	  <div class="pading">
+		<select class="form-control" id="exampleFormControlSelect1" placeholder="tes">
+		<option>Kecamatan</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		</select>
+	  </div>
+	<div class="pading">
+		<select class="form-control" id="exampleFormControlSelect1" placeholder="tes">
+		<option>Kelurahan</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		</select>
+ 	 </div>
+    <div class="pading">
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukkan alamat rinci"></textarea>
+    </div>
+</form>
+<div class="buttonPedagang">
+<a href="{{ asset('/pedagangs/listPedagang') }}"><button type="button" class="btn btn-success">Simpan</button></a>
+<a href="{{ asset('/pedagangs/tambahProduk') }}"><button type="button" class="btn btn-primary active">Tambah Produk</button></a>
+</div>
 </div>
 @endsection
 

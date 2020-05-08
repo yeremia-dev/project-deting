@@ -35,6 +35,15 @@ Route::get('/pedagangs/editPedagang', function () {
 	return view('pedagangs.editPedagang');
 });
 
-Route::get('/pedagangs/tambahDagangan', function () {
-	return view('pedagangs.tambahDagangan');
+Route::get('/pedagangs/detailPedagang', function () {
+	return view('pedagangs.detailPedagang');
+});
+Route::get('/pedagangs/tambahProduk', function () {
+	return view('pedagangs.tambahProduk');
+});
+Route::get('/pedagangs/editProduk', function () {
+	return view('pedagangs.editProduk');
+});
+Route::get('/pedagangs/editPedagang', function () {
+	return view('pedagangs.editPedagang');
 });

@@ -15,6 +15,7 @@
 			<th scope="col">Nomor HP</th>
 			<th scope="col">Nomor WA</th>
 			<th scope="col">Alamat</th>
+			<th scope="col">Action</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -25,6 +26,9 @@
 			<td>08324324423</td>
 			<td>@08324324423</td>
 			<td>Laguboti</td>
+			<td>
+			<a href="{{ asset('/pedagangs/detailPedagang') }}"><button type="button" class="btn btn-primary">Detail</button></a>
+			</td>
 			</tr>
 		</tbody>
 	</table>
