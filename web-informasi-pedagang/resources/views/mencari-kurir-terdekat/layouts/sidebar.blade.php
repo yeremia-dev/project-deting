@@ -9,7 +9,7 @@
                     <nav>
                         <ul class="metismenu" id="menu">
                             <li class="active">
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>Pedagang</span></a>
                                 <ul class="collapse">
                                     <li class="active"><a href="index.html">ICO dashboard</a></li>
                                     <li><a href="index2.html">Ecommerce dashboard</a></li>
@@ -17,7 +17,16 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Sidebar
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Kurir
+                                        Types
+                                    </span></a>
+                                <ul class="collapse">
+                                    <li><a href="index.html">Left Sidebar</a></li>
+                                    <li><a href="index3-horizontalmenu.html">Horizontal Sidebar</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Aduan
                                         Types
                                     </span></a>
                                 <ul class="collapse">

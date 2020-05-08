@@ -26,12 +26,12 @@
 	<!-- page container area start -->
     <div class="page-container">
         <!-- sidebar menu area start -->
-        @include('layouts.sidebar')
+        @include('mencari-kurir-terdekat.layouts.sidebar')
         <!-- sidebar menu area end -->
         <!-- main content area start -->
         <div class="main-content">
             <!-- header area start -->
-            @include('layouts.nav')
+            @include('mencari-kurir-terdekat.layouts.nav')
             <!-- header area end -->
             <div class="main-content-inner">
                 <!-- overview area start -->
@@ -42,7 +42,7 @@
         </div>
         <!-- main content area end -->
         <!-- footer area start-->
-        @include('layouts.footer')
+        @include('mencari-kurir-terdekat.layouts.footer')
         <!-- footer area end-->
     </div>
 	<!-- jquery latest version -->
