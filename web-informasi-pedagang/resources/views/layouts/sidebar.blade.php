@@ -25,8 +25,13 @@
                             <li class="active">
                                 <a href="#">Aduan</a>
                                 <ul class="collapse">
+<<<<<<< HEAD
                                 <li class="{{ 'aduan' == request()->path() ? 'active' : '' }}"><a href="index.html">Informasi Aduan</a></li>
                                     <li><a href="/aduan">Request Aduan</a></li>
+=======
+                                    <li class="active"><a href="index.html">Informasi Aduan</a></li>
+                                    <li><a href="index2.html">Request Aduan</a></li>
+>>>>>>> 05ad020e1f05cc20f25dc31cef507dd7065b59e7
                                 </ul>
                             </li>
                             
