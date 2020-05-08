@@ -23,6 +23,9 @@ class RequestKurirControllers extends Controller{
     public function addp(){
         return view('kurir/produkd');
     }
+    public function test(){
+        return "hello";
+    }
 
     public function store(Request $request){
         return create([

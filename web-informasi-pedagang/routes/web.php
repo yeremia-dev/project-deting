@@ -33,3 +33,5 @@ Route::get(
     '/kurir/produkd', 'RequestKurirControllers@addp'
 )->name('kurirProdukd');
 
+Route::get('/kurir/test', 'RequestKurirControllers@test'
+)->name('kurirTest');
