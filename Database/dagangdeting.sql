@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2020 at 10:35 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- Waktu pembuatan: 08 Bulan Mei 2020 pada 08.23
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `aduan`
+-- Struktur dari tabel `aduan`
 --
 
 CREATE TABLE `aduan` (
@@ -58,7 +58,7 @@ CREATE TABLE `aduan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kurir`
+-- Struktur dari tabel `kurir`
 --
 
 CREATE TABLE `kurir` (
@@ -84,54 +84,56 @@ CREATE TABLE `kurir` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pedagang`
+-- Struktur dari tabel `pedagang`
 --
 
 CREATE TABLE `pedagang` (
   `id_pedagang` int(11) NOT NULL,
   `nama_pedagang` varchar(24) NOT NULL,
-  `alamat_pedagang` varchar(100) NOT NULL,
-  `no_telepon` varchar(13) NOT NULL,
+  `alamat_rinci` varchar(255) NOT NULL,
+  `kabupaten` varchar(255) NOT NULL,
+  `kecamatan` varchar(255) NOT NULL,
+  `kelurahan` varchar(255) NOT NULL,
+  `no_hp` varchar(13) NOT NULL,
+  `no_wa` varchar(20) NOT NULL,
   `foto_pedagang` varchar(24) DEFAULT NULL,
-  `kategori_dagangan` varchar(24) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `pedagang`
+-- Dumping data untuk tabel `pedagang`
 --
 
-INSERT INTO `pedagang` (`id_pedagang`, `nama_pedagang`, `alamat_pedagang`, `no_telepon`, `foto_pedagang`, `kategori_dagangan`, `created_at`, `updated_at`) VALUES
-(1, 'indah', 'tarutung', '09876543', 'asdfgh', 'sdfghj', '2020-04-24 08:01:50', '2020-04-25 08:01:50');
+INSERT INTO `pedagang` (`id_pedagang`, `nama_pedagang`, `alamat_rinci`, `kabupaten`, `kecamatan`, `kelurahan`, `no_hp`, `no_wa`, `foto_pedagang`, `created_at`, `updated_at`) VALUES
+(1, 'indah', 'tarutung', '', '', '', '09876543', '', 'asdfgh', '2020-04-24 08:01:50', '2020-04-25 08:01:50');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produk`
+-- Struktur dari tabel `produk`
 --
 
 CREATE TABLE `produk` (
   `id_produk` int(11) NOT NULL,
   `nama_produk` varchar(24) NOT NULL,
   `harga` varchar(24) NOT NULL,
-  `lokasi` varchar(50) NOT NULL,
-  `foto_produk` varchar(24) DEFAULT NULL,
+  `kategori` varchar(50) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `produk`
+-- Dumping data untuk tabel `produk`
 --
 
-INSERT INTO `produk` (`id_produk`, `nama_produk`, `harga`, `lokasi`, `foto_produk`, `created_at`, `updated_at`) VALUES
-(1, 'asdfghjk', 'sdfghjk', 'sdfghjk', 'sdfghjk', '2020-04-24 08:02:36', '2020-04-25 08:02:36');
+INSERT INTO `produk` (`id_produk`, `nama_produk`, `harga`, `kategori`, `created_at`, `updated_at`) VALUES
+(1, 'asdfghjk', 'sdfghjk', 'sdfghjk', '2020-04-24 08:02:36', '2020-04-25 08:02:36');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produk_pedagang`
+-- Struktur dari tabel `produk_pedagang`
 --
 
 CREATE TABLE `produk_pedagang` (
@@ -141,7 +143,7 @@ CREATE TABLE `produk_pedagang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `produk_pedagang`
+-- Dumping data untuk tabel `produk_pedagang`
 --
 
 INSERT INTO `produk_pedagang` (`id`, `id_produk`, `id_pedagang`) VALUES
@@ -152,37 +154,37 @@ INSERT INTO `produk_pedagang` (`id`, `id_produk`, `id_pedagang`) VALUES
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`username`);
 
 --
--- Indexes for table `aduan`
+-- Indeks untuk tabel `aduan`
 --
 ALTER TABLE `aduan`
   ADD PRIMARY KEY (`id_aduan`);
 
 --
--- Indexes for table `kurir`
+-- Indeks untuk tabel `kurir`
 --
 ALTER TABLE `kurir`
   ADD PRIMARY KEY (`id_kurir`);
 
 --
--- Indexes for table `pedagang`
+-- Indeks untuk tabel `pedagang`
 --
 ALTER TABLE `pedagang`
   ADD PRIMARY KEY (`id_pedagang`);
 
 --
--- Indexes for table `produk`
+-- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`id_produk`);
 
 --
--- Indexes for table `produk_pedagang`
+-- Indeks untuk tabel `produk_pedagang`
 --
 ALTER TABLE `produk_pedagang`
   ADD PRIMARY KEY (`id`),
@@ -190,39 +192,39 @@ ALTER TABLE `produk_pedagang`
   ADD KEY `id_pedagang` (`id_pedagang`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `aduan`
+-- AUTO_INCREMENT untuk tabel `aduan`
 --
 ALTER TABLE `aduan`
   MODIFY `id_aduan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `kurir`
+-- AUTO_INCREMENT untuk tabel `kurir`
 --
 ALTER TABLE `kurir`
   MODIFY `id_kurir` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `pedagang`
+-- AUTO_INCREMENT untuk tabel `pedagang`
 --
 ALTER TABLE `pedagang`
   MODIFY `id_pedagang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `produk`
+-- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
   MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `produk_pedagang`
+-- Ketidakleluasaan untuk tabel `produk_pedagang`
 --
 ALTER TABLE `produk_pedagang`
   ADD CONSTRAINT `produk_pedagang_ibfk_1` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`id_produk`) ON DELETE CASCADE ON UPDATE CASCADE,
