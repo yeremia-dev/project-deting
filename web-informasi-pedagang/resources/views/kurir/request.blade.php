@@ -162,8 +162,8 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
 <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
-    import axios from 'axios'
     new Vue({
         el: '#app',
         data: function () {
@@ -188,8 +188,10 @@
         methods: {
             formSubmit(e) {
                 alert(this.jenis_kendaraan)
-                console.log("test")
-                axios.post("API/RequestKurirControllers")
+                axios.get("/kurir/test")
+                    .then(response =>{
+                        alert(response.data)
+                    })
             }
         },
     })

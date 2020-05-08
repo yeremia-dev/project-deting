@@ -7,6 +7,9 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
+use App\Wisata_2020;
+use App\Kurir;
+
 class RequestKurirControllers extends Controller{
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     public function index(){
@@ -24,8 +27,10 @@ class RequestKurirControllers extends Controller{
         return view('kurir/produkd');
     }
     public function test(){
-        return "hello";
+        $data = Kurir::all();
+        return $data;
     }
+
 
     public function store(Request $request){
         return create([
