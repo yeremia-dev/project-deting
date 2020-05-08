@@ -9,20 +9,24 @@
                     <nav>
                         <ul class="metismenu" id="menu">
                             <li class="active">
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
+                                <a href="#">Pedagang</a>
                                 <ul class="collapse">
-                                    <li class="active"><a href="index.html">ICO dashboard</a></li>
-                                    <li><a href="index2.html">Ecommerce dashboard</a></li>
-                                    <li><a href="index3.html">SEO dashboard</a></li>
+                                    <li class="active"><a href="index.html">Informasi Pedagang</a></li>
+                                    <li><a href="index2.html">Request Mendaftar Informasi Pedagang</a></li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Sidebar
-                                        Types
-                                    </span></a>
+                            <li class="active">
+                                <a href="#">Kurir</a>
                                 <ul class="collapse">
-                                    <li><a href="index.html">Left Sidebar</a></li>
-                                    <li><a href="index3-horizontalmenu.html">Horizontal Sidebar</a></li>
+                                    <li class="active"><a href="index.html">Informasi Kurir</a></li>
+                                    <li><a href="index2.html">Request Mendaftar Informasi Kurir</a></li>
+                                </ul>
+                            </li>
+                            <li class="active">
+                                <a href="#">Aduan</a>
+                                <ul class="collapse">
+                                <li class="{{ 'aduan' == request()->path() ? 'active' : '' }}"><a href="index.html">Informasi Aduan</a></li>
+                                    <li><a href="/aduan">Request Aduan</a></li>
                                 </ul>
                             </li>
                             

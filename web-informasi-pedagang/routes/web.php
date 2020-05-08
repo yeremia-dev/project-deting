@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/aduan','AduanController@index');
+Route::post('/save-aduan','AduanController@store');
