@@ -21,3 +21,6 @@ Route::get('/', function () {
 Route::get('/pedagang', function(){
     return view('cari-pedagang');
 });
+Route::get('/hasil-pedagang',function(){
+    return view('hasil-pedagang');
+});
