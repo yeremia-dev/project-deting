@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Bulan Mei 2020 pada 10.19
+-- Waktu pembuatan: 09 Bulan Mei 2020 pada 14.47
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.3
 
@@ -93,9 +93,6 @@ CREATE TABLE `pedagang` (
   `id_pedagang` int(50) NOT NULL,
   `nama_pedagang` varchar(50) NOT NULL,
   `alamat_rinci` varchar(50) NOT NULL,
-  `kabupaten` varchar(50) NOT NULL,
-  `kecamatan` varchar(50) NOT NULL,
-  `kelurahan` varchar(255) NOT NULL,
   `no_hp` varchar(50) NOT NULL,
   `no_wa` varchar(50) NOT NULL,
   `foto_pedagang` varchar(50) DEFAULT NULL,
