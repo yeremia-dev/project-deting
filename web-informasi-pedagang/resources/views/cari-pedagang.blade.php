@@ -11,6 +11,11 @@
                 </div>
                 <div class="col-md-5">
                     <h4>Cari Berdasarkan</h4><br><br><br>
+                    <div class="form-group">
+                        <label for="nama_produk">Nama Produk</label>
+                        <input type="text" class="form-control" id="nama_produk" aria-describedby="nama_produk">
+                        <small id="emailHelp" class="form-text text-muted">Ketik Manual Produk Yang Ingin dicari</small>
+                    </div>
                     <p>
                         <bold>Lokasi
                             <bold>

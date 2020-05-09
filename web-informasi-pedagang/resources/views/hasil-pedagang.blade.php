@@ -1,16 +1,14 @@
 @extends('layouts.master')
 @section('content')
 <h1>Hasil Pencarian</h1>
+
 <div class="col-12 mt-5" id="app">
     <div class="card">
         <div class="card-body">
-            <div class="header-title">
-
-            </div>
             <div class="row">
-                <div class="col-md-12">
+            <div class="col-sm-8">
                     <div class="card-area">
-                        <div class="col-lg-4 col-md-6 mt-5">
+                        <div class="col-lg-8 col-md-6 mt-5">
                             <div class="card card-bordered">
                                 <img class="card-img-top img-fluid" src="assets/images/card/card-img1.jpg" alt="image">
                                 <div class="card-body">
@@ -26,13 +24,20 @@
                             </div>
                         </div>
                     </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="col-lg-12 col-md-12 mt-5">
+                    <template>
+                        <div>
+                            <b-table striped hover :items="items"></b-table>
+                        </div>
+                    </template>
                 </div>
+            </div>
             </div>
         </div>
     </div>
 </div>
-
-
 <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
 <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -41,7 +46,12 @@
         el: '#app',
         data() {
             return {
-                data: [],
+                items: [
+                    {  Nama_produk: 'Dickerson', kategori: 'Macdonald' },
+                    {  Nama_produk: 'Dickerson', kategori: 'Macdonald' },
+                    {   Nama_produk: 'Dickerson', kategori: 'Macdonald' },
+                    {   Nama_produk: 'Dickerson', kategori: 'Macdonald' }
+                ],
             }
         },
         methods: {
@@ -62,11 +72,14 @@
                 return decodeURIComponent(results[2].replace(/\+/g, ' '));
             }
         },
+
         created() {
             this.getUrl();
         }
     })
+
 </script>
+
 @endsection
 
 
