@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>srtdash - ICO Dashboard</title>
+    <title>Buy From Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/icon/favicon.ico')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}">
@@ -21,6 +21,11 @@
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css')}}">
     <!-- modernizr css -->
     <script src="{{ asset('assets/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+    <!-- mencari kurir terdekat -->
+    <link rel="stylesheet" href="{{ asset('assets/mencari-kurir-terdekat/style.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCqk0o7gAPnf-hWOKtlFPjYtvWBKgDo33o" type="text/javascript"></script>
 </head>
 <body>
 	<!-- page container area start -->

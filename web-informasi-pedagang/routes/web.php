@@ -13,6 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('mencari-kurir-terdekat.index');
-});
+Route::get('/', 'MencariKurirTerdekatController@index');

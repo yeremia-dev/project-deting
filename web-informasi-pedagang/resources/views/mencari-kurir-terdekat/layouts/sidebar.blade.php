@@ -1,8 +1,6 @@
 <div class="sidebar-menu">
             <div class="sidebar-header">
-                <div class="logo">
-                    <a href="index.html"><img src="assets/images/icon/logo.png" alt="logo"></a>
-                </div>
+                <h4 style="color: white">Buy From Home</h4>
             </div>
             <div class="main-menu">
                 <div class="menu-inner">
@@ -17,18 +15,14 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Kurir
-                                        Types
-                                    </span></a>
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Kurir</span></a>
                                 <ul class="collapse">
                                     <li><a href="index.html">Left Sidebar</a></li>
                                     <li><a href="index3-horizontalmenu.html">Horizontal Sidebar</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Aduan
-                                        Types
-                                    </span></a>
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Aduan </span></a>
                                 <ul class="collapse">
                                     <li><a href="index.html">Left Sidebar</a></li>
                                     <li><a href="index3-horizontalmenu.html">Horizontal Sidebar</a></li>
