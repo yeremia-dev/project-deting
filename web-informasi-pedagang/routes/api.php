@@ -23,3 +23,18 @@ Route::apiResources(
         'kurir' => 'API\RequestKurirControllers'
     ]
 );
+Route::get('/kurirs/provinsi','RequestKurirControllers@test');
+
+
+Route::get('/kurir/test/prov/{kode}','RequestKurirControllers@findKab');
+Route::get('/kurir/test/kab/{kode}','RequestKurirControllers@findKec');
+Route::get('/kurirs/find/kab/{kode}','RequestKurirControllers@findKec');
+Route::post('/kurir/test/addImage/{kode}','RequestKurirControllers@addImage');
+Route::get('/kurirs/ktp/','RequestKurirControllers@addKTP');
+Route::post('upload/{kode}', 'RequestKurirControllers@addImage');
+Route::post('upload/stnk/{kode}', 'RequestKurirControllers@addImageSTNK');
+Route::post('upload/sim/{kode}', 'RequestKurirControllers@addImageSIM');
+Route::post('upload/kurir/{kode}', 'RequestKurirControllers@addImageKurir');
+Route::post('upload/all/', 'RequestKurirControllers@store');
+Route::post('insert', 'RequestKurirControllers@masuk');
+Route::get('check/', 'RequestKurirControllers@getKurir');

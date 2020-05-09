@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kurir extends Model
 {
-    protected $table = 'kurirs';
+    protected $table = 'kurir';
 
     protected $primaryKey = 'id_kurir';
 
     protected $fillable = [
         'jenis_kendaraan',
         'latitude',
-        'longtitude',
+        'longitude',
         'nomor_kendaraan',
         'nama_kurir',
         'alamat_kurir',

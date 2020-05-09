@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Wisata_2020 extends Model
+class Wilayah extends Model
 {
-    protected $table = 'wisata_2020';
+    protected $table = 'wilayah_2020';
 
     protected $primaryKey = 'kode';
 
