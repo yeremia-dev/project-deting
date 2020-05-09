@@ -13,7 +13,8 @@
                     <h4>Cari Berdasarkan</h4><br><br><br>
                     <div class="form-group">
                         <label for="nama_produk">Nama Produk</label>
-                        <input type="text" class="form-control" id="nama_produk" aria-describedby="nama_produk">
+                        <input type="text" class="form-control" v-model="produk" id="nama_produk"
+                               aria-describedby="nama_produk">
                         <small id="emailHelp" class="form-text text-muted">Ketik Manual Produk Yang Ingin dicari</small>
                     </div>
                     <p>
@@ -77,6 +78,7 @@
                     kec: false,
                     kel: false
                 },
+                produk: '',
                 prov: [],
                 provinsi: null,
                 kab: [],
@@ -90,13 +92,13 @@
         methods: {
             cariPedagang() {
                 if (this.kelurahan !== null) {
-                    window.location.href = `/hasil-pedagang?search=${this.kelurahan}`
+                    window.location.href = `/hasil-pedagang?search=${this.kelurahan}&produk=${this.produk}`
                 } else if (this.kecamatan !== null) {
-                    window.location.href = `/hasil-pedagang?search=${this.kecamatan}`
+                    window.location.href = `/hasil-pedagang?search=${this.kecamatan}&produk=${this.produk}`
                 } else if (this.kabupaten !== null) {
-                    window.location.href = `/hasil-pedagang?search=${this.kabupaten}`
+                    window.location.href = `/hasil-pedagang?search=${this.kabupaten}&produk=${this.produk}`
                 } else if (this.provinsi !== null) {
-                    window.location.href = `/hasil-pedagang?search=${this.provinsi}`
+                    window.location.href = `/hasil-pedagang?search=${this.provinsi}&produk=${this.produk}`
                 } else {
                     alert("Pilih Wilayah")
                 }
