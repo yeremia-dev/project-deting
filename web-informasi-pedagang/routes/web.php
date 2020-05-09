@@ -35,12 +35,21 @@ Route::get('/pedagangs/editPedagang', function () {
 	return view('pedagangs.editPedagang');
 });
 
-Route::get('/pedagangs/detailPedagang', function () {
-	return view('pedagangs.detailPedagang');
-});
+// Route::get('/pedagangs/detailPedagang', function () {
+// 	return view('pedagangs.detailPedagang');
+// });
+
+Route::get('/pedagangs/detailPedagang', 'PedagangController@index');
+
 Route::get('/pedagangs/tambahProduk', function () {
 	return view('pedagangs.tambahProduk');
 });
+
+Route::post('/pedagang/store', 'ProdukController@store');
+
+Route::post('/produk/delete/{id_produk}', 'ProdukController@destroy');
+// Route::post('/banners/store', 'BannerController@store');
+
 Route::get('/pedagangs/editProduk', function () {
 	return view('pedagangs.editProduk');
 });

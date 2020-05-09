@@ -49,19 +49,26 @@
 			<th scope="col">#</th>
 			<th scope="col">Nama Produk</th>
 			<th scope="col">Kategori</th>
+			<th scope="col">Harga</th>
 			<th scope="col">Action</th>
 			</tr>
 		</thead>
 		<tbody>
+			@foreach($data as $datas)
 			<tr>
 			<th scope="row">1</th>
-			<td>Andaliman</td>
-			<td>Rempah</td>
+			<td>{{ $datas->nama_produk }}</td>
+			<td>{{ $datas->kategori}} </td>
+			<td>{{ $datas->harga}} </td>
 			<td>
-			<a href="{{ asset('/pedagangs/editProduk') }}"><button type="button" class="btn btn-primary">Edit</button></a>
-			<a href="{{ asset('/pedagangs/detailPedagang') }}">	<button type="button" class="btn btn-danger">Hapus</button></a>
+				<a href="{{ url('/pedagangs/editProduk') }}"><button type="button" class="btn btn-primary">Edit</button></a>				
+				<form method="POST"  action="{{ url('/produk/delete', $datas->id) }}" enctype="multipart/form-data">
+					@csrf
+					<button type="submit" class="btn btn-danger">Hapus</button>
+				</form>
 			</td>
 			</tr>
+			@endforeach
 		</tbody>
 	</table>
 	</div>
