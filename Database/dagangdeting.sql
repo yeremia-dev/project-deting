@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2020 at 07:50 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- Waktu pembuatan: 09 Bulan Mei 2020 pada 10.19
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `aduan`
+-- Struktur dari tabel `aduan`
 --
 
 CREATE TABLE `aduan` (
@@ -58,27 +58,27 @@ CREATE TABLE `aduan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kurir`
+-- Struktur dari tabel `kurir`
 --
 
 CREATE TABLE `kurir` (
-  `id` int(11) NOT NULL,
-  `nama_kurir` char(24) NOT NULL,
-  `alamat_kurir` char(100) NOT NULL,
-  `nomor_telepon` varchar(13) NOT NULL,
-  `nomor_ktp` varchar(17) NOT NULL,
-  `foto_ktp` varchar(24) DEFAULT NULL,
-  `foto_stnk` varchar(24) DEFAULT NULL,
-  `foto_SIM` varchar(24) DEFAULT NULL,
-  `foto_kurir` varchar(24) DEFAULT NULL,
-  `jenis_kelamin` varchar(24) NOT NULL,
-  `status` int(11) NOT NULL,
-  `jenis_kendaraan` varchar(24) NOT NULL,
-  `nomor_kendaraan` varchar(24) NOT NULL,
-  `latitude` varchar(100) NOT NULL,
-  `longitude` varchar(100) NOT NULL,
-  `id_admin` varchar(255) NOT NULL,
-  `kode_wilayah` varchar(39) NOT NULL,
+  `id` int(50) NOT NULL,
+  `nama_kurir` char(50) NOT NULL,
+  `alamat_kurir` char(50) NOT NULL,
+  `nomor_telepon` varchar(50) NOT NULL,
+  `nomor_ktp` varchar(50) NOT NULL,
+  `foto_ktp` varchar(50) DEFAULT NULL,
+  `foto_stnk` varchar(50) DEFAULT NULL,
+  `foto_SIM` varchar(50) DEFAULT NULL,
+  `foto_kurir` varchar(50) DEFAULT NULL,
+  `jenis_kelamin` varchar(50) NOT NULL,
+  `status` int(50) NOT NULL,
+  `jenis_kendaraan` varchar(50) NOT NULL,
+  `nomor_kendaraan` varchar(50) NOT NULL,
+  `latitude` varchar(50) NOT NULL,
+  `longitude` varchar(50) NOT NULL,
+  `id_admin` varchar(50) NOT NULL,
+  `kode_wilayah` varchar(50) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -86,21 +86,21 @@ CREATE TABLE `kurir` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pedagang`
+-- Struktur dari tabel `pedagang`
 --
 
 CREATE TABLE `pedagang` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(24) NOT NULL,
-  `alamat_rinci` varchar(255) NOT NULL,
-  `kabupaten` varchar(255) NOT NULL,
-  `kecamatan` varchar(255) NOT NULL,
+  `id_pedagang` int(50) NOT NULL,
+  `nama_pedagang` varchar(50) NOT NULL,
+  `alamat_rinci` varchar(50) NOT NULL,
+  `kabupaten` varchar(50) NOT NULL,
+  `kecamatan` varchar(50) NOT NULL,
   `kelurahan` varchar(255) NOT NULL,
-  `no_hp` varchar(13) NOT NULL,
-  `no_wa` varchar(20) NOT NULL,
-  `foto` varchar(24) DEFAULT NULL,
-  `id_admin` varchar(255) NOT NULL,
-  `kode_wilayah` varchar(39) NOT NULL,
+  `no_hp` varchar(50) NOT NULL,
+  `no_wa` varchar(50) NOT NULL,
+  `foto_pedagang` varchar(50) DEFAULT NULL,
+  `id_admin` varchar(50) NOT NULL,
+  `kode_wilayah` varchar(50) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -108,15 +108,14 @@ CREATE TABLE `pedagang` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produk`
+-- Struktur dari tabel `produk`
 --
 
 CREATE TABLE `produk` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(24) NOT NULL,
-  `harga` varchar(24) NOT NULL,
-  `kategori` varchar(50) NOT NULL,
-  `id_pedagang` int(11) NOT NULL,
+  `id_produk` int(50) NOT NULL,
+  `nama_produk` varchar(50) NOT NULL,
+  `kategori` varchar(255) NOT NULL,
+  `id_pedagang` int(50) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -124,7 +123,7 @@ CREATE TABLE `produk` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wilayah_2020`
+-- Struktur dari tabel `wilayah_2020`
 --
 
 CREATE TABLE `wilayah_2020` (
@@ -133,7 +132,7 @@ CREATE TABLE `wilayah_2020` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `wilayah_2020`
+-- Dumping data untuk tabel `wilayah_2020`
 --
 
 INSERT INTO `wilayah_2020` (`kode`, `nama`) VALUES
@@ -1143,19 +1142,19 @@ INSERT INTO `wilayah_2020` (`kode`, `nama`) VALUES
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`username`);
 
 --
--- Indexes for table `aduan`
+-- Indeks untuk tabel `aduan`
 --
 ALTER TABLE `aduan`
   ADD PRIMARY KEY (`id_aduan`);
 
 --
--- Indexes for table `kurir`
+-- Indeks untuk tabel `kurir`
 --
 ALTER TABLE `kurir`
   ADD PRIMARY KEY (`id`),
@@ -1163,77 +1162,77 @@ ALTER TABLE `kurir`
   ADD KEY `kode_wilayah` (`kode_wilayah`);
 
 --
--- Indexes for table `pedagang`
+-- Indeks untuk tabel `pedagang`
 --
 ALTER TABLE `pedagang`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id_pedagang`),
   ADD KEY `id_admin` (`id_admin`),
   ADD KEY `kode_wilayah` (`kode_wilayah`);
 
 --
--- Indexes for table `produk`
+-- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id_produk`),
   ADD KEY `id_pedagang` (`id_pedagang`);
 
 --
--- Indexes for table `wilayah_2020`
+-- Indeks untuk tabel `wilayah_2020`
 --
 ALTER TABLE `wilayah_2020`
   ADD PRIMARY KEY (`kode`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `aduan`
+-- AUTO_INCREMENT untuk tabel `aduan`
 --
 ALTER TABLE `aduan`
   MODIFY `id_aduan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `kurir`
+-- AUTO_INCREMENT untuk tabel `kurir`
 --
 ALTER TABLE `kurir`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `pedagang`
+-- AUTO_INCREMENT untuk tabel `pedagang`
 --
 ALTER TABLE `pedagang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pedagang` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `produk`
+-- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_produk` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `kurir`
+-- Ketidakleluasaan untuk tabel `kurir`
 --
 ALTER TABLE `kurir`
   ADD CONSTRAINT `kurir_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `admin` (`username`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `kurir_ibfk_2` FOREIGN KEY (`kode_wilayah`) REFERENCES `wilayah_2020` (`kode`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `pedagang`
+-- Ketidakleluasaan untuk tabel `pedagang`
 --
 ALTER TABLE `pedagang`
   ADD CONSTRAINT `pedagang_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `admin` (`username`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `pedagang_ibfk_2` FOREIGN KEY (`kode_wilayah`) REFERENCES `wilayah_2020` (`kode`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `produk`
+-- Ketidakleluasaan untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  ADD CONSTRAINT `produk_ibfk_1` FOREIGN KEY (`id_pedagang`) REFERENCES `pedagang` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `produk_ibfk_1` FOREIGN KEY (`id_pedagang`) REFERENCES `pedagang` (`id_pedagang`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
