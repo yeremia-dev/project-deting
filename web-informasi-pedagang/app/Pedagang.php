@@ -14,10 +14,13 @@ class Pedagang extends Model
     protected $primaryKey = 'id_pedagang';
 
     protected $fillable = [
+        'id_pedagang',
         'nama_pedagang',
-        'alamat_pedagang',
-        'no_telepon',
+        'alamat_rinci',
+        'no_hp',
+        'no_wa',
         'foto_pedagang',
-        'kategori_dagangan'
+        'id_admin',
+        'kode_wilayah'
     ];
 }

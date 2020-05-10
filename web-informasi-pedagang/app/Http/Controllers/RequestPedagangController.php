@@ -10,20 +10,27 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RequestPedagangController extends controller
 {
 
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    public function lihat($kode){
+        $data = DB::SELECT("SELECT COUNT(id_pedagang) as val FROM pedagang WHERE id_pedagang LIKE '$kode%'");
+        return $data;
+    }
     public function stores(Request $request)
     {
         Pedagang::create([
+            'id_pedagang' => $request['id_pedagang'],
             'nama_pedagang' => $request['nama_pedagang'],
-            'alamat_pedagang'=> $request['alamat_pedagang'],
-            'no_telepon'=> $request['no_telepon'],
+            'alamat_rinci'=> $request['alamat_rinci'],
+            'no_hp'=> $request['no_hp'],
+            'no_wa'=> $request['no_wa'],
             'foto_pedagang'=> $request['foto_pedagang'],
-            'kategori_dagangan'=> $request['kategori_dagangan']
+            'kode_wilayah'=>$request['kode_wilayah']
         ]);
         return "Sukses";
     }

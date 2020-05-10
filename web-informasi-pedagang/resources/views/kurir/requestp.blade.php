@@ -30,7 +30,8 @@
                                                     </div>
                                                     <div class="col-md-7" style="margin-left: 25px">
                                                         <img :src="foto" class="img-responsive" height="70" width="90">
-                                                        <input type="file" @change="fotoBtn" class="col-sm-11 form-control"
+                                                        <input type="file" @change="fotoBtn"
+                                                               class="col-sm-11 form-control"
                                                                placeholder="Foto KTP" required><br>
                                                     </div>
                                                 </div>
@@ -75,8 +76,10 @@
                                                     <br>
                                                     <b-col cols="8" col md="5" lg="11" sm="7">
                                                         <b-select v-on:change="provinsiBtn" v-model="prov" required>
-                                                            <b-select-option v-for="provinsi in provinsi" :key="provinsi.kode"
-                                                                             v-bind:value="provinsi.kode">@{{provinsi.nama}}
+                                                            <b-select-option v-for="provinsi in provinsi"
+                                                                             :key="provinsi.kode"
+                                                                             v-bind:value="provinsi.kode">
+                                                                @{{provinsi.nama}}
                                                             </b-select-option>
                                                         </b-select>
                                                     </b-col>
@@ -92,8 +95,10 @@
                                                     <br>
                                                     <b-col cols="8" col md="5" lg="11" sm="7">
                                                         <b-select v-on:change="kabupatenBtn" v-model="kab" required>
-                                                            <b-select-option v-for="kabupaten in kabupaten" :key="kabupaten.kode"
-                                                                             v-bind:value="kabupaten.kode">@{{kabupaten.nama}}
+                                                            <b-select-option v-for="kabupaten in kabupaten"
+                                                                             :key="kabupaten.kode"
+                                                                             v-bind:value="kabupaten.kode">
+                                                                @{{kabupaten.nama}}
                                                             </b-select-option>
                                                         </b-select>
                                                     </b-col>
@@ -108,8 +113,10 @@
                                                     <br>
                                                     <b-col cols="8" col md="5" lg="11" sm="7">
                                                         <b-select v-on:change="kecamatanBtn" v-model="kec" required>
-                                                            <b-select-option v-for="kecamatan in kecamatan" :key="kecamatan.kode"
-                                                                             v-bind:value="kecamatan.kode">@{{kecamatan.nama}}
+                                                            <b-select-option v-for="kecamatan in kecamatan"
+                                                                             :key="kecamatan.kode"
+                                                                             v-bind:value="kecamatan.kode">
+                                                                @{{kecamatan.nama}}
                                                             </b-select-option>
                                                         </b-select>
                                                     </b-col>
@@ -162,23 +169,25 @@
                                                                 </div>
                                                             </td>
                                                             <td>
-                                                                <select v-model="row.kategori" class="bg-light custom-select">
-                                                                    <option value="0" selected>Kabupaten</option>
-                                                                    <option value="1">Toba</option>
-                                                                    <option value="2">Samosir</option>
-                                                                    <option value="3">Tapanuli Utara</option>
+                                                                <select v-model="row.kategori"
+                                                                        class="bg-light custom-select">
+                                                                    <option value="Daging" selected>Daging</option>
+                                                                    <option value="Sayuran">Sayuran</option>
+                                                                    <option value="Sembako">Sembako</option>
+                                                                    <option value="lain-lain">lain-lain</option>
                                                                 </select>
                                                             </td>
                                                             <td>
-                                                                <button @click="deleteRow(row)" class="btn btn-primary">
-                                                                    <span class="fa fa-plus"></span> hapus Produk
+                                                                <button @click="deleteRow(row)" class="btn btn-danger">
+                                                                    <span class="fa fa-remove"></span> hapus Produk
                                                                 </button>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>
-
-                                                                <button type="submit" @click="submit" class="btn btn-info">Submit</button>
+                                                                <button type="submit" @click="submit"
+                                                                        class="btn btn-success">Submit
+                                                                </button>
                                                                 <button @click="addRow" class="btn btn-primary">
                                                                     <span class="fa fa-plus"></span> Tambah Produk
                                                                 </button>
@@ -186,9 +195,6 @@
                                                             <td></td>
                                                             <td></td>
                                                         </tr>
-                                                        <button @click="save" class="btn btn-primary">
-                                                            <span class="fa fa-plus"></span> Submit
-                                                        </button>
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -204,9 +210,12 @@
                             <ul class="nav nav-pills">
                                 <li class="nav-item"><a class="nav-link active" href="#pedagang"
                                                         data-toggle="tab" hidden>Data Pedagang</a></li>
-                                <li class="nav-item"><b-btn class="nav-link btn-primary" v-show="!selanjutnya" @click="test"
-                                                        href="#dagangan"
-                                                        data-toggle="tab">Selanjutnya</b-btn></li>
+                                <li class="nav-item">
+                                    <b-btn class="nav-link btn-primary" v-show="!selanjutnya" @click="test"
+                                           href="#dagangan"
+                                           data-toggle="tab">Selanjutnya
+                                    </b-btn>
+                                </li>
                             </ul>
                             <center>
                                 <button class="btn btn-md btn-success" v-if="selanjutnya">Kirim Request</button>
@@ -232,10 +241,10 @@
             return {
                 nama: '',
                 alamat_rinci: '',
-                provinsi : [],
-                prov:'',
+                provinsi: [],
+                prov: '',
                 kabupaten: [],
-                kab:'',
+                kab: '',
                 kecamatan: [],
                 kec: '',
                 no_hp: '',
@@ -243,6 +252,7 @@
                 foto: '',
                 kode_wilayah: '',
                 selanjutnya: false,
+                indikator: '0',
                 rows: [
                     {nama_produk: '', kategori: ''}
                 ]
@@ -259,10 +269,9 @@
         },
         methods: {
             formSubmit(e) {
-                alert(this.jenis_kendaraan)
                 axios.get("/kurir/test")
                     .then(response => {
-                        alert(response.data)
+                        console.log(response.data)
                     })
             },
             provinsiBtn() {
@@ -272,7 +281,6 @@
                         console.log(response.data)
                     })
 
-                // alert(this.prov)
             },
             kabupatenBtn() {
                 const responses = axios.get("/api/kurir/test/kab/" + this.kab)
@@ -281,38 +289,58 @@
                         console.log(response.data)
                     })
 
-                // alert(this.prov)
             },
             kecamatanBtn() {
                 console.log(this.kec)
-                // alert(this.prov)
             },
-            test(){
+            test() {
                 console.log(this.no_hp)
-                console.log(this.no_wa)
-                console.log(this.kec)
-                console.log(this.alamat_rinci)
-                alert(this.nama)
             },
-            save(){
-                alert("sukses")
+            save() {
+                console.log("sukses")
             },
-            submit(){
+            submit() {
+                let skuPedagangs = this.nama + '-' + this.no_hp;
+                let skuPedagang;
+                axios.get('/api/pedagang/lihat/' + skuPedagangs).then(response => {
+                    console.log(response.data[0].val);
+                    if (response.data[0].val === 0) {
+                        skuPedagang = this.nama + '-' + this.no_hp;
+                    } else {
+                        skuPedagang = this.nama + '-' + this.no_hp + '-' + response.data[0].val + '-1-';
+                    }
+                    axios.post('/api/pedagang/insert', {
+                        id_pedagang: skuPedagang,
+                        nama_pedagang: this.nama,
+                        alamat_rinci: this.alamat_rinci,
+                        no_hp: this.no_hp,
+                        no_wa: this.no_wa,
+                        foto_pedagang: kode + '.png',
+                        kode_wilayah: this.kec
+                    }).then(response => {
+                        console.log(response);
+                    });
+
+                    //insert produk
+                    for (let i = 0; i < this.rows.length; i++) {
+                        axios.post('/api/produk/insert', {
+                            nama_produk: this.rows[i].nama_produk,
+                            kategori: this.rows[i].kategori,
+                            id_pedagang: skuPedagang
+                        }).then(response => {
+                            console.log(response);
+                        });
+                    }
+
+
+                })
+
                 let kode = 'Pedagang-' + this.nama + "-" + this.no_hp;
-                // alert(this.image)
                 axios.post('/api/pedagang/upload/' + kode, {image: this.image}).then(response => {
                     console.log(response);
                 });
                 console.log(this.rows[0])
-                axios.post('/api/pedagang/insert', {
-                    nama_pedagang: this.nama,
-                    alamat_pedagang:this.kec,
-                    no_telepon:this.no_hp,
-                    foto_pedagang: kode + '.png',
-                    kategori_dagangan: 'testing dulu'
-                }).then(response => {
-                    console.log(response);
-                });
+
             },
             addRow: function () {
                 this.rows.push({nama_produk: '', kategori: ''});
@@ -320,7 +348,7 @@
             deleteRow: function (row) {
                 this.rows.$remove(row);
             },
-            fotoBtn(e){
+            fotoBtn(e) {
                 let files = e.target.files || e.dataTransfer.files;
                 if (!files.length)
                     return;
