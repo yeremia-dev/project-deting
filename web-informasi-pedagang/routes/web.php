@@ -18,9 +18,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('/pedagang', function(){
-    return view('cari-pedagang');
+Route::get('/pedagang', function () {
+    return view('search-pedagang.cari-pedagang');
 });
-Route::get('/hasil-pedagang',function(){
-    return view('hasil-pedagang');
+Route::get('/hasil-pedagang', function () {
+    return view('search-pedagang.hasil-pedagang');
 });

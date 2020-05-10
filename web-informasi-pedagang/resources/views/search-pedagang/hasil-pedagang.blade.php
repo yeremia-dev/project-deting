@@ -19,8 +19,9 @@
                                         <li class="list-group-item">No WhatsApp : @{{ data.pedagang.no_wa }}</li>
                                     </ul>
                                     <br>
-                                    <a href="https://wa.me/@{{ data.pedagang.no_wa }}" class="btn btn-success">Chat
-                                        WhatsApp</a>
+                                    <button @click="chatWA(data.pedagang.no_wa)" class="btn btn-success">Chat
+                                        WhatsApp
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -62,22 +63,12 @@
             return {
                 items: [],
                 datas: [],
-                fields: [
-                    {
-                        key: "nama",
-                        label: "Nama Dagangan",
-                        sorttable: true
-                    },
-                    {
-                        key: "kategori",
-                        label: "Kategori Dagangan",
-                        sorttable: true,
-
-                    },
-                ]
             }
         },
         methods: {
+            chatWA(i) {
+                window.location.href = `https://wa.me/${i}`
+            },
             getUrl() {
                 var kode = this.getParameterByName('search')
                 var produk = this.getParameterByName('produk')
