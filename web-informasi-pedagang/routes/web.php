@@ -27,9 +27,8 @@ Route::get('/pedagangs/tambahPedagang', function () {
 	return view('pedagangs.tambahPedagang');
 });
 
-Route::get('/pedagangs/listPedagang', function () {
-	return view('pedagangs.listPedagang');
-});
+Route::get('/pedagangs/listPedagang', 'PedagangController@showAll');
+	// return view('pedagangs.listPedagang');
 
 Route::get('/pedagangs/editPedagang', function () {
 	return view('pedagangs.editPedagang');
@@ -51,7 +50,11 @@ Route::post('/produk/delete/{id_produk}', 'ProdukController@destroy');
 // Route::post('/banners/store', 'BannerController@store');
 
 Route::get('/pedagangs/editProduk/{id}', 'PedagangController@show');
-Route::post('/pedagangs/updateProduk/{id}', 'PedagangController@update');	
+Route::post('/pedagangs/updateProduk/{id}', 'PedagangController@update');
+Route::post('/pedagang/delete/{id}', 'PedagangController@delete');	
+Route::get('/pedagang/produk/{id}', 'PedagangController@detailPedang');
+Route::get('/pedagangs/editInfo/{id}', 'PedagangController@edit');
+Route::post('/pedagang/updateInfo/{id}', 'PedagangController@updateInfo');
 
 Route::get('/pedagangs/editPedagang', function () {
 	return view('pedagangs.editPedagang');

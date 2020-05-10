@@ -20,18 +20,18 @@
 			<th scope="col">Action</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody>			
 			<tr>
 			<th scope="row">1</th>
-			<td>Sanny Naomi Sinaga</td>
-			<td>sanny.jpg</td>
-			<td>08324324423</td>
-			<td>@08324324423</td>
-			<td>Laguboti</td>
+			<td>{{ $data_pedagang->nama }}</td>
+			<td>{{ $data_pedagang->foto }}</td>
+			<td>{{ $data_pedagang->no_hp }}</td>
+			<td>{{ $data_pedagang->no_wa }}</td>
+			<td>{{ $data_pedagang->alamat }}</td>
 			<td>
 			<a href="{{ asset('/pedagangs/editPedagang') }}"><button type="button" class="btn btn-primary">Edit</button></a>
 			</td>
-			</tr>
+			</tr>			
 		</tbody>
 	</table>
 	</div>
@@ -53,7 +53,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($data as $datas)
+			@foreach($data_produks as $datas)
 			<tr>
 			<th scope="row">1</th>
 			<td>{{ $datas->nama_produk }}</td>

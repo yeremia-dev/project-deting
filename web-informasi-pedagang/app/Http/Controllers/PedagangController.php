@@ -15,7 +15,14 @@ class PedagangController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function test()
+    public function showAll() {
+
+        $pedagangs = Pedagang::all();        
+
+        return view('pedagangs.listPedagang')->with('pedagangs', $pedagangs);
+    }
+
+    public function test()  
     {
         $data = DB::SELECT("SELECT * FROM wilayah_2020 WHERE CHAR_LENGTH(kode)<3");
         return $data;
@@ -92,8 +99,9 @@ class PedagangController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   
+        $data = Pedagang::find($id);
+        return view('pedagangs.editPedagang')->with('data', $data);
     }
 
     /**
@@ -115,5 +123,35 @@ class PedagangController extends Controller
         return redirect('/pedagangs/detailPedagang');
     }
 
+    public function delete($id) {
 
+        $data = Pedagang::find($id);
+        $data->delete();
+
+        return redirect('/pedagangs/listPedagang');
+
+    }
+
+    public function detailPedang($id) {
+        
+        $data_pedagang = Pedagang::find($id);
+        $data_produk = Produk::all()->where('id_pedagang', $id);
+        
+        return view('/pedagangs/detailPedagang')->with('data_pedagang', $data_pedagang)
+                                                ->with('data_produks', $data_produk);       
+
+    }
+
+    public function updateInfo(Request $request, $id) {
+
+        $data = Pedagang::find($id);
+        $data->nama = $request->nama_pedagang;
+        $data->no_hp = $request->no_hp;
+        $data->no_wa = $request->no_wa;
+        $data->alamat_rinci = $request->alamat_rinci;
+
+        $data->update();
+
+        return redirect('/pedagang/produk/'.$id);    
+    }
 }
