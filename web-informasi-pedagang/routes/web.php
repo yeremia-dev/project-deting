@@ -16,3 +16,35 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+//to index kurir
+Route::get(
+    '/kurir/index', 'RequestKurirControllers@index'
+)->name('kurirIndex');
+
+Route::get(
+    '/kurir/request', 'RequestKurirControllers@request'
+)->name('kurirRequest');
+
+Route::get(
+    '/kurir/requestp', 'RequestKurirControllers@requestp'
+)->name('kurirRequestp');
+
+Route::get(
+    '/kurir/produkd', 'RequestKurirControllers@addp'
+)->name('kurirProdukd');
+
+Route::get(
+    '/kurir/konfirmasi', 'RequestKurirControllers@konfir'
+)->name('kurirKonfirmasi');
+
+Route::get(
+    '/kurir/viewproduk', 'RequestKurirControllers@view'
+)->name('kurirViewproduk');
+
+Route::get(
+    '/kurir/pedagang', 'RequestKurirControllers@pedagangView'
+)->name('kurirProdukd');
+
+Route::get(
+    '/kurir/konfirmasipdg', 'RequestKurirControllers@konfirpdg'
+)->name('kurirKonfirmasipdg');
