@@ -12,14 +12,6 @@
 		    <label for="exampleInputEmail1">Lokasi Anda</label>
 		    <input type="text" class="form-control" placeholder="Lokasi anda" id="tempat">
 		  </div>
-		  <div class="form-group">
-		    <label for="exampleInputPassword1">Kategori Kurir</label>
-		     <select class="form-control" >
-		      <option>Angkutan</option>
-		      <option>Motor</option>
-		      <option>Becak</option>
-		    </select>
-		  </div>
 		  <button type="submit" class="btn btn-primary">Cari Kurir</button>
 		</form>
 	</div>
@@ -33,23 +25,120 @@
 					<label for="lokasi">Lokasi</label>
 					<textarea id="lokasi" rows="5" cols="5" class="form-control">--
 					</textarea>
+          <label for="longitude">Longitude</label>
+          <input id="longitude" type="text" name="" class="form-control" value="--">
+          <label for="latitude">Latitude</label>
+          <input  id="latitude" type="text" name="" class="form-control" value="--">
 					<div id="panelContent"></div><br>
-					<div id="longitude"></div><br>
-					<div id="latitude"></div>
+					<!-- <div id="longitude"></div><br>
+					<div id="latitude"></div> -->
 				</div>
-				<div class="col-md-9">
+				<div class="col-md-5">
 					<div id="map" style="height: 500px;width: 600px"></div>	
 				</div>
+        <div class="col-md-4">
+          <div>
+            <div id="judul_kurir"></div> <br>
+             <div id="content_kurir"  ></div> 
+          </div> 
+        </div>
 			</div>
 		</div>
 		
 	</div>
+  <script type="text/javascript">
+    var count = 0;
+      /**
+     * Converts degrees to radians.
+     * 
+     * @param degrees Number of degrees.
+     */
+    function degreesToRadians(degrees){
+        return degrees * Math.PI / 180;
+    }
+
+    /**
+     * Returns the distance between 2 points of coordinates in Google Maps
+     * 
+     * @see https://stackoverflow.com/a/1502821/4241030
+     * @param lat1 Latitude of the point A
+     * @param lng1 Longitude of the point A
+     * @param lat2 Latitude of the point B
+     * @param lng2 Longitude of the point B
+     */
+    function getDistanceBetweenPoints(lat1, lng1, lat2, lng2){
+        // The radius of the planet earth in meters
+        let R = 6378137;
+        let dLat = degreesToRadians(lat2 - lat1);
+        let dLong = degreesToRadians(lng2 - lng1);
+        let a = Math.sin(dLat / 2)
+                *
+                Math.sin(dLat / 2) 
+                +
+                Math.cos(degreesToRadians(lat1)) 
+                * 
+                Math.cos(degreesToRadians(lat1)) 
+                *
+                Math.sin(dLong / 2) 
+                * 
+                Math.sin(dLong / 2);
+
+        let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        let distance = R * c;
+
+        return distance;
+    }
+    // Obtain the distance in meters using the haversine formula
+    function getKurir(latA,longA){
+      console.log(latA);
+      console.log(longA);
+      $("#judul_kurir").append("<h3>List Kurir</h3>")
+      <?php
+      foreach($kurirs as $kurir){
+        ?>
+          var distanceInMeters = getDistanceBetweenPoints(
+            // LatA
+            latA,
+            // LongA
+            longA,
+            // LatB
+            <?= $kurir->latitude ?>,
+            // LongB
+            <?= $kurir->longitude ?>
+        );
+          // Outputs: Distance in Meters:  286476.96153465303
+          console.log("Distance in Meters: ", distanceInMeters);
+          if(distanceInMeters <= 1000){
+            count++;
+              $("#content_kurir").append("<div class='alert alert-primary'>\
+                <table>\
+                  <tr>\
+                    <td>Nama : <?= $kurir->nama_kurir ?></td>\
+                  </tr>\
+                  <tr>\
+                    <td>No. Handphone : <?= $kurir->nomor_telepon ?></td>\
+                  </tr>\
+                </table>\
+                </div>");
+          }
+        <?php
+      }
+    ?>
+    if(count == 0){
+      $("#content_kurir").append("<div class='alert alert-primary'>\
+          <p>Tidak ada kurir berjarak 1 km dari lokasi anda</p>\
+        </div>");
+    }
+    }
+</script>
+
 	<script type="text/javascript">
       $(document).ready(function() {
         
         function updateMarkerPosition(latLng) {
             document.getElementById('latitude').value = [latLng.lat()]
             document.getElementById('longitude').value = [latLng.lng()]
+            getKurir(latLng.lat(),latLng.lng());
         }
         $("#formCariTempat").submit(function(e) {
             e.preventDefault();
@@ -89,7 +178,10 @@
                         //menampilkan data keterangan alamat, lat, long 
                         $("#latitude").val(result.results[i].geometry.location.lat);
                         $("#longitude").val(result.results[i].geometry.location.lng);
-                        $("#lokasi").val(result.results[i].formatted_address);       
+                        $("#lokasi").val(result.results[i].formatted_address);  
+                        //local storage
+                        localStorage.setItem("longitude", result.results[i].geometry.location.lng);
+                        localStorage.setItem("latitude", result.results[i].geometry.location.lat);
 
                 
                         var peta = new google.maps.Map(document.getElementById("map"), propertiPeta);
@@ -117,11 +209,11 @@
             }else{
               alert("Nama tempat tidak boleh kosong!");
             } 
-           
         });
         
     });
    
 </script>
+
 @endsection
 
