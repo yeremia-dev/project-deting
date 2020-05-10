@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Bulan Mei 2020 pada 14.47
+-- Waktu pembuatan: 10 Bulan Mei 2020 pada 10.38
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.3
 
@@ -64,7 +64,6 @@ CREATE TABLE `aduan` (
 CREATE TABLE `kurir` (
   `id` int(50) NOT NULL,
   `nama_kurir` char(50) NOT NULL,
-  `alamat_kurir` char(50) NOT NULL,
   `nomor_telepon` varchar(50) NOT NULL,
   `nomor_ktp` varchar(50) NOT NULL,
   `foto_ktp` varchar(50) DEFAULT NULL,
@@ -77,7 +76,7 @@ CREATE TABLE `kurir` (
   `nomor_kendaraan` varchar(50) NOT NULL,
   `latitude` varchar(50) NOT NULL,
   `longitude` varchar(50) NOT NULL,
-  `id_admin` varchar(50) NOT NULL,
+  `id_admin` varchar(50) DEFAULT NULL,
   `kode_wilayah` varchar(50) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -90,7 +89,7 @@ CREATE TABLE `kurir` (
 --
 
 CREATE TABLE `pedagang` (
-  `id_pedagang` int(50) NOT NULL,
+  `id_pedagang` char(50) NOT NULL,
   `nama_pedagang` varchar(50) NOT NULL,
   `alamat_rinci` varchar(50) NOT NULL,
   `no_hp` varchar(50) NOT NULL,
@@ -112,7 +111,7 @@ CREATE TABLE `produk` (
   `id_produk` int(50) NOT NULL,
   `nama_produk` varchar(50) NOT NULL,
   `kategori` varchar(255) NOT NULL,
-  `id_pedagang` int(50) NOT NULL,
+  `id_pedagang` char(50) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -1194,12 +1193,6 @@ ALTER TABLE `aduan`
 --
 ALTER TABLE `kurir`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT untuk tabel `pedagang`
---
-ALTER TABLE `pedagang`
-  MODIFY `id_pedagang` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk`
