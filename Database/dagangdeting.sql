@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Bulan Mei 2020 pada 10.55
+-- Waktu pembuatan: 10 Bulan Mei 2020 pada 20.43
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.3
 
@@ -64,6 +64,7 @@ CREATE TABLE `aduan` (
 CREATE TABLE `kurir` (
   `id` int(50) NOT NULL,
   `nama_kurir` char(50) NOT NULL,
+  `alamat_kurir` char(50) NOT NULL,
   `nomor_telepon` varchar(50) NOT NULL,
   `nomor_ktp` varchar(50) NOT NULL,
   `foto_ktp` varchar(50) DEFAULT NULL,
@@ -74,9 +75,6 @@ CREATE TABLE `kurir` (
   `status` int(50) NOT NULL,
   `jenis_kendaraan` varchar(50) NOT NULL,
   `nomor_kendaraan` varchar(50) NOT NULL,
-  `kabupaten` varchar(255) NOT NULL,
-  `kecamatan` varchar(255) NOT NULL,
-  `kelurahan` varchar(255) NOT NULL,
   `latitude` varchar(50) NOT NULL,
   `longitude` varchar(50) NOT NULL,
   `id_admin` varchar(50) DEFAULT NULL,
@@ -98,10 +96,11 @@ CREATE TABLE `pedagang` (
   `no_hp` varchar(50) NOT NULL,
   `no_wa` varchar(50) NOT NULL,
   `foto_pedagang` varchar(50) DEFAULT NULL,
-  `id_admin` varchar(50) NOT NULL,
+  `id_admin` varchar(50) DEFAULT NULL,
   `kode_wilayah` varchar(50) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
