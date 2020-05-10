@@ -38,6 +38,13 @@ Route::get(
 )->name('kurirKonfirmasi');
 
 Route::get(
-    '/kurir/detailproduk', 'RequestKurirControllers@viewdetail'
-)->name('kurirDetailproduk');
+    '/kurir/viewproduk', 'RequestKurirControllers@view'
+)->name('kurirViewproduk');
 
+Route::get(
+    '/kurir/pedagang', 'RequestKurirControllers@pedagangView'
+)->name('kurirProdukd');
+
+Route::get(
+    '/kurir/konfirmasipdg', 'RequestKurirControllers@konfirpdg'
+)->name('kurirKonfirmasipdg');

@@ -38,3 +38,12 @@ Route::post('upload/kurir/{kode}', 'RequestKurirControllers@addImageKurir');
 Route::post('upload/all/', 'RequestKurirControllers@store');
 Route::post('insert', 'RequestKurirControllers@masuk');
 Route::get('check/', 'RequestKurirControllers@getKurir');
+
+
+//Pedagang
+Route::get('pedagang/lihat/{kode}','RequestPedagangController@lihat');
+Route::post('pedagang/upload/{kode}', 'RequestPedagangController@addImage');
+Route::post('pedagang/insert', 'RequestPedagangController@stores');
+
+//Produk
+Route::post('produk/insert', 'RequestProdukController@stores');

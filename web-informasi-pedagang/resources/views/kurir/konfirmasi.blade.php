@@ -21,7 +21,7 @@
           <th scope="col">Nomor Kendaraan</th>
           <th scope="col">Jenis Kendaraan</th>
           <th scope="col">Aksi</th>
-          <th scope="col">Status</th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
@@ -34,8 +34,8 @@
             <td>laki-laki</td>
             <td>BL3713BFF</td>
             <td>roda 3</td>
-            <td><button type="button" class="btn btn-outline-light text-dark">View</button></td>
-            <td>Diterima</td>
+            <td><a class="btn secondary" href="#" role="button">Terima</a>s</td>
+            <td><a class="btn secondary" href="#" role="button">Tolak</a></td>
           </tr>
           <tr>
             <th scope="row">2</th>
@@ -46,8 +46,8 @@
             <td>laki-laki</td>
             <td>BL3713BFF</td>
             <td>roda 2</td>
-            <td><button type="button" class="btn btn-outline-light text-dark">View</button></td>
-            <td>Ditolak</td>
+            <td><a class="btn secondary" href="#" role="button">Terima</a></td>
+            <td><a class="btn secondary" href="#" role="button">Tolak</a></td>
           </tr>
           </tbody>
   </table>

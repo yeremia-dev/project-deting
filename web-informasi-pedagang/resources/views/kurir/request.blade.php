@@ -3,7 +3,7 @@
 <div id="app">
     <div class="container">
         <nav class="navbar navbar-grey bg-light">
-            <span class="navbar-brand mb-0 h1">Request Mendaftar Informasi Pedagang</span>
+            <span class="navbar-brand mb-0 h1">Request Mendaftar Informasi Kurir</span>
         </nav>
     </div>
     <hr>
@@ -303,15 +303,15 @@
                         console.log(response);
                     });
                     let kodeSim = 'SIM-' + this.nama_kurir + "-" + this.nomor_kendaraan;
-                    axios.post('/api/upload/sim/' + kodeSim, {image: this.image}).then(response => {
+                    axios.post('/api/upload/sim/' + kodeSim, {image: this.imageSIM}).then(response => {
                         console.log(response);
                     });
                     let kodeSTNK = 'STNK-' + this.nama_kurir + "-" + this.nomor_kendaraan;
-                    axios.post('/api/upload/stnk/' + kodeSTNK, {image: this.image}).then(response => {
+                    axios.post('/api/upload/stnk/' + kodeSTNK, {image: this.imageSTNK}).then(response => {
                         console.log(response);
                     });
                     let kodeKurir = '' + this.nama_kurir + "-" + this.nomor_kendaraan;
-                    axios.post('/api/upload/kurir/' + kodeKurir, {image: this.image}).then(response => {
+                    axios.post('/api/upload/kurir/' + kodeKurir, {image: this.foto_kurir}).then(response => {
                         console.log(response);
                     });
                     axios.post('/api/insert', {

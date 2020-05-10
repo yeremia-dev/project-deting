@@ -47,11 +47,12 @@
                 <tbody>
                     <tr>
                       <th scope="row">1</th>
-                      <td>Ayam Kampung</td>
+                      <td>Ayam potong</td>
                       <td>Daging</td>
                     </tr>
                 </tbody>
-            </table>
+            </table><hr><br>
+            <div><button type="button" class="btn btn-secondary btn-block">Terima</button></div>
     </div>
 
 @endsection

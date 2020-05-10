@@ -32,6 +32,9 @@ class RequestKurirControllers extends Controller
         return view('kurir/requestp');
     }
 
+    public function pedagangView(){
+        return view('index');
+    }
     public function addp()
     {
         return view('kurir/produkd');
@@ -40,9 +43,13 @@ class RequestKurirControllers extends Controller
     {
         return view('kurir/konfirmasi');
     }
-    public function viewdetail()
+    public function view()
     {
-        return view('kurir/detailproduk');
+        return view('kurir/viewproduk');
+    }
+    public function konfirpdg()
+    {
+        return view('kurir/konfirmasipdg');
     }
 
     public function test()
