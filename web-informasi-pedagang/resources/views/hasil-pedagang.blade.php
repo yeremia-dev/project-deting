@@ -19,7 +19,8 @@
                                         <li class="list-group-item">No WhatsApp : @{{ data.pedagang.no_wa }}</li>
                                     </ul>
                                     <br>
-                                    <a href="#" class="btn btn-success">Chat WhatsApp</a>
+                                    <a href="https://wa.me/@{{ data.pedagang.no_wa }}" class="btn btn-success">Chat
+                                        WhatsApp</a>
                                 </div>
                             </div>
                         </div>
