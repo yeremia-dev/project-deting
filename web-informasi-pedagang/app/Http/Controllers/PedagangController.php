@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Pedagang;
 use Illuminate\Support\Facades\DB;
+use App\Produk;
+use App\Pedagang;
 
 class PedagangController extends Controller
 {
@@ -32,9 +33,23 @@ class PedagangController extends Controller
         $data = DB::SELECT("SELECT * FROM wilayah_2020 WHERE kode LIKE '$kode%' AND CHAR_LENGTH(kode)<9 AND CHAR_LENGTH(kode)>5 ");
         return $data;
     }
+
+    public function index2()
+    {
+        $data= Produk::all();
+        return view('pedagangs.detailPedagang')->with('data', $data);
+    }
     public function index()
     {
-        //
+       
+        $data = Produk::all();        
+        // var_dump($data);
+        return view('pedagangs.detailPedagang')->with('data', $data);
+    }
+
+    public function show1() {
+        $data = Produk::all();        
+        return view('pedagangs.index')->with('data', $data);
     }
 
     /**
@@ -44,7 +59,7 @@ class PedagangController extends Controller
      */
     public function create()
     {
-        return view('pedagangs.tambahPedagang');
+        //
     }
 
     /**
@@ -55,25 +70,7 @@ class PedagangController extends Controller
      */
     public function store(Request $request)
     {
-        $pedagang = new Pedagang;
-        $pedagang->nama_pedagang = $request->nama_pedagang;
-        $pedagang->alamat_rinci = $request->alamat_rinci;
-        $pedagang->kabupaten = $request->kabupaten;
-        $pedagang->kecamatan = $request->kecamatan;
-        $pedagang->kelurahan = $request->kelurahan;
-        $pedagang->no_hp = $request->no_hp;
-        $pedagang->no_wa = $request->no_wa;
-        $filename=time() . '.' . $request->foto_pedagang->extension();
-        $pedagang->foto_pedagang = $filename;
-
-       
-
-        $request->validate([
-            'foto_pedagang' => 'required|mimes:jpeg,jpg,png,JPG|max:2048'
-        ]);
-
-        $request->foto_pedagang->move(public_path('foto'), $filename);
-        $pedagang->save();
+    
     }
 
     /**
@@ -84,7 +81,8 @@ class PedagangController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Produk::find($id);
+        return view('pedagangs.editProduk')->with('data', $data);
     }
 
     /**
@@ -107,17 +105,15 @@ class PedagangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $produk = Produk::find($id);
+
+        $produk->nama_produk = $request->nama_produk;
+        $produk->kategori = $request->kategori;
+
+        $produk->update();
+
+        return redirect('/pedagangs/detailPedagang');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+
 }

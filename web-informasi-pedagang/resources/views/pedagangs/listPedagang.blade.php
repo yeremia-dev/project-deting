@@ -29,6 +29,7 @@
 			<td>
 			<a href="{{ asset('/pedagangs/detailPedagang') }}"><button type="button" class="btn btn-primary">Detail</button></a>
 			<a href="{{ asset('/pedagangs/detailPedagang') }}"><button type="button" class="btn btn-primary">Edit</button></a>
+			<a href="{{ asset('/pedagangs/listPedagang') }}"><button type="button" class="btn btn-danger">Hapus</button></a>
 			</td>
 			</tr>
 		</tbody>

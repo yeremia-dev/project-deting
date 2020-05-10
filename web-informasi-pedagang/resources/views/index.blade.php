@@ -13,8 +13,6 @@
                     <div class="card-header p-2">
 
                     </div>
-                    <!-- /.card-header -->
-                    <form action="#">
                         <div class="card-body">
                             <div class="tab-content">
                                 <div class="active tab-pane" id="pedagang">
@@ -41,6 +39,8 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            
+
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="form-group">
@@ -51,37 +51,57 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="gambar">Foto</label>
+                                                        <input type="file" @change="ss"
+                                                        class="form-control-file" id="gambar"/>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <h6>Alamat:</h6><br>
+                                       
                                             <div class="row">
                                                 <div class="col">
-                                                    <select v-model="kabupaten" class="bg-light custom-select">
-                                                        <option value="0" selected>Kabupaten</option>
-                                                        <option value="1">Toba</option>
-                                                        <option value="2">Samosir</option>
-                                                        <option value="3">Tapanuli Utara</option>
+                                                    <label for="provinsi">Provinsi</label>
+                                                    <select id="provinsi" class="bg-light custom-select" v-model="provinsi" @change="getKab">
+                                                    <option v-for="data in prov" :value="data.kode">@{{ data.nama }}
+                                                    </option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <br>
-                                            <div class="row">
+                                            <div class="row" v-show="look.kab === true">
                                                 <div class="col">
-                                                    <select v-model="kecamatan" class="bg-light custom-select">
-                                                        <option value="0" selected>Kecamatan</option>
-                                                        <option value="1">Toba</option>
-                                                        <option value="2">Samosir</option>
-                                                        <option value="3">Tapanuli Utara</option>
-                                                    </select>
+                                                <label for="provinsi">Kabupaten</label>
+                                                <select id="kabupaten" class="bg-light custom-select" v-model="kabupaten" @change="getKec">
+                                                    <option v-for="data in kab" :value="data.kode">@{{ data.nama
+                                                        }}
+                                                    </option>
+                                                </select>
                                                 </div>
                                             </div>
                                             <br>
-                                            <div class="row">
+                                            <div class="row" v-show="look.kec === true">
                                                 <div class="col">
-                                                    <select v-model="kelurahan" class="bg-light custom-select">
-                                                        <option value="0" selected>Kelurahan</option>
-                                                        <option value="1">Toba</option>
-                                                        <option value="2">Samosir</option>
-                                                        <option value="3">Tapanuli Utara</option>
-                                                    </select>
+                                                <label for="kecamatan">Kecamatan</label>
+                                                <select id="kecamatan" class="bg-light custom-select" v-model="kecamatan" @change="getKel">
+                                                    <option v-for="data in kec" :value="data.kode">@{{ data.nama
+                                                        }}
+                                                    </option>
+                                                </select>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row" v-show="look.kel === true">
+                                                <div class="col">
+                                                <label for="kelurahan">Kelurahan</label>
+                                                <select id="Kelurahan" class="bg-light custom-select" v-model="kelurahan">
+                                                    <option v-for="data in kel" :value="data.kode">@{{ data.nama
+                                                        }}
+                                                    </option>
+                                                </select>
                                                 </div>
                                             </div>
                                             <br>
@@ -130,10 +150,10 @@
                                                             </td>
                                                             <td>
                                                                 <select v-model="row.kategori" class="bg-light custom-select">
-                                                                    <option value="0" selected>Kabupaten</option>
-                                                                    <option value="1">Toba</option>
-                                                                    <option value="2">Samosir</option>
-                                                                    <option value="3">Tapanuli Utara</option>
+                                                                    <option value="a" selected>a</option>
+                                                                    <option value="b">b</option>
+                                                                    <option value="c">c</option>
+                                                                    <option value="d">d Utara</option>
                                                                 </select>
                                                             </td>
                                                             <td>
@@ -171,10 +191,10 @@
                                                         data-toggle="tab">Selanjutnya</a></li>
                             </ul>
                             <center>
-                                <button class="btn btn-md btn-success" v-if="selanjutnya">Kirim Request</button>
+                               <button  @click="addProduct" class="btn btn-md btn-success" v-if="selanjutnya">Kirim Request</button>
                             </center>
                         </div>
-                    </form>
+
 
 
                 </div>
@@ -183,7 +203,8 @@
         </div>
     </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js"></script>-->
 <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
@@ -193,9 +214,6 @@
             return {
                 nama: '',
                 alamat_rinci: '',
-                kabupaten: 0,
-                kecamatan: 0,
-                kelurahan: 0,
                 no_hp: '',
                 no_wa: '',
                 foto: '',
@@ -203,15 +221,65 @@
                 selanjutnya: false,
                 rows: [
                     {nama_produk: '', kategori: ''}
-                ]
+                ],
+                look: {
+                    kab: false,
+                    kec: false,
+                    kel: false
+                },
+                prov: [],
+                provinsi: null,
+                kab: [],
+                kabupaten: null,
+                kec: [],
+                kecamatan: null,
+                kel: [],
+                kelurahan: null,
             }
         },
         methods: {
-            formSubmit(e) {
-                alert(this.jenis_kendaraan)
-                axios.get("/kurir/test")
-                    .then(response => {
-                        alert(response.data)
+            ss(e){
+                let files = e.target.files || e.dataTransfer.files;
+                if (!files.length)
+                    return;
+                let reader = new FileReader();
+                let vm = this;
+                reader.onload = (e) => {
+                    vm.foto = e.target.result;
+                };
+                reader.readAsDataURL(files[0]);
+            },
+            getProvinsi() {
+                axios.get('/api/getprovinsi')
+                    .then((res) => {
+                        this.prov = res.data
+                    })
+            },
+            getKab() {
+                axios.get(`/api/getkab/${this.provinsi}`)
+                    .then((res) => {
+                        this.kab = res.data
+                        this.look.kab = true
+                        this.look.kec = false
+                        this.kecamatan = null
+                        this.look.kel = false
+                        this.kelurahan = null
+                    })
+            },
+            getKec() {
+                axios.get(`/api/getkec/${this.kabupaten}`)
+                    .then((res) => {
+                        this.kec = res.data
+                        this.look.kec = true
+                        this.look.kel = false
+                        this.kelurahan = null
+                    })
+            },
+            getKel() {
+                axios.get(`/api/getkel/${this.kecamatan}`)
+                    .then((res) => {
+                        this.kel = res.data
+                        this.look.kel = true
                     })
             },
             addRow: function () {
@@ -219,8 +287,30 @@
             },
             deleteRow: function (row) {
                 this.rows.$remove(row);
+            },
+
+            addProduct: function() {     
+            	axios
+            		.post("/pedagang/store", {
+            			myData: this.rows,
+                        nama: this.nama,
+                        noHp : this.no_hp,
+                        noWA : this.no_wa,
+                        foto  : this.foto,
+                        alamat : this.kelurahan,
+                        alamatRinci : this.alamat_rinci
+            		})
+            		.then(() => {
+            			window.location.href = '/';
+            		})
+            		.catch(er => {
+            			console.log(er);
+            		});
             }
         },
+        created() {
+            this.getProvinsi()
+        }
     })
 </script>
 @endsection

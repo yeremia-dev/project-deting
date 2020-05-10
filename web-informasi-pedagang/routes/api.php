@@ -21,3 +21,15 @@ Route::get('/kurirs/provinsi','PedagangController@test');
 Route::get('/kurir/test/prov/{kode}','PedagangController@findKab');
 Route::get('/kurir/test/kab/{kode}','PedagangController@findKec');
 Route::get('/kurirs/find/kab/{kode}','PedagangController@findKec');
+Route::get('getprovinsi', function () {
+    return \Illuminate\Support\Facades\DB::select('SELECT * FROM wilayah_2020 WHERE CHAR_LENGTH(kode)=2 ORDER BY nama');
+});
+Route::get('getkab/{kode}', function ($kode) {
+    return \Illuminate\Support\Facades\DB::select('SELECT * FROM wilayah_2020 WHERE kode like "' . $kode . '%" AND CHAR_LENGTH(kode)=5 ORDER BY nama');
+});
+Route::get('getkec/{kode}', function ($kode) {
+    return \Illuminate\Support\Facades\DB::select('SELECT * FROM wilayah_2020 WHERE kode like "' . $kode . '%" AND CHAR_LENGTH(kode)=8 ORDER BY nama');
+});
+Route::get('getkel/{kode}', function ($kode) {
+    return DB::select('SELECT * FROM wilayah_2020 WHERE kode like "' . $kode . '%" AND CHAR_LENGTH(kode)=13 ORDER BY nama');
+});

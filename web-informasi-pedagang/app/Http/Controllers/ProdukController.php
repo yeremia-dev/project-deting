@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Produk;
 use Illuminate\Http\Request;
+use App\Pedagang;
 
 class ProdukController extends Controller
 {
@@ -24,7 +25,7 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        return view('pedagangs.tambahProduk');
+        //
     }
 
     /**
@@ -35,20 +36,51 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        $produk = new Produk;
-        $produk->nama_produk = $request->nama_produk;
-        $produk->kategori = $request->kategori;
+        $pedagang = new Pedagang();
+        $pedagang->nama = $request['nama'];
+        $pedagang->alamat_rinci = $request['alamatRinci'];
+        $pedagang->alamat = $request['alamat'];
+        $pedagang->no_hp = $request['noHp'];
+        $pedagang->no_wa = $request['noWA'];
+        $pedagang->status=2;
+        $explode = explode(',', $request['foto']);
+        if (strpos($explode[0],'data')!==false) {
+            $explode = explode(',', $request['foto']);
+            $decode = base64_decode($explode[1]);
+            if (strpos($explode[1], 'jpeg')!==false)
+                $extension = 'jpg';
+            else
+                $extension = 'png';
 
-        $produk->save();
+            $filename = date("Ymdhis") . '.' . $extension;
+            $path = public_path() . '/storage/Image/' . $filename;
+            file_put_contents($path, $decode);
+            $pedagang->foto = './storage/Image/' . $filename;
+        }
+        $pedagang->save();
+        
+        if($datas = $request->get('myData')) { 
+            foreach ($datas as $data) {
+                $produk = new Produk();
+                $produk->nama_produk = $data['nama_produk'];
+                // $produk->harga = $request->harga_produk;
+                $produk->kategori = $data['kategori'];
+                $produk->id_pedagang = $pedagang->id;
+
+                $produk->save();
+            }
+        }
+
+         return response()->json();       
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Produk  $produk
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Produk $produk)
+    public function show($id)
     {
         //
     }
@@ -56,10 +88,10 @@ class ProdukController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Produk  $produk
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Produk $produk)
+    public function edit($id)
     {
         //
     }
@@ -68,10 +100,10 @@ class ProdukController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Produk  $produk
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Produk $produk)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -79,11 +111,15 @@ class ProdukController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Produk  $produk
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Produk $produk)
+    public function destroy($id)
     {
-        //
+        $data = Produk::find($id);
+
+        $data->delete();
+
+        return redirect('/pedagangs/detailPedagang');
     }
 }

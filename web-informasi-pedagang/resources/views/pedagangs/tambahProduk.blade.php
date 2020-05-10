@@ -8,30 +8,30 @@
 <div>
 	<label for="" class="tulisanDataDiri">Masukkan Produk</label>
 </div>
-<form method="POST" action="{{ route('produks.store') }}" enctype="multipart/form-data">
-@csrf
-	<div class="pading">
-		<table class="table">
-		<thead>
-			<tr>
-			<th scope="col">#</th>
-			<th scope="col">Nama Produk</th>
-			<th scope="col">Kategori</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-			<th scope="row">1</th>
-			<input type="text" class="form-control"  id="nama_produk" name="nama_produk" placeholder="Nomor WA">
-			</td>
-			<td>
-			<div class="form-group">
-				<select class="form-control" name="kategori" id="kategori" placeholder="tes">
-				<option value="">Kategori</option>
-				<option value="Rempah-rempah">Rempah-rempah</option>
-				<option value="Daging">Daging</option>
-				</select>
+<div>
+	<form method="POST"  action="{{ url('/pedagang/store') }}" enctype="multipart/form-data">
+		@csrf
+		<div class="form-group" >
+		<div class="pading">
+			<input type="text" class="form-control"  id="nama" placeholder="Nama Produk" name="nama_produk">
+		</div>
+		<div class="pading">
+			<input type="number" class="form-control"  id="nama" placeholder="Harga Produk" name="harga_produk">
+		</div>
+		<div class="form-group">
+		<div class="pading">
+			<select class="form-control" id="exampleFormControlSelect1" placeholder="test" name="kategori">
+				<option>Kategori</option>
+				<option>Rempah-rempah</option>
+				<option>obat</option>
+			</select>
 			</div>
+		<div class="buttonPedagang">
+			<button type="submit" class="btn btn-primary active">Simpan</button>
+		</div>
+	</form>
+</div>
+
 
 			</td>
 			</tr>
