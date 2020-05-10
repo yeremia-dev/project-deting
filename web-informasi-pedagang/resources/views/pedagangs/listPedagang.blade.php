@@ -20,7 +20,7 @@
 		</thead>
 		<tbody>
 			<tr>
-			<th scope="row">1</th>
+			<td>1</td>
 			<td>Sanny Naomi Sinaga</td>
 			<td>sanny.jpg</td>
 			<td>08324324423</td>
@@ -28,6 +28,7 @@
 			<td>Laguboti</td>
 			<td>
 			<a href="{{ asset('/pedagangs/detailPedagang') }}"><button type="button" class="btn btn-primary">Detail</button></a>
+			<a href="{{ asset('/pedagangs/detailPedagang') }}"><button type="button" class="btn btn-primary">Edit</button></a>
 			</td>
 			</tr>
 		</tbody>

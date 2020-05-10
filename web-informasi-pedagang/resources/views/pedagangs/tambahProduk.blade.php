@@ -8,27 +8,39 @@
 <div>
 	<label for="" class="tulisanDataDiri">Masukkan Produk</label>
 </div>
-<div>
-	<form>
-		<div class="form-group" >
-		<div class="pading">
-		<input type="email" class="form-control"  id="nama" placeholder="Nama Produk">
-		</div>
-		<div class="pading">
-		<input type="email" class="form-control"  id="nama" placeholder="Harga Produk">
-		</div>
-		<div class="form-group">
-		<div class="pading">
-			<select class="form-control" id="exampleFormControlSelect1" placeholder="tes">
-			<option>Kategori</option>
-			<option>Rempah-rempah</option>
-			</select>
+<form method="POST" action="{{ route('produks.store') }}" enctype="multipart/form-data">
+@csrf
+	<div class="pading">
+		<table class="table">
+		<thead>
+			<tr>
+			<th scope="col">#</th>
+			<th scope="col">Nama Produk</th>
+			<th scope="col">Kategori</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			<th scope="row">1</th>
+			<input type="text" class="form-control"  id="nama_produk" name="nama_produk" placeholder="Nomor WA">
+			</td>
+			<td>
+			<div class="form-group">
+				<select class="form-control" name="kategori" id="kategori" placeholder="tes">
+				<option value="">Kategori</option>
+				<option value="Rempah-rempah">Rempah-rempah</option>
+				<option value="Daging">Daging</option>
+				</select>
 			</div>
-	</form>
-</div>
-<div class="buttonPedagang">
-<a href="{{ asset('/pedagangs/detailPedagang') }}"><button type="button" class="btn btn-primary active">Simpan</button></a>
-</div>
 
+			</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+	<div class="padding ml-3">
+		<button type="submit" class="btn btn-primary">Simpan</button>
+		</div>
+</form>
 
 @endsection
