@@ -19,6 +19,11 @@ class PedagangController extends Controller
         return view('pedagangs.detailPedagang')->with('data', $data);
     }
 
+    public function show1() {
+        $data = Produk::all();        
+        return view('pedagangs.index')->with('data', $data);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -37,7 +42,7 @@ class PedagangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    
     }
 
     /**
@@ -48,7 +53,8 @@ class PedagangController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Produk::find($id);
+        return view('pedagangs.editProduk')->with('data', $data);
     }
 
     /**
@@ -71,7 +77,14 @@ class PedagangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $produk = Produk::find($id);
+
+        $produk->nama_produk = $request->nama_produk;
+        $produk->kategori = $request->kategori;
+
+        $produk->update();
+
+        return redirect('/pedagangs/detailPedagang');
     }
 
     /**

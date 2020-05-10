@@ -40,7 +40,7 @@
 <div class="jarak">
 <label for="" class="tulisanDataDiri">Produk</label>
 <div>
-	<a href="{{ asset('/pedagangs/tambahProduk') }}">	<button type="button" class="btn btn-primary">Tambah Produk</button></a>
+	<!-- <a href="{{ asset('/pedagangs/tambahProduk') }}">	<button type="button" class="btn btn-primary">Tambah Produk</button></a> -->
 	</div>
 <div>
 	<table class="table table-hover">
@@ -49,7 +49,7 @@
 			<th scope="col">#</th>
 			<th scope="col">Nama Produk</th>
 			<th scope="col">Kategori</th>
-			<th scope="col">Harga</th>
+			<!-- <th scope="col">Harga</th> -->
 			<th scope="col">Action</th>
 			</tr>
 		</thead>
@@ -59,9 +59,9 @@
 			<th scope="row">1</th>
 			<td>{{ $datas->nama_produk }}</td>
 			<td>{{ $datas->kategori}} </td>
-			<td>{{ $datas->harga}} </td>
+			<!-- <td>{{ $datas->harga}} </td> -->
 			<td>
-				<a href="{{ url('/pedagangs/editProduk') }}"><button type="button" class="btn btn-primary">Edit</button></a>				
+				<a href="{{ url('/pedagangs/editProduk', $datas->id) }}"><button type="button" class="btn btn-primary">Edit</button></a>				
 				<form method="POST"  action="{{ url('/produk/delete', $datas->id) }}" enctype="multipart/form-data">
 					@csrf
 					<button type="submit" class="btn btn-danger">Hapus</button>

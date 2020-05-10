@@ -19,9 +19,9 @@ Route::get('/', function () {
 // Route::get('pedagangs/index', function () {
 //     return view('pedagangs.index');
 // });
-Route::get('/pedagangs/index', function () {
-	return view('pedagangs.index');
-});
+Route::get('/pedagangs/index', 'PedagangController@show1');
+	
+
 
 Route::get('/pedagangs/tambahPedagang', function () {
 	return view('pedagangs.tambahPedagang');
@@ -50,9 +50,9 @@ Route::post('/pedagang/store', 'ProdukController@store');
 Route::post('/produk/delete/{id_produk}', 'ProdukController@destroy');
 // Route::post('/banners/store', 'BannerController@store');
 
-Route::get('/pedagangs/editProduk', function () {
-	return view('pedagangs.editProduk');
-});
+Route::get('/pedagangs/editProduk/{id}', 'PedagangController@show');
+Route::post('/pedagangs/updateProduk/{id}', 'PedagangController@update');	
+
 Route::get('/pedagangs/editPedagang', function () {
 	return view('pedagangs.editPedagang');
 });

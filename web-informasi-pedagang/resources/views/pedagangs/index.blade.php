@@ -43,18 +43,22 @@
 					<i class="ti-search"></i>
 				</form>
 			</div>
-			<label for="" class="tulisanBarangDagangan">Barang Dagangan</label>	
+			<label for="" class="tulisanBarangDagangan">Dagangan</label>	
 		</div>
 			<table class="table" >
+				<thead>
+					<tr>
+						<td>nama</td>
+						<td class="trcenter">kategori</td>
+					</tr>
+				</thead>
 				<tbody>
+					@foreach($data as $dat)					
 					<tr>
-					<td>Andaliman</td>
-					<td class="trcenter">Rp 20.000</td>
-					</tr>
-					<tr>
-					<td>Bawang</td>
-					<td class="trcenter">Rp 70.000</td>
-					</tr>
+					<td>{{ $dat->nama_produk }}</td>
+					<td class="trcenter">{{ $dat->kategori }}</td>
+					</tr>					
+					@endforeach
 				</tbody>
 			</table>
 	</div>

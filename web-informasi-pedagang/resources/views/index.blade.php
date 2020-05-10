@@ -228,7 +228,7 @@
             			myData: this.rows
             		})
             		.then(() => {
-
+            			window.reload();
             		})
             		.catch(er => {
             			console.log(er);
