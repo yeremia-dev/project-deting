@@ -36,6 +36,14 @@ class RequestKurirControllers extends Controller
     {
         return view('kurir/produkd');
     }
+    public function konfir()
+    {
+        return view('kurir/konfirmasi');
+    }
+    public function viewdetail()
+    {
+        return view('kurir/detailproduk');
+    }
 
     public function test()
     {
