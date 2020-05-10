@@ -10,7 +10,7 @@
                     <div class="card-area">
                         <div class="col-lg-8 col-md-6 mt-5">
                             <div class="card card-bordered">
-                                <img class="card-img-top img-fluid" src="@{{data.pedagang.foto_pedagang}}" alt="image">
+                                <img class="card-img-top img-fluid" :src="data.pedagang.foto_pedagang" alt="image">
                                 <div class="card-body">
                                     <h6>@{{ data.pedagang.nama_pedagang }}</h6>
                                     <p class="card-text">@{{ data.pedagang.alamat_rinci }}</p>
