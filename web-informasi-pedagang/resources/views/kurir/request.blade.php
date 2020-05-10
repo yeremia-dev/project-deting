@@ -83,6 +83,7 @@
                 <!--                <input type="text" v-model="alamat_kurir" class="col-sm-11 form-control" id="formGroupExampleInput"-->
                 <!--                       placeholder="Alamat Kurir"><br>-->
             </div>
+            <br>
             <div class="form-group">
                 <input type="text" class="col-sm-11 form-control" v-model="nomor_telepon" id="nomorTelepon"
                        placeholder="Nomor Telepon" required><br>
@@ -96,6 +97,11 @@
                     <option value="laki-laki">Laki-laki</option>
                     <option value="perempuan">Perempuan</option>
                 </select>
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="text" class="col-sm-11 form-control" v-model="alamat_rinci" id="nomorKTP"
+                       placeholder="Alamat Rinci" required><br>
             </div>
             <br>
             <br>
@@ -204,7 +210,8 @@
                 kec: '',
                 image: '',
                 imageSTNK: '',
-                imageSIM: ''
+                imageSIM: '',
+                alamat_rinci : ''
             }
         }, async mounted() {
             const response = axios.get("/api/kurirs/provinsi")
@@ -320,7 +327,7 @@
                         longtitude: long,
                         nomor_kendaraan: this.nomor_kendaraan,
                         nama_kurir: this.nama_kurir,
-                        alamat_kurir: this.kec,
+                        alamat_kurir: this.alamat_rinci,
                         nomor_telepon: this.nomor_telepon,
                         nomor_ktp: this.nomor_ktp,
                         foto_ktp: kode + '.png',
@@ -328,10 +335,11 @@
                         foto_SIM: kodeSim + '.png',
                         foto_kurir: 'kurir' + kodeKurir + '.png',
                         jenis_kelamin: this.jenis_kelamin,
-                        status: 1
-                    }).then(response => {
-                        console.log(response);
-                    });
+                        status: 1,
+                        kode_wilayah : this.kec
+                    }).then(
+                        window.location.href="/kurir/request"
+                    )
                 }
             }
         },

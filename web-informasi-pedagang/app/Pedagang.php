@@ -21,6 +21,7 @@ class Pedagang extends Model
         'no_wa',
         'foto_pedagang',
         'id_admin',
-        'kode_wilayah'
+        'kode_wilayah',
+        'status'
     ];
 }

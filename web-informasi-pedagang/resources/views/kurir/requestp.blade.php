@@ -318,9 +318,9 @@
                         no_wa: this.no_wa,
                         foto_pedagang: kode + '.png',
                         kode_wilayah: this.kec
-                    }).then(response => {
-                        console.log(response);
-                    });
+                    }).then(
+                        window.location.href="/kurir/requestp"
+                    )
 
                     //insert produk
                     for (let i = 0; i < this.rows.length; i++) {

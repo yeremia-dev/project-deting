@@ -30,9 +30,11 @@ class RequestPedagangController extends controller
             'no_hp'=> $request['no_hp'],
             'no_wa'=> $request['no_wa'],
             'foto_pedagang'=> $request['foto_pedagang'],
-            'kode_wilayah'=>$request['kode_wilayah']
+            'kode_wilayah'=>$request['kode_wilayah'],
+            'status' => 1
         ]);
-        return "Sukses";
+        return view('kurir/requestp');
+
     }
     public function addImage(Request $request,$kode)
     {
@@ -49,5 +51,16 @@ class RequestPedagangController extends controller
             file_put_contents($path, $decode);
 //            $data->image = './storage/Image/' . $filename;
         }
+    }
+
+    public function findAllPedagangRequest(){
+        $data = DB::SELECT("SELECT * FROM pedagang WHERE status =1");
+        return $data;
+    }
+    public function terima($id){
+        DB::SELECT("UPDATE pedagang set status=2 WHERE id_pedagang LIKE '$id' ");
+    }
+    public function tolak($id){
+        DB::SELECT("UPDATE pedagang set status=0 WHERE id_pedagang LIKE '$id' ");
     }
 }
