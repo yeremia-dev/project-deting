@@ -30,10 +30,6 @@ Route::get(
 )->name('kurirRequestp');
 
 Route::get(
-    '/kurir/produkd', 'RequestKurirControllers@addp'
-)->name('kurirProdukd');
-
-Route::get(
     '/kurir/konfirmasi', 'RequestKurirControllers@konfir'
 )->name('kurirKonfirmasi');
 

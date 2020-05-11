@@ -2,17 +2,16 @@
 @section('content')
 <div id="app">
     <div class="container">
-        <nav class="navbar navbar-grey bg-secondary">
+        <nav class="navbar navbar-secondary bg-light">
             <span class="navbar-brand mb-0 h1">Request Informasi Pedagang</span>
         </nav>
     </div>
     <br>
-
     <div class="table-responsive-md">
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">Nama Pedagangr</th>
+                    <th scope="col">Nama Pedagang</th>
                     <th scope="col">Nomor HP</th>
                     <th scope="col">Nomor WA</th>
                     <th scope="col">Alamat Rinci</th>
@@ -37,7 +36,7 @@
             </tbody>
         </table>
     </div>
-
+</div>
     <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
     <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
