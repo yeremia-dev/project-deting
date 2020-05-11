@@ -88,6 +88,7 @@
 
         return distance;
     }
+
     // Obtain the distance in meters using the haversine formula
     function getKurir(latA,longA){
       console.log(latA);
@@ -110,15 +111,29 @@
           console.log("Distance in Meters: ", distanceInMeters);
           if(distanceInMeters <= 1000){
             count++;
-              $("#content_kurir").append("<div class='alert alert-primary'>\
-                <table>\
-                  <tr>\
-                    <td>Nama : <?= $kurir->nama_kurir ?></td>\
-                  </tr>\
-                  <tr>\
-                    <td>No. Handphone : <?= $kurir->nomor_telepon ?></td>\
-                  </tr>\
-                </table>\
+              $("#content_kurir").append("\
+                <div class='alert alert-primary'>\
+                  <div class='row'>\
+                    <div class='col-md-6'>\
+                      <table>\
+                        <tr>\
+                          <td><p>Nama </p></td>\
+                          <td><p> : </p></td>\
+                          <td><p> <?= $kurir->nama_kurir ?></p></td>\
+                        </tr>\
+                        <tr>\
+                          <td><p>No. Handphone </p></td>\
+                          <td><p> : </p></td>\
+                          <td> <p id='myInput'><?= $kurir->nomor_telepon ?></p></td>\
+                        </tr>\
+                        <tr>\
+                          <td><p>Jenis Kendaraan </p></td>\
+                          <td><p> : </p></td>\
+                          <td><p> <?= $kurir->jenis_kendaraan ?></td>\
+                        </tr>\
+                      </table>\
+                    </div>\
+                  <div class='col-md-6'></div></div>\
                 </div>");
           }
         <?php
@@ -130,6 +145,8 @@
         </div>");
     }
     }
+
+
 </script>
 
 	<script type="text/javascript">
