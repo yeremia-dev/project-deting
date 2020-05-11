@@ -188,7 +188,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                    <button type="submit" @click="submit"
+                                                                    <button type="submit" @click="validation2"
                                                                             class="btn btn-success">Submit
                                                                     </button>
                                                                     <button @click="addRow" class="btn btn-primary">
@@ -310,33 +310,35 @@
                         alert("Data Foto Harus Di isi");
                         return false
                     }
-                    if (this.nama == '') {
+                    else if (this.nama == '') {
                         alert("Data Nama Harus Di isi");
                         return false;
                     }
-                    if (this.no_hp == '') {
+                    else if (this.no_hp == '') {
                         alert("Data Nomor Hp Harus Di isi");
                         return false
                     }
-                    if (this.no_wa == '') {
+                    else if (this.no_wa == '') {
                         alert("Data Nomor WA Harus Di isi");
                         return false
                     }
-                    if (this.prov == '') {
+                    else if (this.prov == '') {
                         alert("Data Provinsi Harus Di isi");
                         return false
                     }
-                    if (this.kab == '') {
+                    else if (this.kab == '') {
                         alert("Data Kabupaten Harus Di isi");
                         return false
                     }
-                    if (this.kec == '') {
+                    else if (this.kec == '') {
                         alert("Data Kecamatan Harus Di isi");
                         return false
                     }
-                    if (this.alamat_rinci == '') {
+                    else if (this.alamat_rinci == '') {
                         alert("Data Alamat Harus Di isi");
                         return false
+                    }else{
+                        this.submit();
                     }
 
                     for (let i = 0; i < this.rows.length; i++) {
@@ -348,12 +350,9 @@
                             alert("Data Kategori Harus Di isi");
                             return false
                         }
-                        alert('test');
                     }
                 },
                 submit() {
-                    // this.validation();
-                    if (this.validation2()) {
                         let skuPedagangs = this.nama + '-' + this.no_hp;
                         let skuPedagang;
                         axios.get('/api/pedagang/lihat/' + skuPedagangs).then(response => {
@@ -371,9 +370,9 @@
                                 no_wa: this.no_wa,
                                 foto_pedagang: kode + '.png',
                                 kode_wilayah: this.kec
-                            }).then(response => {
-                                console.log(response);
-                            });
+                            }).then(
+                                                      window.location.href="/kurir/requestp"
+                                            )
 
                             //insert produk
                             for (let i = 0; i < this.rows.length; i++) {
@@ -394,7 +393,7 @@
                             console.log(response);
                         });
                         console.log(this.rows[0])
-                    }
+
                 },
                 addRow: function () {
                     this.rows.push({nama_produk: '', kategori: ''});

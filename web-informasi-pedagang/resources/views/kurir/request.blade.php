@@ -81,7 +81,7 @@
                     </b-col>
                 </div>
                 <!--                <input type="text" v-model="alamat_kurir" class="col-sm-11 form-control" id="formGroupExampleInput"-->
-                <!--                       placeholder="Alamat Kurir"><br>--> if(data==''){alert("data ini harus di isi"))} else{ jalankan fungsinya}
+                <!--                       placeholder="Alamat Kurir"><br>-->
             </div>
             <br>
             <div class="form-group">
@@ -100,7 +100,7 @@
             </div>
             <br>
             <div class="form-group">
-                <input type="text" class="col-sm-11 form-control" v-model="alamat_rinci" id="nomorKTP"
+                <input type="text" class="col-sm-11 form-control" v-model="alamat_rinci" id="alamatRinci"
                        placeholder="Alamat Rinci" required><br>
             </div>
             <br>
@@ -138,7 +138,7 @@
                 </div>
                 <div class="col-md-7">
                     <img :src="image" class="img-responsive"  height="70" width="90">
-                    <input type="file" @change="ktp"  requiredclass="col-sm-11 form-control" id="fotoKTP"
+                    <input type="file" @change="ktp"  requiredclass="col-sm-11 form-control" v-model="foto_ktp" id="fotoKTP"
                            placeholder="Foto KTP"><br>
                 </div>
             </div>
@@ -172,7 +172,6 @@
     </b-form>
     <br><br><br>
     <b-button @click="uploadImage" variant="success">Kirim Request</b-button>
-    getElementById("").setVisible= "False"
 </div>
 <br>
 
@@ -302,9 +301,49 @@
             uploadImage() {
                 if(!lat){
                     alert("Lokasi Map Harus di isi")
+                }else if(this.jenis_kendaraan == ''){
+                         alert("Jenis Kendaraan Harus di isi");
+                         return false
+                }else if(this.nomor_kendaraan == ''){
+                         alert("Nomor Kendaraan Harus Di isi");
+                         return false
+                }else if(this.nomor_telepon == ''){
+                         alert("Data Nomor Telepon Harus Di isi");
+                         return false
+                }else if(this.nama_kurir == '') {
+                         alert("Data Nama kurir Harus Di isi");
+                         return false
+                }else if(this.prov == '') {
+                         alert("Data Provinsi Harus Di isi");
+                         return false
+                }else if(this.kab == '') {
+                         alert("Data Kabupaten Harus Di isi");
+                         return false
+                }else if(this.kec == '') {
+                         alert("Data Kecamatan Harus Di isi");
+                         return false
+                }else if(this.alamat_rinci == '') {
+                         alert("Data Alamat rinci Harus Di isi");
+                         return false
+                }else if(this.nomor_ktp == '') {
+                         alert("Data Nomor KTP Harus Di isi");
+                         return false
+                }else if(this.foto_ktp == '') {
+                         alert("Data Foto KTP Harus Di isi");
+                         return false
+                }else if(this.foto_stnk == '') {
+                         alert("Data foto stnk Harus Di isi");
+                         return false
+                }else if(this.foto_sim == '') {
+                         alert("Data foto sim Harus Di isi");
+                         return false
+                }else if(this.foto_kurir == '') {
+                         alert("Data foto kurir Harus Di isi");
+                         return false
+                }else if(this.foto_jenis_kelamin == '') {
+                         alert("Data jenis kelamin harus Di isi");
+                         return false
                 }else {
-
-
                     let kode = 'KTP-' + this.nama_kurir + "-" + this.nomor_kendaraan;
                     // alert(this.image)
                     axios.post('/api/upload/' + kode, {image: this.image}).then(response => {
