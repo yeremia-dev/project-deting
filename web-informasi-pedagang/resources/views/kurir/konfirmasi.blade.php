@@ -34,7 +34,7 @@
             <td>laki-laki</td>
             <td>BL3713BFF</td>
             <td>roda 3</td>
-            <td><a class="btn secondary" href="#" role="button">Terima</a>s</td>
+            <td><a class="btn secondary" href="#" role="button">Terima</a></td>
             <td><a class="btn secondary" href="#" role="button">Tolak</a></td>
           </tr>
           <tr>
