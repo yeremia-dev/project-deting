@@ -125,10 +125,12 @@ class PedagangController extends Controller
 
     public function delete($id) {
 
-        $data = Pedagang::find($id);
-        $data->delete();
+        var_dump($id);
 
-        return redirect('/pedagangs/listPedagang');
+        // $data = Pedagang::find($id);
+        // $data->delete();
+
+        // return redirect('/pedagangs/listPedagang');
 
     }
 

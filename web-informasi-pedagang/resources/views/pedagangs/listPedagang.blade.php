@@ -19,6 +19,7 @@
 		</thead>
 		<tbody>
 			@foreach($pedagangs as $pedagang)
+
 			<tr>
 			<td>{{ $pedagang->id  }}</td>
 			<td>{{  $pedagang->nama  }}</td>			
@@ -27,11 +28,15 @@
 			<td>{{ $pedagang->alamat }}</td>
 			<td>			
 			<a href="{{ url('pedagang/produk', $pedagang->id) }}"><button type="button" class="btn btn-primary">Detail</button></a>
-			<a href="{{ url('pedagangs/editInfo', $pedagang->id) }}"><button type="button" class="btn btn-primary">Edit</button></a>			
+			<a href="{{ url('pedagangs/editInfo', $pedagang->id) }}"><button type="button" class="btn btn-primary">Edit</button></a>	
+			<!-- <a href="{{ url('pedagangs/delete', $pedagang->id) }}"><button type="button" class="btn btn-danger">delete</button></a>	 -->
+			<!-- <form method="POST" action="{{ url('/pedagang/delete/'. $pedagang->id) }}" enctype="multipart/form-data">			 -->
+			<!-- @csrf -->
 			<form method="POST" action="{{ url('/pedagang/delete', $pedagang->id) }}" enctype="multipart/form-data">
 			@csrf
-			<button type="submit" class="btn btn-danger">Hapus</button>
-			<form>					
+			<button type="submit" class="btn btn-danger">Hapus {{$pedagang->id }} </button>
+			</form>
+			<!-- <form>					 -->
 			</td>
 			</tr>
 			@endforeach
