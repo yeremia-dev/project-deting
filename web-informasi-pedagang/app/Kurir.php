@@ -24,7 +24,8 @@ class Kurir extends Model
         'foto_SIM',
         'foto_kurir',
         'jenis_kelamin',
-        'status'
+        'status',
+        'kode_wilayah'
     ];
 
 }
