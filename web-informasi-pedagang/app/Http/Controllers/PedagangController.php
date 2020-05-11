@@ -136,9 +136,15 @@ class PedagangController extends Controller
         
         $data_pedagang = Pedagang::find($id);
         $data_produk = Produk::all()->where('id_pedagang', $id);
-        
+        $prov = DB::select("select nama from wilayah_2020 where kode = '".substr($data_pedagang->alamat,0,2) ."' LIMIT 1");
+        $kab = DB::select("select nama from wilayah_2020 where kode = '".substr($data_pedagang->alamat,0,5) ."' LIMIT 1");
+        $kec = DB::select("select nama from wilayah_2020 where kode = '".substr($data_pedagang->alamat,0,8) ."' LIMIT 1");
+        $kel = DB::select("select nama from wilayah_2020 where kode = '".substr($data_pedagang->alamat,0,13) ."' LIMIT 1");
         return view('/pedagangs/detailPedagang')->with('data_pedagang', $data_pedagang)
-                                                ->with('data_produks', $data_produk);       
+                                                ->with('data_produks', $data_produk)->with('prov',$prov)
+                                                ->with('kab',$kab)
+                                                ->with('kec',$kec)
+                                                ->with('kel',$kel);            
 
     }
 

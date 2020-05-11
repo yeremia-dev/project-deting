@@ -17,20 +17,16 @@
 			<th scope="col">Nomor HP</th>
 			<th scope="col">Nomor WA</th>
 			<th scope="col">Alamat</th>
-			<th scope="col">Action</th>
 			</tr>
 		</thead>
 		<tbody>			
 			<tr>
 			<th scope="row">1</th>
 			<td>{{ $data_pedagang->nama }}</td>
-			<td>{{ $data_pedagang->foto }}</td>
+			<td><img src="{{ asset($data_pedagang->foto_pedagang) }}" alt=""></td>
 			<td>{{ $data_pedagang->no_hp }}</td>
 			<td>{{ $data_pedagang->no_wa }}</td>
-			<td>{{ $data_pedagang->alamat }}</td>
-			<td>
-			<a href="{{ asset('/pedagangs/editPedagang') }}"><button type="button" class="btn btn-primary">Edit</button></a>
-			</td>
+			<td>{{ $prov[0]->nama }} {{$kab[0]->nama}} {{$kec[0]->nama}} {{$kel[0]->nama}}</td>
 			</tr>			
 		</tbody>
 	</table>
