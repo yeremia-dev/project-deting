@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/kurir', function(){
+    return view('cari_kurir/cari-kurir');
+});
+
+Route::get('/hasil-kurir',function(){
+    return view('cari_kurir/hasil-kurir');
+});
