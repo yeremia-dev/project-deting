@@ -8,7 +8,7 @@
         <div class="row">
           <div class="col-4 mb-5">
             <div class="card">
-              <img src="..." class="card-img-top" alt="...">
+              <center><img src="assets/cari-kurir/angkot.png" class="card-img-top" style="width: 100px"></center>
               <hr>
               <div class="card-body">
                 <h5 class="card-title text-center">Angkutan</h5>
@@ -17,7 +17,7 @@
           </div>
           <div class="col-4 mb-5">
             <div class="card">
-              <img src="..." class="card-img-top" alt="...">
+              <center><img src="assets/cari-kurir/asd.png" class="card-img-top" style="width: 100px"></center>
               <hr>
               <div class="card-body">
                 <h5 class="card-title text-center">Motor</h5>
@@ -26,7 +26,7 @@
           </div>
           <div class="col-4 mb-5">
             <div class="card">
-              <img src="..." class="card-img-top" alt="...">
+              <center><img src="assets/cari-kurir/becak.png" class="card-img-top" style="width: 100px;height: 90px"></center>
               <hr>
               <div class="card-body text-center ">
                 <h5 class="card-title">Becak</h5>
@@ -38,7 +38,35 @@
         <hr>
         <h5 class="mb-5">Kategori Kurir</h5>
         <!-- daftar kurir -->
-        
+        <div class="row">
+          @foreach($kurirs as $kurir)
+            <div class="col-md-3">
+              <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{ $kurir->nama_kurir}}</h5>
+                  <table>
+                    <tr>
+                      <td><p style="color: white">Alamat</p></td>
+                      <td><p style="color: white"> : </p></td>
+                      <td><p style="color: white">&nbsp;&nbsp;{{ $kurir->alamat_kurir }}</p></td>
+                    </tr>
+                    <tr>
+                      <td><p style="color: white">Nomor Telepon </p></td>
+                      <td><p style="color: white"> : </p></td>
+                      <td><p style="color: white">&nbsp;&nbsp; {{ $kurir->nomor_telepon }}</p></td>
+                    </tr>
+                    <tr>
+                      <td><p style="color: white">Jenis Kendaraan </p></td>
+                      <td><p style="color: white"> : </p></td>
+                      <td><p style="color: white">&nbsp;&nbsp; {{ $kurir->jenis_kendaraan }}</p></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          @endforeach
+        </div>
+        {{ $kurirs->links() }}
         <!-- end daftar kurir -->
     </div>
 

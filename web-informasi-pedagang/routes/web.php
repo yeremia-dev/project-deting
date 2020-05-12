@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/kurir', function(){
-    return view('cari_kurir/cari-kurir');
-});
+Route::get('/kurir', 'SearchKurirController@index');
+
+Route::get('/kurir-terdekat', 'SearchKurirController@index');
+
+Route::post('/search-kurir', 'SearchKurirController@search');
