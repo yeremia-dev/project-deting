@@ -1,183 +1,84 @@
 @extends('layouts.master')
 @section('content')
-<div class="col-12 mt-5" id="app">
-        <div class="card-body">
-            <div class="container">
-              <div class="row">
-                <div class="col-9">
-                              <h3 class="mb-3 -ml-4">KATEGORI PRODUK</h3>
-                              <div class="row row-cols-1 row-cols-md-3 mb-5">
-                                  <div class="col-4">
-                                    <div class="card rounded border border-dark mb-5">
-                                      <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="col-4">
-                                    <div class="card rounded border border-dark mb-5">
-                                      <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="col-4">
-                                    <div class="card  rounded border border-dark mb-5">
-                                      <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                </div>
-                </div>
-                <div class="col-3">
-                  2 of 2
-                </div>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <!-- untuk emnu kategori kurir -->
+      <h2 class=" mt-5 mb-3">KATEGORI KURIR</h2>
+      <div class="row row-cols-1 row-cols-md-3">
+          <div class="col-4 mb-5">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <hr>
+              <div class="card-body">
+                <h5 class="card-title text-center">Angkutan</h5>
               </div>
-            </div>  
-            <!-- <div class="header-title">Kategori Produk</div>
-            <div class="row">
-                <div class="col-md-7">
-                    <h1>Test</h1>
-                </div>
-                <div class="col-md-5">
-                    <h4>Cari Berdasarkan</h4><br><br><br>
-                    <div class="form-group">
-                        <label for="nama_produk">Nama Produk</label>
-                        <input type="text" class="form-control" v-model="produk" id="nama_produk"
-                               aria-describedby="nama_produk">
-                        <small id="emailHelp" class="form-text text-muted">Ketik Manual Produk Yang Ingin dicari</small>
-                    </div>
-                    <p>
-                        <bold>Lokasi
-                            <bold>
-                    </p>
-                    <fieldset>
-                        <div class="form-group">
-                            <label for="Provinsi">Provinsi</label>
-                            <select class="form-control" v-model="provinsi" @change="getKab">
-                                <option v-for="data in prov" :value="data.kode">@{{ data.nama
-                                    }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group" v-show="look.kab === true">
-                            <label for="Kabupaten">Kabupaten</label>
-                            <select class="form-control" v-model="kabupaten" @change="getKec">
-                                <option v-for="data in kab" :value="data.kode">@{{ data.nama
-                                    }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group" v-show="look.kec === true">
-                            <label for="Kecamatan">Kecamatan</label>
-                            <select class="form-control" v-model="kecamatan" @change="getKel">
-                                <option v-for="data in kec" :value="data.kode">@{{ data.nama
-                                    }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group" v-show="look.kel === true" v-model="kelurahan">
-                            <label for="Kelurahan">Kelurahan/Desa</label>
-                            <select id="Kelurahan" class="form-control" v-model="kelurahan">
-                                <option v-for="data in kel" :value="data.kode">@{{ data.nama
-                                    }}
-                                </option>
-                            </select>
-                        </div>
-
-                        <button type="submit" class="btn btn-secondary btn-lg btn-block" @click="cariPedagang">
-                            Cari
-                        </button>
-                    </fieldset>
-                </div>
-            </div> -->
+            </div>
+          </div>
+          <div class="col-4 mb-5">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <hr>
+              <div class="card-body">
+                <h5 class="card-title text-center">Motor</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 mb-5">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <hr>
+              <div class="card-body text-center ">
+                <h5 class="card-title">Becak</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end kategroi kurir -->
+        <hr>
+        <h5 class="mb-5">KATEGORI KURIR: ANGKUTAN</h5>
+        <!-- daftar kurir -->
+        <div class="card" style="width: 18rem;">
+          <img src="andi.jpg" alt="..." class="rounded-circle" style="height:150px; width: 150px; margin-left: auto; margin-right :auto; margin-top: 10px">
+          <div class="card-body">
+            <button type='button' class='btn btn-primary center' style="align-items: center;"> Klik Disini</button>
+          </div>
+        </div>
+        <!-- end daftar kurir -->
     </div>
+
+    <div class="col-3 mt-5 ml-5" style="background-color: #A9A9A9;">
+      <h5 class="mt-3">Cari Berdasarkan:</h5>
+      <button type="button" class="btn btn-info btn-block mt-5" >Lokasi Terdekat</button>
+      
+      <h5 class="mt-5 mb-1">Lokasi</h5>
+      <div class="form-group">
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>Provinsi</option>
+          <option>2</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>Kabupaten</option>
+          <option>2</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>Kecamatan</option>
+          <option>2</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>Kelurahan</option>
+          <option>2</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-primary btn-block" >Cari Kurir</button>
+
+    </div>
+  </div>
 </div>
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
-<script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script>
-    new Vue({
-        el: '#app',
-        data: function () {
-            return {
-                look: {
-                    kab: false,
-                    kec: false,
-                    kel: false
-                },
-                produk: '',
-                prov: [],
-                provinsi: null,
-                kab: [],
-                kabupaten: null,
-                kec: [],
-                kecamatan: null,
-                kel: [],
-                kelurahan: null,
-            }
-        },
-        methods: {
-            cariPedagang() {
-                if (this.kelurahan !== null) {
-                    window.location.href = `/hasil-pedagang?search=${this.kelurahan}&produk=${this.produk}`
-                } else if (this.kecamatan !== null) {
-                    window.location.href = `/hasil-pedagang?search=${this.kecamatan}&produk=${this.produk}`
-                } else if (this.kabupaten !== null) {
-                    window.location.href = `/hasil-pedagang?search=${this.kabupaten}&produk=${this.produk}`
-                } else if (this.provinsi !== null) {
-                    window.location.href = `/hasil-pedagang?search=${this.provinsi}&produk=${this.produk}`
-                } else {
-                    alert("Pilih Wilayah")
-                }
-            },
-            getProvinsi() {
-                axios.get('/api/getprovinsi')
-                    .then((res) => {
-                        this.prov = res.data
-                    })
-            },
-            getKab() {
-                axios.get(`/api/getkab/${this.provinsi}`)
-                    .then((res) => {
-                        this.kab = res.data
-                        this.look.kab = true
-                        this.look.kec = false
-                        this.kecamatan = null
-                        this.look.kel = false
-                        this.kelurahan = null
-                    })
-            },
-            getKec() {
-                axios.get(`/api/getkec/${this.kabupaten}`)
-                    .then((res) => {
-                        this.kec = res.data
-                        this.look.kec = true
-                        this.look.kel = false
-                        this.kelurahan = null
-                    })
-            },
-            getKel() {
-                axios.get(`/api/getkel/${this.kecamatan}`)
-                    .then((res) => {
-                        this.kel = res.data
-                        this.look.kel = true
-                    })
-            }
-        },
-        created() {
-            this.getProvinsi()
-        }
-    })
-</script>
 @endsection
-
- -->

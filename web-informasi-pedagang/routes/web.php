@@ -20,7 +20,3 @@ Route::get('/', function () {
 Route::get('/kurir', function(){
     return view('cari_kurir/cari-kurir');
 });
-
-Route::get('/hasil-kurir',function(){
-    return view('cari_kurir/hasil-kurir');
-});
