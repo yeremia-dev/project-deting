@@ -13,10 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-//to index kurir
-Route::get(
-    '/kurir/index', 'KurirControllers@index'
-)->name('kurirIndex');
+Route:: get('/','kurirController@index');
+
+Route:: get('/dataKurir','kurirController@index');
+Route:: post('/dataKurir/create','kurirController@create');
