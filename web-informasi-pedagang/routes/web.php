@@ -19,6 +19,6 @@ Route::get('/', function () {
 
 Route::get('/kurir', 'SearchKurirController@index');
 
-Route::get('/kurir-terdekat', 'SearchKurirController@index');
+Route::get('/kurir-terdekat', 'MencariKurirTerdekatController@index');
 
 Route::post('/search-kurir', 'SearchKurirController@search');
