@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -79,3 +80,6 @@ Route::get(
 Route::get(
     '/kurir/konfirmasipdg', 'RequestKurirControllers@konfirpdg'
 )->name('kurirKonfirmasipdg');
+
+Route::get('/', 'MencariKurirTerdekatController@index');
+

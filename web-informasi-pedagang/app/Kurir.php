@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Kurir extends Model
 {
     protected $table = 'kurir';
-  
+
     protected $primaryKey = 'id_kurir';
 
     protected $fillable = [
@@ -27,5 +27,4 @@ class Kurir extends Model
         'status',
         'kode_wilayah'
     ];
-
 }
