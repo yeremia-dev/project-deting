@@ -18,6 +18,16 @@ Route::get('/', function () {
 });
 
 
+
+Route::get('/pedagang', function () {
+    return view('search-pedagang.cari-pedagang');
+});
+Route::get('/hasil-pedagang', function () {
+    return view('search-pedagang.hasil-pedagang');
+});
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -36,4 +46,3 @@ Route::group(['middleware' => ['auth','admin']], function (){
     Route::get('/pengacara','Admin\PengacaraController@index');
 
 });
-
