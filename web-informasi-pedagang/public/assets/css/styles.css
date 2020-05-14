@@ -1,3 +1,4 @@
+
 /*--------------------------------------------
 
     Template Name: srtdash - Bootstrap 4 Admin and Ui Kit
@@ -53,6 +54,64 @@
 
 
 /*------------------------- 1. Core Css -------------------*/
+
+/* css tambahan */
+.option{
+    height: 100px;
+}
+.textarea{
+    height: 70px;
+    width: 535px;
+}
+.form-control[type="text"]:focus {
+    outline-color: none;
+    }
+.buttonKirim{
+    padding-top: 40px;
+    float: right;
+}
+.imgProfile{
+    border-radius: 50%;
+    display: block;
+    width: 180px;
+    height: 180px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.kurirBox{
+    background:#eeeeee;
+    padding-top: 10px;
+}
+.fotoKurir{
+    color:#000000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    text-align: right;
+    padding-bottom: 10px;
+    margin-left: 130px;
+    padding-top: 30px;
+}
+.informasiKurir{
+    color: #007BFF;
+}
+.cup{
+    background-color: #F3F8FB;
+    padding-top: 50px;
+}
+.inputKurir{
+    box-sizing: inherit;
+}
+.labelText{
+    color: #000000;
+}
+.infoTambahan{
+    padding-top: 20px;
+    color: black;
+}
+.buttonSub{
+    color: #eeeeee;
+}
+
 
 .page-container {
     width: 100%;
