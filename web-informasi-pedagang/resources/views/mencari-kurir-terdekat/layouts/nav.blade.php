@@ -8,9 +8,11 @@
                 <span></span>
             </div>
             <div class="search-box pull-left">
-                            
-                        </div>
-                    </div>
-                  
-                </div>
+                <form action="#">
+                    <input type="text" name="search" placeholder="Search..." required>
+                    <i class="ti-search"></i>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>

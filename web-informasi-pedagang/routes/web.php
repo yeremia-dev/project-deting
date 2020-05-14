@@ -83,3 +83,9 @@ Route::get(
 
 Route::get('/', 'MencariKurirTerdekatController@index');
 
+
+
+Route:: get('/','kurirController@index');
+
+Route:: get('/dataKurir','kurirController@index');
+Route:: post('/dataKurir/create','kurirController@create');

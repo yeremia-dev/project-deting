@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKurirsTable extends Migration
+class CreateKurirTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateKurirsTable extends Migration
      */
     public function up()
     {
-        Schema::create('kurirs', function (Blueprint $table) {
-            $table->id('id_kurir');
+        Schema::create('kurir', function (Blueprint $table) {
+            $table->increments('id_kurir');
             $table->string('nama_kurir');
             $table->string('alamat_kurir');
             $table->string('nomor_telepon');
@@ -24,11 +24,11 @@ class CreateKurirsTable extends Migration
             $table->string('foto_SIM');
             $table->string('foto_kurir');
             $table->string('jenis_kelamin');
-            $table->integer('status');
+            $table->string('status');
             $table->string('jenis_kendaraan');
             $table->string('nomor_kendaraan');
             $table->string('latitude');
-            $table->string('longtitude');
+            $table->string('longitude');
             $table->timestamps();
         });
     }
@@ -40,6 +40,6 @@ class CreateKurirsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kurirs');
+        Schema::dropIfExists('kurir');
     }
 }
