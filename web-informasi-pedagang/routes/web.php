@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//route pengaduan
+Route::get('/index', function () {
+    return view('pengaduan.index');
+});
+Route::get('/aduan','AduanController@index');
+Route::post('/save-aduan','AduanController@store');
+
+
 
 Route::get('/', function () {
     return view('welcome');
