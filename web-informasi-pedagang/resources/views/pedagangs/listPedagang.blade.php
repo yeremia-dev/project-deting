@@ -20,6 +20,7 @@
 		<tbody>
 		<?php $i=1; ?>
 			@foreach($pedagangs as $pedagang)
+
 			<tr>
 			<td>{{ $i  }}</td>
 			<td>{{  $pedagang->nama  }}</td>			
