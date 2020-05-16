@@ -14,26 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
 
 Auth::routes();
-
+Auth::routes(['register' => false]);
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::group(['middleware' => ['auth','admin']], function (){
-
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    });
-
-    Route::get('/role-register','Admin\DashboardController@registered');
-    Route::get('/role-edit/{id}','Admin\DashboardController@registeredit');
-    Route::put('/role-register-update/{id}','Admin\DashboardController@registerupdate');
-    Route::delete('/role-delete/{id}','Admin\DashboardController@registerdelete');
-
-    Route::get('/pengacara','Admin\PengacaraController@index');
-
-});
-
