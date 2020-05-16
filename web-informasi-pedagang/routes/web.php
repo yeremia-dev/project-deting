@@ -33,6 +33,7 @@ Route::get('/kurir-terdekat', 'MencariKurirTerdekatController@index');
 
 Route::post('/search-kurir', 'SearchKurirController@search');
 
+
 Route::get('/pedagang', function () {
     return view('search-pedagang.cari-pedagang');
 });
@@ -60,6 +61,8 @@ Route::group(['middleware' => ['auth','admin']], function (){
     Route::get('/pengacara','Admin\PengacaraController@index');
 
 });
+
+
 //to index kurir
 Route::get(
     '/kurir/index', 'RequestKurirControllers@index'
@@ -94,6 +97,5 @@ Route::get('/', 'MencariKurirTerdekatController@index');
 
 
 Route:: get('/','kurirController@index');
-
 Route:: get('/dataKurir','kurirController@index');
 Route:: post('/dataKurir/create','kurirController@create');
