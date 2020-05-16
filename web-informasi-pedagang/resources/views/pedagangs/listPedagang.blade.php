@@ -18,22 +18,25 @@
 			</tr>
 		</thead>
 		<tbody>
+		<?php $i=1; ?>
 			@foreach($pedagangs as $pedagang)
 			<tr>
-			<td>{{ $pedagang->id  }}</td>
+			<td>{{ $i  }}</td>
 			<td>{{  $pedagang->nama  }}</td>			
 			<td>{{ $pedagang->no_hp }}</td>
 			<td>{{ $pedagang->no_wa }}</td>
 			<td>{{ $pedagang->alamat }}</td>
-			<td>			
-			<a href="{{ url('pedagang/produk', $pedagang->id) }}"><button type="button" class="btn btn-primary">Detail</button></a>
-			<a href="{{ url('pedagangs/editInfo', $pedagang->id) }}"><button type="button" class="btn btn-primary">Edit</button></a>			
-			<form method="POST" action="{{ url('/pedagang/delete', $pedagang->id) }}" enctype="multipart/form-data">
-			@csrf
-			<button type="submit" class="btn btn-danger">Hapus</button>
-			<form>					
+			<td>
+				<div class="row">
+
+					<div class="col-md-4"><a href="{{ url('pedagang/produk', $pedagang->id) }}"><button type="button" class="btn btn-primary">Detail</button></a></div>
+					<div class="col-md-4"><a href="{{ url('pedagangs/editInfo?id='. $pedagang->id) }}"><button type="button" class="btn btn-primary">Edit</button></a></div>
+					<div class="col-md-4"><a href="{{ url('pedagang/delete', $pedagang->id) }}"><button type="button" class="btn btn-danger">Hapus</button></a></div>
+				</div>
+			</div>							
 			</td>
 			</tr>
+			<?php $i++ ?>
 			@endforeach
 		</tbody>
 	</table>

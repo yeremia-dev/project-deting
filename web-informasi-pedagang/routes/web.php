@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Pedagang;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,15 +46,19 @@ Route::get('/pedagangs/tambahProduk', function () {
 });
 
 Route::post('/pedagang/store', 'ProdukController@store');
+Route::post('/pedagang/edit/{id}', 'ProdukController@updateData');
 
-Route::post('/produk/delete/{id_produk}', 'ProdukController@destroy');
-// Route::post('/banners/store', 'BannerController@store');
+// Route::post('/produk/delete/{id_produk}', 'ProdukController@destroy');
+// // Route::post('/banners/store', 'BannerController@store');
 
 Route::get('/pedagangs/editProduk/{id}', 'PedagangController@show');
 Route::post('/pedagangs/updateProduk/{id}', 'PedagangController@update');
-Route::post('/pedagang/delete/{id}', 'PedagangController@delete');	
+Route::get('/pedagang/delete/{id}', 'PedagangController@delete');	
 Route::get('/pedagang/produk/{id}', 'PedagangController@detailPedang');
-Route::get('/pedagangs/editInfo/{id}', 'PedagangController@edit');
+Route::get('/pedagangs/editInfo', 'PedagangController@edit');
+Route::get('getdatapedagang/{id}', function($id){
+	return Pedagang::find($id);
+});
 Route::post('/pedagang/updateInfo/{id}', 'PedagangController@updateInfo');
 
 Route::get('/pedagangs/editPedagang', function () {

@@ -150,14 +150,14 @@
                                                             </td>
                                                             <td>
                                                                 <select v-model="row.kategori" class="bg-light custom-select">
-                                                                    <option value="a" selected>a</option>
-                                                                    <option value="b">b</option>
-                                                                    <option value="c">c</option>
-                                                                    <option value="d">d Utara</option>
+                                                                    <option value="Daging" selected>Daging</option>
+                                                                    <option value="Rempah-rempah">Rempah-rempah</option>
+                                                                    <option value="Telur">Telur</option>
+                                                                    <option value="Sembako">Sembako</option>
                                                                 </select>
                                                             </td>
                                                             <td>
-                                                                <button @click="deleteRow(row)" class="btn btn-primary">
+                                                                <button @click="deleteRow" class="btn btn-primary">
                                                                     <span class="fa fa-plus"></span> hapus Produk
                                                                 </button>
                                                             </td>
@@ -191,7 +191,7 @@
                                                         data-toggle="tab">Selanjutnya</a></li>
                             </ul>
                             <center>
-                               <button  @click="addProduct" class="btn btn-md btn-success" v-if="selanjutnya">Kirim Request</button>
+                               <button  @click="addProduct" class="btn btn-md btn-success" v-if="selanjutnya">Simpan</button>
                             </center>
                         </div>
 
@@ -216,7 +216,7 @@
                 alamat_rinci: '',
                 no_hp: '',
                 no_wa: '',
-                foto: '',
+                foto_pedagang: '',
                 kode_wilayah: '',
                 selanjutnya: false,
                 rows: [
@@ -245,7 +245,7 @@
                 let reader = new FileReader();
                 let vm = this;
                 reader.onload = (e) => {
-                    vm.foto = e.target.result;
+                    vm.foto_pedagang = e.target.result;
                 };
                 reader.readAsDataURL(files[0]);
             },
@@ -285,8 +285,8 @@
             addRow: function () {
                 this.rows.push({nama_produk: '', kategori: ''});
             },
-            deleteRow: function (row) {
-                this.rows.$remove(row);
+            deleteRow: function () {
+                this.rows.pop();
             },
 
             addProduct: function() {     
@@ -296,12 +296,12 @@
                         nama: this.nama,
                         noHp : this.no_hp,
                         noWA : this.no_wa,
-                        foto  : this.foto,
+                        foto_pedagang  : this.foto_pedagang,
                         alamat : this.kelurahan,
                         alamatRinci : this.alamat_rinci
             		})
             		.then(() => {
-            			window.location.href = '/';
+            			window.location.href = '/pedagangs/listPedagang';
             		})
             		.catch(er => {
             			console.log(er);

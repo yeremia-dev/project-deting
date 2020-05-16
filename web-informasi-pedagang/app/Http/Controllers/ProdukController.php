@@ -43,9 +43,9 @@ class ProdukController extends Controller
         $pedagang->no_hp = $request['noHp'];
         $pedagang->no_wa = $request['noWA'];
         $pedagang->status=2;
-        $explode = explode(',', $request['foto']);
+        $explode = explode(',', $request['foto_pedagang']);
         if (strpos($explode[0],'data')!==false) {
-            $explode = explode(',', $request['foto']);
+            $explode = explode(',', $request['foto_pedagang']);
             $decode = base64_decode($explode[1]);
             if (strpos($explode[1], 'jpeg')!==false)
                 $extension = 'jpg';
@@ -55,7 +55,7 @@ class ProdukController extends Controller
             $filename = date("Ymdhis") . '.' . $extension;
             $path = public_path() . '/storage/Image/' . $filename;
             file_put_contents($path, $decode);
-            $pedagang->foto = './storage/Image/' . $filename;
+            $pedagang->foto_pedagang = './storage/Image/' . $filename;
         }
         $pedagang->save();
         
@@ -68,6 +68,41 @@ class ProdukController extends Controller
                 $produk->id_pedagang = $pedagang->id;
 
                 $produk->save();
+            }
+        }
+
+         return response()->json();       
+    }
+
+    public function updateData(Request $request, $id)
+    {
+        $pedagang = Pedagang::find($id);
+        $pedagang->nama = $request['nama'];
+        $pedagang->alamat_rinci = $request['alamatRinci'];
+        $pedagang->alamat = $request['alamat'];
+        $pedagang->no_hp = $request['noHp'];
+        $pedagang->no_wa = $request['noWA'];
+        $pedagang->status=2;
+    
+        $pedagang->save();
+        
+        if($datas = $request->get('myData')) { 
+            foreach ($datas as $data) {
+                if($data['id'] == null){
+                    $produk = new Produk();
+                    $produk->nama_produk = $data['nama_produk'];
+                    // $produk->harga = $request->harga_produk;
+                    $produk->kategori = $data['kategori'];
+                    $produk->id_pedagang = $pedagang->id;
+
+                    $produk->save();
+                }else {
+                    $produk = Produk::find($data['id']);
+                    $produk->nama_produk = $data['nama_produk'];
+                    $produk->kategori = $data['kategori'];
+                    $produk->save();
+
+                }
             }
         }
 
@@ -116,10 +151,10 @@ class ProdukController extends Controller
      */
     public function destroy($id)
     {
-        $data = Produk::find($id);
+        // $data = Produk::find($id);
 
-        $data->delete();
+        // $data->delete();
 
-        return redirect('/pedagangs/detailPedagang');
+        // return redirect('/pedagangs/detailPedagang');
     }
 }

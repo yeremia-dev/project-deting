@@ -1,10 +1,10 @@
 @extends('layouts.master')
 @section('content')
-<label for="" class="tulisan">Toko A</label>
+<label for="" class="tulisan">Informasi Pedagang</label>
 <body>
     <div class="cup">  
 		<div class="col-md-12 kurirBox">
-			<label for="" class="tulisanInfo">INFORMASI PEDAGANG</label>	
+			<label for="" class="tulisanInfo">Data Pedagang</label>	
 			<div class="row">
 				<div class="col-md-4">
 					<img class="imagePedagang" src="{{ asset('assets/images/author/profil.jpg') }}" alt="logo">
@@ -14,17 +14,27 @@
 					<table class="table" >
 						<thead class="tulisanDataDiri">
 							<tr >
-								<th >Nama</th>
+								<th >Nama Pedagang</th>
 								<th>:</th>
 								<th>Sanny Sinaga</th>
 							</tr>
 							<tr>
-								<th>No Hp/WA</th>
+								<th>No WA</th>
+								<th>:</th>
+								<th>08745043504350437</th>
+							</tr>
+							<tr>
+								<th>No WA</th>
 								<th>:</th>
 								<th>08745043504350437</th>
 							</tr>
 							<tr>
 								<th>Alamat</th>
+								<th>:</th>
+								<th>Laguboti</th>
+							</tr>
+							<tr>
+								<th>Alamat Rinci</th>
 								<th>:</th>
 								<th>Laguboti</th>
 							</tr>
@@ -43,24 +53,29 @@
 					<i class="ti-search"></i>
 				</form>
 			</div>
-			<label for="" class="tulisanBarangDagangan">Dagangan</label>	
+			<label for="" class="tulisanBarangDagangan">Daftar Produk</label>	
 		</div>
-			<table class="table" >
-				<thead>
-					<tr>
-						<td>nama</td>
-						<td class="trcenter">kategori</td>
-					</tr>
-				</thead>
-				<tbody>
-					@foreach($data as $dat)					
-					<tr>
-					<td>{{ $dat->nama_produk }}</td>
-					<td class="trcenter">{{ $dat->kategori }}</td>
-					</tr>					
-					@endforeach
-				</tbody>
-			</table>
+		<div>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+			<th scope="col">#</th>
+			<th scope="col">Nama Produk</th>
+			<th scope="col">Kategori</th>
+			<!-- <th scope="col">Harga</th>
+			<th scope="col">Action</th> -->
+			</tr>
+		</thead>
+		<tbody>
+			
+			<tr>
+			<th scope="row">1</th>
+			<td>TEs</td>
+			<td>yes </td>
+		
+		</tbody>
+	</table>
+	</div>
 	</div>
 </body>
 @endsection

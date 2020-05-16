@@ -24,6 +24,9 @@ Route::get('/kurirs/find/kab/{kode}','PedagangController@findKec');
 Route::get('getprovinsi', function () {
     return \Illuminate\Support\Facades\DB::select('SELECT * FROM wilayah_2020 WHERE CHAR_LENGTH(kode)=2 ORDER BY nama');
 });
+Route::get('getproduct/{id}', function ($id) {
+    return \Illuminate\Support\Facades\DB::select('SELECT * FROM produk WHERE id_pedagang='.$id);
+});
 Route::get('getkab/{kode}', function ($kode) {
     return \Illuminate\Support\Facades\DB::select('SELECT * FROM wilayah_2020 WHERE kode like "' . $kode . '%" AND CHAR_LENGTH(kode)=5 ORDER BY nama');
 });
