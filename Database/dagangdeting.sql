@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Bulan Mei 2020 pada 10.53
+-- Waktu pembuatan: 17 Bulan Mei 2020 pada 15.38
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.3
 
@@ -21,21 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `dagangdeting`
 --
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `admin`
---
-
-CREATE TABLE `admin` (
-  `username` char(24) NOT NULL,
-  `nama_admin` varchar(24) NOT NULL,
-  `password` varchar(24) NOT NULL,
-  `email` varchar(24) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -77,7 +62,7 @@ CREATE TABLE `kurir` (
   `nomor_kendaraan` varchar(50) NOT NULL,
   `latitude` varchar(50) NOT NULL,
   `longitude` varchar(50) NOT NULL,
-  `id_admin` varchar(50) DEFAULT NULL,
+  `id_admin` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -95,7 +80,7 @@ CREATE TABLE `pedagang` (
   `no_hp` varchar(50) NOT NULL,
   `no_wa` varchar(50) NOT NULL,
   `foto_pedagang` varchar(50) DEFAULT NULL,
-  `id_admin` varchar(50) DEFAULT NULL,
+  `id_admin` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `status` int(11) DEFAULT NULL
@@ -115,6 +100,30 @@ CREATE TABLE `produk` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'admin@admin.com', '2020-05-16 01:03:44', '$2y$10$4A1Th/dLzj1FxV/ywpSZFuPB8DFLf14X77ybLj47Exi4qmrrTJtT.', NULL, '2020-05-16 01:03:44', '2020-05-16 01:03:44');
 
 -- --------------------------------------------------------
 
@@ -91411,12 +91420,6 @@ INSERT INTO `wilayah_2020` (`kode`, `nama`) VALUES
 --
 
 --
--- Indeks untuk tabel `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`username`);
-
---
 -- Indeks untuk tabel `aduan`
 --
 ALTER TABLE `aduan`
@@ -91444,6 +91447,13 @@ ALTER TABLE `produk`
   ADD KEY `id_pedagang` (`id_pedagang`);
 
 --
+-- Indeks untuk tabel `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -91466,6 +91476,12 @@ ALTER TABLE `produk`
   MODIFY `id_produk` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT untuk tabel `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
@@ -91473,13 +91489,13 @@ ALTER TABLE `produk`
 -- Ketidakleluasaan untuk tabel `kurir`
 --
 ALTER TABLE `kurir`
-  ADD CONSTRAINT `kurir_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `admin` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `kurir_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `pedagang`
 --
 ALTER TABLE `pedagang`
-  ADD CONSTRAINT `pedagang_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `admin` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `pedagang_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `produk`
