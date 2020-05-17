@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//route Autentikasi
+Auth::routes(['register' => false]);
+
 //fungsi search pedagang (Kristopel)
 Route::get('/', function () {
     return view('search-pedagang.cari-pedagang');
@@ -31,9 +34,18 @@ Route::post('/save-aduan','AduanController@store');
 
 
 
+
 //Route::get('/', function () {
 //    return view('welcome');
 //});
+
+//Route::get('/', function () {
+//	if (Auth::user()) {
+//        return redirect('/home');
+//    }
+//    return view('home');
+//});
+
 
 
 //Route::get('/kurir', 'SearchKurirController@index');
@@ -42,10 +54,7 @@ Route::get('/kurir-terdekat', 'MencariKurirTerdekatController@index');
 
 Route::post('/search-kurir', 'SearchKurirController@search');
 
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth','admin']], function (){
 
@@ -61,6 +70,7 @@ Route::group(['middleware' => ['auth','admin']], function (){
     Route::get('/pengacara','Admin\PengacaraController@index');
 
 });
+
 
 //to index kurir
 Route::get(
@@ -92,6 +102,7 @@ Route::get(
 )->name('kurirKonfirmasipdg');
 
 //Route::get('/', 'MencariKurirTerdekatController@index');
+
 
 
 
