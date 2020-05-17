@@ -6,28 +6,31 @@
                 <div class="menu-inner">
                     <nav>
                         <ul class="metismenu" id="menu">
+                            @if(!Auth::user())
                             <li>
                                 <a href="#">Pedagang</a>
                                 <ul class="collapse">
-                                    <li><a href="index.html">Informasi Pedagang</a></li>
-                                    <li><a href="index2.html">Request Mendaftar Informasi Pedagang</a></li>
+                                    <li><a href="/mago">Informasi Pedagang</a></li>
+                                    <li><a href="{{ url('kurir/requestp') }}">Request Mendaftar Pedagang</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="#">Kurir</a>
                                 <ul class="collapse">
-                                    <li><a href="index.html">Informasi Kurir</a></li>
-                                    <li><a href="index2.html">Request Mendaftar Informasi Kurir</a></li>
+                                    <li><a href="{{ url('user/kurir') }}">Informasi Kurir</a></li>
+                                    <li><a href="{{ url('kurir/request') }}">Request Mendaftar Informasi Kurir</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="#">Aduan</a>
                                 <ul class="collapse">
-                                <li><a href="/index">Informasi Aduan</a></li>
-                                <li><a href="/aduan">Request Aduan</a></li>
+                                <li><a href="{{ url('pengaduan') }}">Informasi Aduan</a></li>
+                                <li><a href="{{ url('pengaduan/aduan') }}">Request Aduan</a></li>
                                 </ul>
                             </li>
-
+                            @else
+                            <h1>Tes</h1>
+                                @endif
                         </ul>
                     </nav>
                 </div>

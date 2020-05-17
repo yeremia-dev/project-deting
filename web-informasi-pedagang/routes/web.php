@@ -15,6 +15,19 @@ use Illuminate\Support\Facades\Route;
 
 //route Autentikasi
 Auth::routes(['register' => false]);
+Route::group(['middleware' => ['auth','admin']], function (){
+
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+    });
+
+    Route::get('/role-register','Admin\DashboardController@registered');
+    Route::get('/role-edit/{id}','Admin\DashboardController@registeredit');
+    Route::put('/role-register-update/{id}','Admin\DashboardController@registerupdate');
+    Route::delete('/role-delete/{id}','Admin\DashboardController@registerdelete');
+
+});
+
 
 //fungsi search pedagang (Kristopel)
 Route::get('/', function () {
@@ -26,13 +39,19 @@ Route::get('/hasil-pedagang', function () {
 
 
 //route pengaduan
-Route::get('pengaduan/', function () {
+Route::get('pengaduan', function () {
     return view('pengaduan.index');
 });
 Route::get('pengaduan/aduan','AduanController@index');
-Route::post('/save-aduan','AduanController@store');
+Route::post('save-aduan','AduanController@store');
 
 
+//route mencari kurir
+Route::get('user/kurir', 'SearchKurirController@index');
+
+Route::get('/kurir-terdekat', 'MencariKurirTerdekatController@index');
+
+Route::post('/search-kurir', 'SearchKurirController@search');
 
 
 //Route::get('/', function () {
@@ -48,34 +67,10 @@ Route::post('/save-aduan','AduanController@store');
 
 
 
-//Route::get('/kurir', 'SearchKurirController@index');
-
-Route::get('/kurir-terdekat', 'MencariKurirTerdekatController@index');
-
-Route::post('/search-kurir', 'SearchKurirController@search');
-
-//Route::get('/home', 'HomeController@index')->name('home');
-
-Route::group(['middleware' => ['auth','admin']], function (){
-
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    });
-
-    Route::get('/role-register','Admin\DashboardController@registered');
-    Route::get('/role-edit/{id}','Admin\DashboardController@registeredit');
-    Route::put('/role-register-update/{id}','Admin\DashboardController@registerupdate');
-    Route::delete('/role-delete/{id}','Admin\DashboardController@registerdelete');
-
-    Route::get('/pengacara','Admin\PengacaraController@index');
-
-});
-
-
 //to index kurir
-Route::get(
-    '/kurir/index', 'RequestKurirControllers@index'
-)->name('kurirIndex');
+//Route::get(
+//    '/kurir/index', 'RequestKurirControllers@index'
+//)->name('kurirIndex');
 
 Route::get(
     '/kurir/request', 'RequestKurirControllers@request'
@@ -93,22 +88,22 @@ Route::get(
     '/kurir/viewproduk', 'RequestKurirControllers@view'
 )->name('kurirViewproduk');
 
-Route::get(
-    '/kurir/pedagang', 'RequestKurirControllers@pedagangView'
-)->name('kurirProdukd');
+//Route::get(
+//    '/kurir/pedagang', 'RequestKurirControllers@pedagangView'
+//)->name('kurirProdukd');
 
 Route::get(
     '/kurir/konfirmasipdg', 'RequestKurirControllers@konfirpdg'
 )->name('kurirKonfirmasipdg');
 
-//Route::get('/', 'MencariKurirTerdekatController@index');
 
 
+Route::get('/mencari', 'MencariKurirTerdekatController@index');
+//Route:: get('/kurir','kurirController@index');
+//Route:: get('/dataKurir','kurirController@index');
+//Route:: post('/dataKurir/create','kurirController@create');
 
 
-Route:: get('/kurir','kurirController@index');
-Route:: get('/dataKurir','kurirController@index');
-Route:: post('/dataKurir/create','kurirController@create');
 
 Route::get('/mago', function () {
     return view('jubel.notyet');
