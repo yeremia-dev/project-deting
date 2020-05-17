@@ -1,11 +1,4 @@
-<html>
-    <head>
-        <title>Dalam Proses...</title>
-        <style>
-
-        </style>
-    </head>
-    <body>
-        <h1>Dalam Prosess...</h1>
-    </body>
-</html>
+@extends('layouts.master')
+@section('content')
+<h1>Dalam Proses...</h1>
+@endsection

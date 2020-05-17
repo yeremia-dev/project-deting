@@ -25,6 +25,6 @@ class AduanController extends Controller
 
         $aduan->save();
 
-        return redirect('/aduan')->with('success','Data Added for Aduan');
+        return redirect('/')->with('success','Data Added for Aduan');
     }
 }
