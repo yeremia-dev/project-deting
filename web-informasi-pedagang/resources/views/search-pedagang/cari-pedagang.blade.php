@@ -1,13 +1,12 @@
 @extends('layouts.master')
+@section('title', 'Kategori Produk')
 @section('content')
-<h1>Kategori Produk</h1>
 <div class="col-12 mt-5" id="app">
     <div class="card">
         <div class="card-body">
-            <div class="header-title">Kategori Produk</div>
             <div class="row">
                 <div class="col-md-7">
-                    <h1>Test</h1>
+                    
                 </div>
                 <div class="col-md-5">
                     <h4>Cari Berdasarkan</h4><br><br><br>
