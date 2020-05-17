@@ -285,6 +285,7 @@
     top: 6px;
 }
 
+
 /*-------------------- END Sidebar Menu -------------------*/
 
 
@@ -2894,3 +2895,86 @@ table.dataTable thead td {
 }
 
 /*-------------------- END Offset Sidebar ------------------- */
+
+/* Tambahan */
+
+.imagePedagang{
+    border-radius: 50%;
+    display: block;
+    width: 180px;
+    height: 180px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.cup{
+    background-color: #eeeeee;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.tulisan{
+    font-family: 'Calibri';
+    font-size: 40px;
+    color: #000000;
+}
+.tulisanInfo{
+    font-family: 'Calibri';
+    font-size: 25px;
+    color: #000000;
+    font-weight: bold;
+}
+.tulisanFoto{
+    font-family: 'Calibri';
+    font-size: 20px;
+    color: #000000;
+    margin-left: 165px;
+}
+
+.tulisanDataDiri{
+    font-family: 'Calibri';
+    font-size: 20px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.tulisanBarangDagangan{
+    font-family: 'Calibri';
+    font-size: 25px;
+    color: #000000;
+    font-weight: bold;
+    padding-top: 40px;
+    padding-right: 1000px;
+}
+.jarak{
+    padding-top: 40px;
+}
+.pading{
+    padding-top: 10px;
+    padding-right: 500px;
+    padding-left: 15px;
+}
+.trcenter{
+   text-align: center; 
+}
+.tulisanDataPedagang{
+    font-family: 'Calibri';
+    font-size: 25px;
+    color: #000000;
+    font-weight: bold;
+    padding-left: 20px;
+}
+.tulisanDataDiri{
+    font-family: 'Calibri';
+    font-size: 23px;
+    color: #000000;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-left: 20px;
+}
+
+.buttonPedagang{
+    padding-top: 10px;
+    padding-right: 500px;
+    padding-left: 15px;
+}
