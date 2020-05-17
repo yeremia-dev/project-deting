@@ -18,7 +18,7 @@
                             <li class="active">
                                 <a href="#">Kurir</a>
                                 <ul class="collapse">
-                                    <li class="active"><a href="index.html">Informasi Kurir</a></li>
+                                    <li><a href="index.html">Informasi Kurir</a></li>
                                     <li><a href="index2.html">Request Mendaftar Informasi Kurir</a></li>
                                 </ul>
                             </li>
@@ -29,7 +29,7 @@
                                 <li><a href="/aduan">Request Aduan</a></li>
                                 </ul>
                             </li>
-                            
+
                         </ul>
                     </nav>
                 </div>
