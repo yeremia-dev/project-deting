@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//route Autentikasi
+Auth::routes(['register' => false]);
+
 //route pengaduan
 Route::get('/index', function () {
     return view('pengaduan.index');
@@ -23,7 +26,10 @@ Route::post('/save-aduan','AduanController@store');
 
 
 Route::get('/', function () {
-    return view('welcome');
+	if (Auth::user()) {
+        return redirect('/home');
+    }
+    return view('home');
 });
 
 
@@ -42,8 +48,6 @@ Route::get('/hasil-pedagang', function () {
 });
 
 
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 

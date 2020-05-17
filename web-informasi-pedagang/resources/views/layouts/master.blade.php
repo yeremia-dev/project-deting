@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+  <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>BUY FROM HOME</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,7 +23,7 @@
     <script src="{{ asset('assets/js/vendor/modernizr-2.8.3.min.js')}}"></script>
 </head>
 <body>
-	<!-- page container area start -->
+  <!-- page container area start -->
     <div class="page-container">
         <!-- sidebar menu area start -->
         @include('layouts.sidebar')
@@ -45,7 +45,7 @@
         @include('layouts.footer')
         <!-- footer area end-->
     </div>
-	<!-- jquery latest version -->
+  <!-- jquery latest version -->
     <script src="{{ asset('assets/js/vendor/jquery-2.2.4.min.js')}}"></script>
     <!-- bootstrap 4 js -->
     <script src="{{ asset('assets/js/popper.min.js')}}"></script>
