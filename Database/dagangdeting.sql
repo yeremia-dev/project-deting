@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Bulan Mei 2020 pada 13.10
+-- Waktu pembuatan: 18 Bulan Mei 2020 pada 17.18
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.3
 
@@ -47,7 +47,7 @@ CREATE TABLE `aduan` (
 --
 
 CREATE TABLE `kurir` (
-  `id` int(50) NOT NULL,
+  `id_kurir` int(50) NOT NULL,
   `nama_kurir` char(50) NOT NULL,
   `alamat_kurir` char(50) NOT NULL,
   `nomor_telepon` varchar(50) NOT NULL,
@@ -57,7 +57,7 @@ CREATE TABLE `kurir` (
   `foto_SIM` varchar(50) DEFAULT NULL,
   `foto_kurir` varchar(50) DEFAULT NULL,
   `jenis_kelamin` varchar(50) NOT NULL,
-  `status` int(50) NOT NULL,
+  `status` varchar(12) NOT NULL,
   `jenis_kendaraan` varchar(50) NOT NULL,
   `nomor_kendaraan` varchar(50) NOT NULL,
   `latitude` varchar(50) DEFAULT NULL,
@@ -91430,7 +91430,7 @@ ALTER TABLE `aduan`
 -- Indeks untuk tabel `kurir`
 --
 ALTER TABLE `kurir`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id_kurir`),
   ADD KEY `id_admin` (`id_admin`);
 
 --
@@ -91468,7 +91468,7 @@ ALTER TABLE `aduan`
 -- AUTO_INCREMENT untuk tabel `kurir`
 --
 ALTER TABLE `kurir`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kurir` int(50) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `pedagang`
