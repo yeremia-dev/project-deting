@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Bulan Mei 2020 pada 11.26
+-- Waktu pembuatan: 18 Bulan Mei 2020 pada 12.18
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.3
 
@@ -60,8 +60,8 @@ CREATE TABLE `kurir` (
   `status` int(50) NOT NULL,
   `jenis_kendaraan` varchar(50) NOT NULL,
   `nomor_kendaraan` varchar(50) NOT NULL,
-  `latitude` varchar(50) NOT NULL,
-  `longitude` varchar(50) NOT NULL,
+  `latitude` varchar(50) DEFAULT NULL,
+  `longitude` varchar(50) DEFAULT NULL,
   `id_admin` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
