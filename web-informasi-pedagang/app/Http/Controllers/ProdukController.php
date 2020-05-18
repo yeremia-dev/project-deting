@@ -58,8 +58,8 @@ class ProdukController extends Controller
             $pedagang->foto_pedagang = './storage/Image/' . $filename;
         }
         $pedagang->save();
-        
-        if($datas = $request->get('myData')) { 
+
+        if($datas = $request->get('myData')) {
             foreach ($datas as $data) {
                 $produk = new Produk();
                 $produk->nama_produk = $data['nama_produk'];
@@ -71,7 +71,7 @@ class ProdukController extends Controller
             }
         }
 
-         return response()->json();       
+         return response()->json();
     }
 
     public function updateData(Request $request, $id)
@@ -83,10 +83,10 @@ class ProdukController extends Controller
         $pedagang->no_hp = $request['noHp'];
         $pedagang->no_wa = $request['noWA'];
         $pedagang->status=2;
-    
+
         $pedagang->save();
-        
-        if($datas = $request->get('myData')) { 
+
+        if($datas = $request->get('myData')) {
             foreach ($datas as $data) {
                 if($data['id'] == null){
                     $produk = new Produk();
@@ -106,7 +106,7 @@ class ProdukController extends Controller
             }
         }
 
-         return response()->json();       
+         return response()->json();
     }
 
     /**
