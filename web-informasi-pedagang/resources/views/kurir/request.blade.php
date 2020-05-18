@@ -369,6 +369,7 @@
                         jenis_kelamin: this.jenis_kelamin,
                         status: "request"
                     }).then(
+                        window.location.href=""
                     )
                 }
             }

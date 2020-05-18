@@ -371,9 +371,9 @@
                                         nama_produk: this.rows[i].nama_produk,
                                         kategori: this.rows[i].kategori,
                                         id_pedagang: response.data
-                                    }).then(response => {
-                                        console.log(response);
-                                    });
+                                    }).then(
+                                        window.location.href="/kurir/requestp"
+                                    );
                                 }
                             })
 
