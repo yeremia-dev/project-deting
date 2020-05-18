@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Bulan Mei 2020 pada 17.18
+-- Waktu pembuatan: 18 Bulan Mei 2020 pada 18.34
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.3
 
@@ -57,7 +57,7 @@ CREATE TABLE `kurir` (
   `foto_SIM` varchar(50) DEFAULT NULL,
   `foto_kurir` varchar(50) DEFAULT NULL,
   `jenis_kelamin` varchar(50) NOT NULL,
-  `status` varchar(12) NOT NULL,
+  `status` varchar(20) NOT NULL,
   `jenis_kendaraan` varchar(50) NOT NULL,
   `nomor_kendaraan` varchar(50) NOT NULL,
   `latitude` varchar(50) DEFAULT NULL,
