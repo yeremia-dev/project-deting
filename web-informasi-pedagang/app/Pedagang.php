@@ -12,11 +12,11 @@ class Pedagang extends Model
 {
     protected $table = 'pedagang';
 
-    protected $primaryKey = 'id_pedagang';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id_pedagang',
-        'nama_pedagang',
+        'id',
+        'nama',
         'alamat_rinci',
         'no_hp',
         'no_wa',
