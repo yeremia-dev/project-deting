@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Bulan Mei 2020 pada 15.38
+-- Waktu pembuatan: 18 Bulan Mei 2020 pada 04.52
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.3
 
@@ -74,16 +74,17 @@ CREATE TABLE `kurir` (
 --
 
 CREATE TABLE `pedagang` (
-  `id_pedagang` char(50) NOT NULL,
-  `nama_pedagang` varchar(50) NOT NULL,
-  `alamat_rinci` varchar(50) NOT NULL,
-  `no_hp` varchar(50) NOT NULL,
-  `no_wa` varchar(50) NOT NULL,
-  `foto_pedagang` varchar(50) DEFAULT NULL,
-  `id_admin` bigint(20) UNSIGNED DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `nama` varchar(24) NOT NULL,
+  `alamat_rinci` varchar(255) NOT NULL,
+  `alamat` varchar(255) NOT NULL,
+  `no_hp` varchar(13) NOT NULL,
+  `no_wa` varchar(20) NOT NULL,
+  `foto_pedagang` varchar(255) DEFAULT NULL,
+  `status` int(11) NOT NULL,
+  `id_admin` bigint(20) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `status` int(11) DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -93,10 +94,10 @@ CREATE TABLE `pedagang` (
 --
 
 CREATE TABLE `produk` (
-  `id_produk` int(50) NOT NULL,
-  `nama_produk` varchar(50) NOT NULL,
-  `kategori` varchar(255) NOT NULL,
-  `id_pedagang` char(50) NOT NULL,
+  `id` int(11) NOT NULL,
+  `nama_produk` varchar(24) NOT NULL,
+  `kategori` varchar(50) NOT NULL,
+  `id_pedagang` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -91436,14 +91437,14 @@ ALTER TABLE `kurir`
 -- Indeks untuk tabel `pedagang`
 --
 ALTER TABLE `pedagang`
-  ADD PRIMARY KEY (`id_pedagang`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `id_admin` (`id_admin`);
 
 --
 -- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  ADD PRIMARY KEY (`id_produk`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `id_pedagang` (`id_pedagang`);
 
 --
@@ -91470,10 +91471,16 @@ ALTER TABLE `kurir`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT untuk tabel `pedagang`
+--
+ALTER TABLE `pedagang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+
+--
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
@@ -91501,7 +91508,7 @@ ALTER TABLE `pedagang`
 -- Ketidakleluasaan untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  ADD CONSTRAINT `produk_ibfk_1` FOREIGN KEY (`id_pedagang`) REFERENCES `pedagang` (`id_pedagang`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `produk_ibfk_1` FOREIGN KEY (`id_pedagang`) REFERENCES `pedagang` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
