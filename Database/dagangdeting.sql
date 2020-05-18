@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Bulan Mei 2020 pada 12.18
+-- Waktu pembuatan: 18 Bulan Mei 2020 pada 13.10
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.3
 
@@ -35,7 +35,7 @@ CREATE TABLE `aduan` (
   `nomor_telepon` varchar(13) NOT NULL,
   `lokasi` varchar(50) NOT NULL,
   `isi` varchar(255) NOT NULL,
-  `foto_buktiAduan` varchar(24) DEFAULT NULL,
+  `foto_buktiAduan` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
