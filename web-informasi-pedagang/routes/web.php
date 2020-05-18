@@ -14,6 +14,7 @@ use App\Pedagang;
 |
 */
 
+
 //route Autentikasi
 Auth::routes(['register' => false]);
 Route::group(['middleware' => ['auth','admin']], function (){
@@ -38,6 +39,9 @@ Route::group(['middleware' => ['auth','admin']], function (){
     Route::get(
         '/kurir/konfirmasipdg', 'RequestKurirControllers@konfirpdg'
     )->name('kurirKonfirmasipdg');
+
+    Route::get('admin/listaduan','AduanController@listaduan');
+    Route::delete('/role-delete/{id}','AduanController@aduandelete');
 
     Route:: get('admin/kurir','kurirController@index');
     Route:: get('admin/dataKurir','kurirController@index');
@@ -129,15 +133,6 @@ Route::middleware(['user'])->group(function (){
 
 
 });
-
-
-
-
-
-
-
-
-
 
 
 //Route::get('/', function () {
