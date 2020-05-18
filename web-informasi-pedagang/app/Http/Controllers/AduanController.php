@@ -9,7 +9,10 @@ class AduanController extends Controller
 {
     public function index()
     {
-        return view('pengaduan.aduan');
+        $aduan = Aduan::all();
+        return view('pengaduan.aduan')
+            ->with('aduan',$aduan)
+        ;
     }
 
     public function store(Request $request)
@@ -25,6 +28,21 @@ class AduanController extends Controller
 
         $aduan->save();
 
-        return redirect('/aduan')->with('success','Data Added for Aduan');
+        return redirect('/')->with('success','Data Added for Aduan');
+    }
+
+    public function listaduan()
+    {
+        $aduan = Aduan::all();
+        return view('pengaduan.viewaduan')
+            ->with('viewaduan',$aduan);
+    }
+
+    public function aduandelete($id)
+    {
+        $aduan = Aduan::findOrfail($id);
+        $aduan->delete();
+
+        return redirect('admin/listaduan')->with('status','You Data Is Deleted');
     }
 }
