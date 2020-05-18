@@ -6,7 +6,7 @@
                 <div class="menu-inner">
                     <nav>
                         <ul class="metismenu" id="menu">
-                            @if(!Auth::user())
+                            @if(!Auth::check())
                             <li>
                                 <a href="#">Pedagang</a>
                                 <ul class="collapse">
