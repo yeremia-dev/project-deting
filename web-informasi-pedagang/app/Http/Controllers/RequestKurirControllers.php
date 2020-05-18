@@ -157,7 +157,7 @@ class RequestKurirControllers extends Controller
             'foto_SIM' => $request['foto_SIM'],
             'foto_kurir' => $request['foto_kurir'],
             'jenis_kelamin' => $request[' jenis_kelamin'],
-            'status' => 1,
+            'status' => 'request',
         ]);
         $data = Kurir::all();
         return $data;
@@ -178,7 +178,7 @@ class RequestKurirControllers extends Controller
             'foto_kurir' => $request['foto_kurir'],
             'jenis_kelamin' => $request['jenis_kelamin'],
             'kode_wilayah' =>$request['kode_wilayah'],
-            'status' => 1,
+            'status' => 'request',
         ]);
         return view('kurir/request');
     }
@@ -188,9 +188,9 @@ class RequestKurirControllers extends Controller
         return $data;
     }
     public function terima($id){
-        DB::SELECT("UPDATE kurir set status=2 WHERE id=$id ");
+        DB::SELECT("UPDATE kurir set status='approved' WHERE id=$id ");
     }
     public function tolak($id){
-        DB::SELECT("UPDATE kurir set status=0 WHERE id=$id ");
+        DB::SELECT("UPDATE kurir set status='rejected' WHERE id=$id ");
     }
 }

@@ -23,17 +23,25 @@ class RequestPedagangController extends controller
     }
     public function stores(Request $request)
     {
-        Pedagang::create([
-            'id_pedagang' => $request['id_pedagang'],
-            'nama_pedagang' => $request['nama_pedagang'],
-            'alamat_rinci'=> $request['alamat_rinci'],
-            'no_hp'=> $request['no_hp'],
-            'no_wa'=> $request['no_wa'],
-            'foto_pedagang'=> $request['foto_pedagang'],
-            'kode_wilayah'=>$request['kode_wilayah'],
-            'status' => 1
-        ]);
-        return view('kurir/requestp');
+        $pedagang = new Pedagang();
+        $pedagang->nama = $request['nama_pedagang'];
+        $pedagang->alamat_rinci = $request['alamat_rinci'];
+        $pedagang->alamat = $request['alamat'];
+        $pedagang->no_hp = $request['no_hp'];
+        $pedagang->no_wa = $request['no_wa'];
+        $pedagang->foto_pedagang = $request['foto_pedagang'];
+        $pedagang->status = 1;
+//        Pedagang::create([
+//            'nama' => $request['nama_pedagang'],
+//            'alamat_rinci'=> $request['alamat_rinci'],
+//            'alamat' => $request['alamat'],
+//            'no_hp'=> $request['no_hp'],
+//            'no_wa'=> $request['no_wa'],
+//            'foto_pedagang'=> $request['foto_pedagang'],
+//            'status' => 1
+//        ]);
+        $pedagang->save();
+        return $pedagang->id;
 
     }
     public function addImage(Request $request,$kode)
@@ -46,7 +54,7 @@ class RequestPedagangController extends controller
 
             $extension = 'png';
 
-            $filename = 'kurir' . $kode . '.' . $extension;
+            $filename = 'pedagang' . $kode . '.' . $extension;
             $path = public_path() . '/storage/Pedagang/' . $filename;
             file_put_contents($path, $decode);
 //            $data->image = './storage/Image/' . $filename;

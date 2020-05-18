@@ -54,7 +54,7 @@ Route::get('pedagangTerima/{id}', 'RequestPedagangController@terima');
 Route::get('pedagangTolak/{id}', 'RequestPedagangController@tolak');
 
 //Produk
-Route::post('produk/insert', 'RequestProdukController@stores');
+Route::post('produk/insert', 'RequestProdukController@inserts');
 
 
 Route::get('getprovinsi', function () {

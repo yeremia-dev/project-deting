@@ -99,11 +99,6 @@
                 </select>
             </div>
             <br>
-            <div class="form-group">
-                <input type="text" class="col-sm-11 form-control" v-model="alamat_rinci" id="alamatRinci"
-                       placeholder="Alamat Rinci" required><br>
-            </div>
-            <br>
             <br>
             <br><br><br><br>
         </div>
@@ -322,9 +317,6 @@
                 }else if(this.kec == '') {
                          alert("Data Kecamatan Harus Di isi");
                          return false
-                }else if(this.alamat_rinci == '') {
-                         alert("Data Alamat rinci Harus Di isi");
-                         return false
                 }else if(this.nomor_ktp == '') {
                          alert("Data Nomor KTP Harus Di isi");
                          return false
@@ -367,7 +359,7 @@
                         longtitude: long,
                         nomor_kendaraan: this.nomor_kendaraan,
                         nama_kurir: this.nama_kurir,
-                        alamat_kurir: this.alamat_rinci,
+                        alamat_kurir: this.kec,
                         nomor_telepon: this.nomor_telepon,
                         nomor_ktp: this.nomor_ktp,
                         foto_ktp: kode + '.png',
@@ -375,10 +367,8 @@
                         foto_SIM: kodeSim + '.png',
                         foto_kurir: 'kurir' + kodeKurir + '.png',
                         jenis_kelamin: this.jenis_kelamin,
-                        status: 1,
-                        kode_wilayah : this.kec
+                        status: "request"
                     }).then(
-                        window.location.href="/kurir/request"
                     )
                 }
             }

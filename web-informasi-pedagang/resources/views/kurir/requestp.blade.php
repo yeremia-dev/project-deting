@@ -353,45 +353,31 @@
                     }
                 },
                 submit() {
-                        let skuPedagangs = this.nama + '-' + this.no_hp;
-                        let skuPedagang;
-                        axios.get('/api/pedagang/lihat/' + skuPedagangs).then(response => {
-                            console.log(response.data[0].val);
-                            if (response.data[0].val === 0) {
-                                skuPedagang = this.nama + '-' + this.no_hp;
-                            } else {
-                                skuPedagang = this.nama + '-' + this.no_hp + '-' + response.data[0].val + '-1-';
-                            }
+                    let kodeKurir = this.nama + "-" + this.no_wa;
+                    axios.post('/api/pedagang/upload/' + kodeKurir, {image: this.foto}).then(response => {
+                        console.log(response);
+                    });
                             axios.post('/api/pedagang/insert', {
-                                id_pedagang: skuPedagang,
                                 nama_pedagang: this.nama,
                                 alamat_rinci: this.alamat_rinci,
                                 no_hp: this.no_hp,
                                 no_wa: this.no_wa,
-                                foto_pedagang: kode + '.png',
-                                kode_wilayah: this.kec
-                            }).then(
-                                                      window.location.href="/kurir/requestp"
-                                            )
+                                foto_pedagang: kodeKurir + '.png',
+                                alamat: this.kec
+                            }).then(response => {
+                                console.log(response.data);
+                                for (let i = 0; i < this.rows.length; i++) {
+                                    axios.post('/api/produk/insert', {
+                                        nama_produk: this.rows[i].nama_produk,
+                                        kategori: this.rows[i].kategori,
+                                        id_pedagang: response.data
+                                    }).then(response => {
+                                        console.log(response);
+                                    });
+                                }
+                            })
 
                             //insert produk
-                            for (let i = 0; i < this.rows.length; i++) {
-                                axios.post('/api/produk/insert', {
-                                    nama_produk: this.rows[i].nama_produk,
-                                    kategori: this.rows[i].kategori,
-                                    id_pedagang: skuPedagang
-                                }).then(response => {
-                                    console.log(response);
-                                });
-                            }
-
-
-                        })
-
-                        let kode = 'Pedagang-' + this.nama + "-" + this.no_hp;
-                        axios.post('/api/pedagang/upload/' + kode, {image: this.image}).then(response => {
-                            console.log(response);
-                        });
                         console.log(this.rows[0])
 
                 },
