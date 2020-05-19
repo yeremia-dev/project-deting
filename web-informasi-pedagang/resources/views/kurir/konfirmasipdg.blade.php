@@ -65,18 +65,18 @@
                         .then(response => {
                             console.log(response)
                         })
-                    // .then(
-                    //     window.location.href = '/kurir/konfirmasipdg'
-                    // )
+                    .then(
+                        window.location.href = '/kurir/konfirmasipdg'
+                    )
                 },
                 tolak(value) {
                     axios.get("/api/pedagangTolak/" + value)
                         .then(response => {
                             console.log(response)
                         })
-                    // .then(
-                    //     window.location.href = '/kurir/konfirmasipdg'
-                    // )
+                    .then(
+                        window.location.href = '/kurir/konfirmasipdg'
+                    )
                 }
             }
         })
