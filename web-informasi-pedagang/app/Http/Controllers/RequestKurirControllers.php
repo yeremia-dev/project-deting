@@ -3,14 +3,11 @@
 namespace App\Http\Controllers;
 
 
+use App\Kurir;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
-
-use App\Wilayah;
-use App\Kurir;
 use Illuminate\Support\Facades\DB;
 
 class RequestKurirControllers extends Controller
@@ -32,17 +29,21 @@ class RequestKurirControllers extends Controller
         return view('kurir/requestp');
     }
 
-    public function pedagangView(){
+    public function pedagangView()
+    {
         return view('index');
     }
+
     public function konfir()
     {
         return view('kurir/konfirmasi');
     }
-    public function view()
+
+    public function view($id)
     {
-        return view('kurir/viewproduk');
+        return view('kurir/viewproduk', compact('id'));
     }
+
     public function konfirpdg()
     {
         return view('kurir/konfirmasipdg');
@@ -67,7 +68,7 @@ class RequestKurirControllers extends Controller
         return $data;
     }
 
-    public function addImage(Request $request,$kode)
+    public function addImage(Request $request, $kode)
     {
         $explode = explode(',', $request->image);
         if (strpos($explode[0], 'data') !== false) {
@@ -75,7 +76,7 @@ class RequestKurirControllers extends Controller
             $explode = explode(',', $request->image);
             $decode = base64_decode($explode[1]);
 
-                $extension = 'png';
+            $extension = 'png';
 
             $filename = $kode . '.' . $extension;
             $path = public_path() . '/storage/KTP/' . $filename;
@@ -83,7 +84,8 @@ class RequestKurirControllers extends Controller
 //            $data->image = './storage/Image/' . $filename;
         }
     }
-    public function addImageSTNK(Request $request,$kode)
+
+    public function addImageSTNK(Request $request, $kode)
     {
         $explode = explode(',', $request->image);
         if (strpos($explode[0], 'data') !== false) {
@@ -91,7 +93,7 @@ class RequestKurirControllers extends Controller
             $explode = explode(',', $request->image);
             $decode = base64_decode($explode[1]);
 
-                $extension = 'png';
+            $extension = 'png';
 
             $filename = $kode . '.' . $extension;
             $path = public_path() . '/storage/STNK/' . $filename;
@@ -99,7 +101,8 @@ class RequestKurirControllers extends Controller
 //            $data->image = './storage/Image/' . $filename;
         }
     }
-    public function addImageSIM(Request $request,$kode)
+
+    public function addImageSIM(Request $request, $kode)
     {
         $explode = explode(',', $request->image);
         if (strpos($explode[0], 'data') !== false) {
@@ -107,7 +110,7 @@ class RequestKurirControllers extends Controller
             $explode = explode(',', $request->image);
             $decode = base64_decode($explode[1]);
 
-                $extension = 'png';
+            $extension = 'png';
 
             $filename = $kode . '.' . $extension;
             $path = public_path() . '/storage/SIM/' . $filename;
@@ -115,7 +118,8 @@ class RequestKurirControllers extends Controller
 //            $data->image = './storage/Image/' . $filename;
         }
     }
-    public function addImageKurir(Request $request,$kode)
+
+    public function addImageKurir(Request $request, $kode)
     {
         $explode = explode(',', $request->image);
         if (strpos($explode[0], 'data') !== false) {
@@ -123,7 +127,7 @@ class RequestKurirControllers extends Controller
             $explode = explode(',', $request->image);
             $decode = base64_decode($explode[1]);
 
-                $extension = 'png';
+            $extension = 'png';
 
             $filename = 'kurir' . $kode . '.' . $extension;
             $path = public_path() . '/storage/kurir/' . $filename;
@@ -137,10 +141,12 @@ class RequestKurirControllers extends Controller
         return 'asd';
     }
 
-    public function getKurir(){
+    public function getKurir()
+    {
         $data = Kurir::all();
         return $data;
     }
+
     public function store(Request $request)
     {
         Kurir::create([
@@ -162,7 +168,9 @@ class RequestKurirControllers extends Controller
         $data = Kurir::all();
         return $data;
     }
-    public function masuk(Request $request){
+
+    public function masuk(Request $request)
+    {
         return Kurir::create([
             'jenis_kendaraan' => $request['jenis_kendaraan'],
             'latitude' => $request['latitude'],
@@ -177,20 +185,31 @@ class RequestKurirControllers extends Controller
             'foto_SIM' => $request['foto_SIM'],
             'foto_kurir' => $request['foto_kurir'],
             'jenis_kelamin' => $request['jenis_kelamin'],
-            'kode_wilayah' =>$request['kode_wilayah'],
+            'kode_wilayah' => $request['kode_wilayah'],
             'status' => 'request',
         ]);
         return view('kurir/request');
     }
 
-    public function findAllKurirRequest(){
-        $data = DB::SELECT("SELECT * FROM kurir WHERE status =1");
+    public function findAllKurirRequest()
+    {
+        $data = Kurir::where('status', 'request')->get();
         return $data;
     }
-    public function terima($id){
-        DB::SELECT("UPDATE kurir set status='approved' WHERE id=$id ");
+
+    public function terima($id)
+    {
+        $kurir = Kurir::find($id);
+        $kurir->status = 'approved';
+        $kurir->id_admin = 1;
+        $kurir->save();
     }
-    public function tolak($id){
-        DB::SELECT("UPDATE kurir set status='rejected' WHERE id=$id ");
+
+    public function tolak($id)
+    {
+        $kurir = Kurir::find($id);
+        $kurir->status = 'rejected';
+        $kurir->id_admin = 1;
+        $kurir->save();
     }
 }

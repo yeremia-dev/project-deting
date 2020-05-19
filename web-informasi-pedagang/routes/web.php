@@ -33,7 +33,7 @@ Route::group(['middleware' => ['auth','admin']], function (){
     )->name('kurirKonfirmasi');
 
     Route::get(
-        '/kurir/viewproduk', 'RequestKurirControllers@view'
+        '/kurir/viewproduk/{id}', 'RequestKurirControllers@view'
     )->name('kurirViewproduk');
 
     Route::get(

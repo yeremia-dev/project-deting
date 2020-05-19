@@ -52,6 +52,8 @@ Route::post('pedagang/insert', 'RequestPedagangController@stores');
 Route::get('pedagangRequest/', 'RequestPedagangController@findAllPedagangRequest');
 Route::get('pedagangTerima/{id}', 'RequestPedagangController@terima');
 Route::get('pedagangTolak/{id}', 'RequestPedagangController@tolak');
+Route::get('pedagang/find/{id}','RequestPedagangController@getDataPedagang');
+Route::get('pedagang/find/produk/{id}','RequestPedagangController@getDataProduk');
 
 //Produk
 Route::post('produk/insert', 'RequestProdukController@inserts');

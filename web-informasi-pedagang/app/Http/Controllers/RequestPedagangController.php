@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use App\Pedagang;
+use App\Produk;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -65,10 +66,35 @@ class RequestPedagangController extends controller
         $data = DB::SELECT("SELECT * FROM pedagang WHERE status =1");
         return $data;
     }
-    public function terima($id){
-        DB::SELECT("UPDATE pedagang set status=2 WHERE id_pedagang LIKE '$id' ");
+
+    public function getDataPedagang($id)
+    {
+        $data = Pedagang::find($id);
+//        $data = DB::SELECT("SELECT * FROM pedagang WHERE status =1");
+        return $data;
     }
-    public function tolak($id){
-        DB::SELECT("UPDATE pedagang set status=0 WHERE id_pedagang LIKE '$id' ");
+
+    public function getDataProduk($id)
+    {
+        $data = Produk::where('id_pedagang',$id)->get();
+//        $data = DB::SELECT("SELECT * FROM pedagang WHERE status =1");
+        return $data;
+    }
+
+    public function terima($id)
+    {
+
+        $pedagang = Pedagang::find($id);
+        $pedagang->id_admin = 1;
+        $pedagang->status =  2;
+        $pedagang->save();
+    }
+
+    public function tolak($id)
+    {
+        $pedagang = Pedagang::find($id);
+        $pedagang->id_admin = 1;
+        $pedagang->status = 0;
+        $pedagang->save();
     }
 }
