@@ -80,32 +80,32 @@
          <div class="form-group">
           <select class="form-control" id="exampleFormControlSelect1" name="provinsi" required>
             <option>Provinsi</option>
-            @foreach($wilayahs as $wilayah)
-              <option value="{{$wilayah->kode}}">{{ $wilayah->nama}}</option>
+            @foreach($provinsis as $provinsi)
+              <option value="{{$provinsi->kode}}">{{ $provinsi->nama}}</option>
             @endforeach  
           </select>
         </div>
         <div class="form-group">
           <select class="form-control" id="exampleFormControlSelect1" name="kabupaten" required>
             <option>Kabupaten</option>
-            @foreach($wilayahs as $wilayah)
-              <option value="{{$wilayah->kode}}">{{ $wilayah->nama}}</option>
+            @foreach($kabupatens as $kabupaten)
+              <option value="{{$kabupaten->kode}}">{{ $kabupaten->nama}}</option>
             @endforeach 
           </select>
         </div>
         <div class="form-group">
           <select class="form-control" id="exampleFormControlSelect1" name="kecamatan" required>
             <option>Kecamatan</option>
-            @foreach($wilayahs as $wilayah)
-              <option value="{{$wilayah->kode}}">{{ $wilayah->nama}}</option>
+            @foreach($kecamatans as $kecamatan)
+              <option value="{{$kecamatan->kode}}">{{ $kecamatan->nama}}</option>
             @endforeach 
           </select>
         </div>
         <div class="form-group">
           <select class="form-control" id="exampleFormControlSelect1" name="kelurahan" required>
             <option>Kelurahan</option>
-            @foreach($wilayahs as $wilayah)
-              <option value="{{$wilayah->kode}}">{{ $wilayah->nama}}</option>
+            @foreach($kelurahans as $kelurahan)
+              <option value="{{$kelurahan->kode}}">{{ $kelurahan->nama}}</option>
             @endforeach 
           </select>
         </div>

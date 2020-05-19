@@ -8,7 +8,7 @@
         <div class="row">
           <div class="col-4 mb-5">
             <div class="card">
-              <img src="..." class="card-img-top" alt="...">
+              <center><img src="assets/cari-kurir/angkot.png" class="card-img-top" style="width: 100px"></center>
               <hr>
               <div class="card-body">
                 <h5 class="card-title text-center">Angkutan</h5>
@@ -17,7 +17,7 @@
           </div>
           <div class="col-4 mb-5">
             <div class="card">
-              <img src="..." class="card-img-top" alt="...">
+              <center><img src="assets/cari-kurir/asd.png" class="card-img-top" style="width: 100px"></center>
               <hr>
               <div class="card-body">
                 <h5 class="card-title text-center">Motor</h5>
@@ -26,7 +26,7 @@
           </div>
           <div class="col-4 mb-5">
             <div class="card">
-              <img src="..." class="card-img-top" alt="...">
+              <center><img src="assets/cari-kurir/becak.png" class="card-img-top" style="width: 100px;height: 90px"></center>
               <hr>
               <div class="card-body text-center ">
                 <h5 class="card-title">Becak</h5>
@@ -52,32 +52,32 @@
          <div class="form-group">
           <select class="form-control" id="exampleFormControlSelect1" name="provinsi" required>
             <option>Provinsi</option>
-            @foreach($wilayahs as $wilayah)
-              <option value="{{$wilayah->kode}}">{{ $wilayah->nama}}</option>
+            @foreach($provinsis as $provinsi)
+              <option value="{{$provinsi->kode}}">{{ $provinsi->nama}}</option>
             @endforeach  
           </select>
         </div>
         <div class="form-group">
           <select class="form-control" id="exampleFormControlSelect1" name="kabupaten" required>
             <option>Kabupaten</option>
-            @foreach($wilayahs as $wilayah)
-              <option value="{{$wilayah->kode}}">{{ $wilayah->nama}}</option>
+            @foreach($kabupatens as $kabupaten)
+              <option value="{{$kabupaten->kode}}">{{ $kabupaten->nama}}</option>
             @endforeach 
           </select>
         </div>
         <div class="form-group">
           <select class="form-control" id="exampleFormControlSelect1" name="kecamatan" required>
             <option>Kecamatan</option>
-            @foreach($wilayahs as $wilayah)
-              <option value="{{$wilayah->kode}}">{{ $wilayah->nama}}</option>
+            @foreach($kecamatans as $kecamatan)
+              <option value="{{$kecamatan->kode}}">{{ $kecamatan->nama}}</option>
             @endforeach 
           </select>
         </div>
         <div class="form-group">
           <select class="form-control" id="exampleFormControlSelect1" name="kelurahan" required>
             <option>Kelurahan</option>
-            @foreach($wilayahs as $wilayah)
-              <option value="{{$wilayah->kode}}">{{ $wilayah->nama}}</option>
+            @foreach($kelurahans as $kelurahan)
+              <option value="{{$kelurahan->kode}}">{{ $kelurahan->nama}}</option>
             @endforeach 
           </select>
         </div>
