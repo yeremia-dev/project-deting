@@ -45,7 +45,7 @@ class kurirController extends Controller
 
         if($create=="Succes"){
         $create = new modelDataKurir;
-        $create->id_kurir = $request->id_kurir;
+//        $create->id = $request->id_kurir;
         $create->nama_kurir = $request->nama_kurir;
         $create->alamat_kurir = $request->alamat_kurir;
         $create->nomor_telepon = $request->nomor_telepon;
@@ -62,9 +62,9 @@ class kurirController extends Controller
         return redirect('dataKurir')->with('sukses', 'Data berhasil di tambahkan!');
     } if($create=="Failed"){
 
-        return redirect('dataKurir');
+        return redirect('admin/kurir');
 
     }
-        
+
     }
 }

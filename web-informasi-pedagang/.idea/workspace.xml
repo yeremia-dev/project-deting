@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8f47cb2-fe77-4445-bb8f-7bd80ad85e26" name="Default Changelist" comment="" />
+    <list default="true" id="b8f47cb2-fe77-4445-bb8f-7bd80ad85e26" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/kurirController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/kurirController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Aduan.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Aduan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dataKurir.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dataKurir.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/mencari-kurir-terdekat/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mencari-kurir-terdekat/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/mencari-kurir-terdekat/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mencari-kurir-terdekat/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pengaduan/viewaduan.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pengaduan/viewaduan.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,7 +162,8 @@
       <workItem from="1589601614427" duration="10081000" />
       <workItem from="1589691840579" duration="13964000" />
       <workItem from="1589727792406" duration="798000" />
-      <workItem from="1589765202079" duration="16328000" />
+      <workItem from="1589765202079" duration="18536000" />
+      <workItem from="1589857082000" duration="6720000" />
     </task>
     <servers />
   </component>

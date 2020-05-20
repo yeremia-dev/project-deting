@@ -34,23 +34,23 @@
 					<div id="latitude"></div> -->
 				</div>
 				<div class="col-md-5">
-					<div id="map" style="height: 500px;width: 600px"></div>	
+					<div id="map" style="height: 500px;width: 600px"></div>
 				</div>
         <div class="col-md-4">
           <div>
             <div id="judul_kurir"></div> <br>
-             <div id="content_kurir"  ></div> 
-          </div> 
+             <div id="content_kurir"  ></div>
+          </div>
         </div>
 			</div>
 		</div>
-		
+
 	</div>
   <script type="text/javascript">
     var count = 0;
       /**
      * Converts degrees to radians.
-     * 
+     *
      * @param degrees Number of degrees.
      */
     function degreesToRadians(degrees){
@@ -59,7 +59,7 @@
 
     /**
      * Returns the distance between 2 points of coordinates in Google Maps
-     * 
+     *
      * @see https://stackoverflow.com/a/1502821/4241030
      * @param lat1 Latitude of the point A
      * @param lng1 Longitude of the point A
@@ -73,14 +73,14 @@
         let dLong = degreesToRadians(lng2 - lng1);
         let a = Math.sin(dLat / 2)
                 *
-                Math.sin(dLat / 2) 
+                Math.sin(dLat / 2)
                 +
-                Math.cos(degreesToRadians(lat1)) 
-                * 
-                Math.cos(degreesToRadians(lat1)) 
+                Math.cos(degreesToRadians(lat1))
                 *
-                Math.sin(dLong / 2) 
-                * 
+                Math.cos(degreesToRadians(lat1))
+                *
+                Math.sin(dLong / 2)
+                *
                 Math.sin(dLong / 2);
 
         let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
@@ -151,7 +151,7 @@
 
 	<script type="text/javascript">
       $(document).ready(function() {
-        
+
         function updateMarkerPosition(latLng) {
             document.getElementById('latitude').value = [latLng.lat()]
             document.getElementById('longitude').value = [latLng.lng()]
@@ -171,13 +171,13 @@
                 document.getElementById("panelContent").innerHTML="";
 
                 //ambil data dari json
-                $.getJSON(url, function(result){ 
+                $.getJSON(url, function(result){
 
                     //menampilkan peta
-                    var map;             
-                    map = new google.maps.Map(document.getElementById('map'), {                
-                      zoom: 15,  
-                      center: {lat: result.results[0].geometry.location.lat, lng: result.results[0].geometry.location.lng},              
+                    var map;
+                    map = new google.maps.Map(document.getElementById('map'), {
+                      zoom: 15,
+                      center: {lat: result.results[0].geometry.location.lat, lng: result.results[0].geometry.location.lng},
                     });
                     var propertiPeta = {
                         center:new google.maps.LatLng(result.results[0].geometry.location.lat,result.results[0].geometry.location.lng),
@@ -191,18 +191,18 @@
                     }
 
                     //looping data json
-                    $.each(result.results, function(i){  
-                        //menampilkan data keterangan alamat, lat, long 
+                    $.each(result.results, function(i){
+                        //menampilkan data keterangan alamat, lat, long
                         $("#latitude").val(result.results[i].geometry.location.lat);
                         $("#longitude").val(result.results[i].geometry.location.lng);
-                        $("#lokasi").val(result.results[i].formatted_address);  
+                        $("#lokasi").val(result.results[i].formatted_address);
                         //local storage
                         localStorage.setItem("longitude", result.results[i].geometry.location.lng);
                         localStorage.setItem("latitude", result.results[i].geometry.location.lat);
 
-                
+
                         var peta = new google.maps.Map(document.getElementById("map"), propertiPeta);
-                        
+
                         var latLng = new google.maps.LatLng(result.results[i].geometry.location.lat, result.results[i].geometry.location.lng);
                        var marker = new google.maps.Marker({
                            position : latLng,
@@ -214,22 +214,22 @@
                        updateMarkerPosition(latLng);
                        google.maps.event.addListener(marker, 'drag', function() {
                            updateMarkerPosition(marker.getPosition());
-                       });    
-                          
+                       });
+
                          // To add the marker to the map, call setMap();
                         marker.setMap(peta);
 
                    });
 
-                 });   
+                 });
 
             }else{
               alert("Nama tempat tidak boleh kosong!");
-            } 
+            }
         });
-        
+
     });
-   
+
 </script>
 
 @endsection

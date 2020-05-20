@@ -45,7 +45,7 @@ Route::group(['middleware' => ['auth','admin']], function (){
 
     Route:: get('admin/kurir','kurirController@index');
     Route:: get('admin/dataKurir','kurirController@index');
-    Route:: post('/dataKurir/create','kurirController@create');
+    Route:: post('dataKurir/create','kurirController@create')->name('createkurir');
 
     Route::get('/pedagangs/index', 'PedagangController@show1');
 
@@ -95,6 +95,8 @@ Route::group(['middleware' => ['auth','admin']], function (){
     });
 
 });
+
+
 
 Route::middleware(['user'])->group(function (){
 

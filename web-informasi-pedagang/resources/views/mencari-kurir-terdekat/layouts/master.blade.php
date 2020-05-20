@@ -32,12 +32,12 @@
 	<!-- page container area start -->
     <div class="page-container">
         <!-- sidebar menu area start -->
-        @include('mencari-kurir-terdekat.layouts.sidebar')
+        @include('layouts.sidebar')
         <!-- sidebar menu area end -->
         <!-- main content area start -->
         <div class="main-content">
             <!-- header area start -->
-            @include('mencari-kurir-terdekat.layouts.nav')
+            @include('layouts.nav')
             <!-- header area end -->
             <div class="main-content-inner">
                 <!-- overview area start -->
