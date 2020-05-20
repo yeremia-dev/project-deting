@@ -32,8 +32,8 @@
                 <td>@{{request.jenis_kelamin}}</td>
                 <td>@{{request.nomor_kendaraan}}</td>
                 <td>@{{request.jenis_kendaraan}}</td>
-                <td><a class="btn btn-primary" href="#" @click="terima(request.id)" role="button">Terima</a></td>
-                <td><a class="btn btn-danger" href="#"  @click="tolak(request.id)" role="button">Tolak</a></td>
+                <td><a class="btn btn-primary" href="#" @click="terima(request.id_kurir)" role="button">Terima</a></td>
+                <td><a class="btn btn-danger" href="#"  @click="tolak(request.id_kurir)" role="button">Tolak</a></td>
             </tr>
             </tbody>
         </table>
