@@ -13,6 +13,9 @@
                         <ul class="collapse">
                             <li><a href="{{ url('dataKurir') }}">Data kurir</a></li>
                         </ul>
+                        <ul class="collapse">
+                            <li><a href="{{ url('listKurir') }}">List Kurir</a></li>
+                        </ul>
                     </li>
                     <!-- <li>
                         <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Sidebar
