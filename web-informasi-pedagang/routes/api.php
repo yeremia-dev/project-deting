@@ -31,6 +31,7 @@ Route::get('/kurirs/provinsi','RequestKurirControllers@test');
 Route::get('/kurir/test/prov/{kode}','RequestKurirControllers@findKab');
 Route::get('/kurir/test/kab/{kode}','RequestKurirControllers@findKec');
 Route::get('/kurirs/find/kab/{kode}','RequestKurirControllers@findKec');
+Route::get('/kurirs/find/kel/{kode}','RequestKurirControllers@findKelurahan');
 Route::post('/kurir/test/addImage/{kode}','RequestKurirControllers@addImage');
 Route::get('/kurirs/ktp/','RequestKurirControllers@addKTP');
 Route::post('upload/{kode}', 'RequestKurirControllers@addImage');
