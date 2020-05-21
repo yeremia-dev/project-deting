@@ -20,14 +20,14 @@
     <div class="col-md-12 kurirBox">
         <div class="row">
             <div class="col-md-4">
-                <form method="POST" action="dataKurir/create" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('createkurir') }}" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <label for="" class="labelText">INFORMASI KURIR</label>
             <!-- <img class="imgProfile" src="assets/images/author/avatar.png" alt="logo"> -->
             <input type="file" name="foto_kurir">
             <label for="" class="fotoKurir">Foto Kurir</label>
             </div>
-            <div class="col-md-8"> 
+            <div class="col-md-8">
                 <table class="table">
                 <thead>
                     <tr>
@@ -89,8 +89,8 @@
                 </thead>
             </table>
             </div>
-        </div> 
-        
+        </div>
+
     </div>
     <div class="col-md-12">
 
@@ -110,7 +110,7 @@
                     </div>
                     <div class="col-md-3 buttonKirim">
                         <button class="btn btn-outline-primary btn-sm btn-block">Kirim</button>
-                        {!!csrf_field()!!} 
+                        {!!csrf_field()!!}
                     </div>
                 </div>
         </div>

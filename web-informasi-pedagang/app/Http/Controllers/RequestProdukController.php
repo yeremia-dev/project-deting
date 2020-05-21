@@ -17,10 +17,20 @@ class RequestProdukController extends controller
 
     public function stores(Request $request){
         Produk::create([
-            'nama_produk' => $request['nama_produk'],
+            'nama_produk' => "asd",
             'kategori' => $request['kategori'],
             'id_pedagang' => $request['id_pedagang']
         ]);
+        return "sukses";
+    }
+
+
+    public function inserts(Request $request){
+        $produk = new Produk();
+        $produk->nama_produk = $request['nama_produk'];
+        $produk->kategori = $request['kategori'];
+        $produk->id_pedagang = $request['id_pedagang'];
+        $produk->save();
         return "sukses";
     }
 }

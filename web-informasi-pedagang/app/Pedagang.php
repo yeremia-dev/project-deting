@@ -15,14 +15,13 @@ class Pedagang extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id',
         'nama',
         'alamat_rinci',
+        'alamat',
         'no_hp',
         'no_wa',
         'foto_pedagang',
         'id_admin',
-        'kode_wilayah',
         'status'
     ];
 }

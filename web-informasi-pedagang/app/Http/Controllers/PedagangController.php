@@ -26,12 +26,12 @@ class PedagangController extends Controller
             $kel = DB::select("select nama from wilayah_2020 where kode = '".substr($pedagang->alamat,0,13) ."' LIMIT 1");
             $res = $prov[0]->nama.' '.$kab[0]->nama.' '.$kec[0]->nama.' '.$kel[0]->nama;
             $pedagang -> alamat = $res;
-            array_push($data,$pedagang);    
+            array_push($data,$pedagang);
         }
         return view('pedagangs.listPedagang')->with('pedagangs', $data);
     }
 
-    public function test()  
+    public function test()
     {
         $data = DB::SELECT("SELECT * FROM wilayah_2020 WHERE CHAR_LENGTH(kode)<3");
         return $data;
@@ -57,14 +57,14 @@ class PedagangController extends Controller
     }
     public function index()
     {
-       
-        $data = Produk::all();        
+
+        $data = Produk::all();
         // var_dump($data);
         return view('pedagangs.detailPedagang')->with('data', $data);
     }
 
     public function show1() {
-        $data = Produk::all();        
+        $data = Produk::all();
         return view('pedagangs.index')->with('data', $data);
     }
 
@@ -86,7 +86,7 @@ class PedagangController extends Controller
      */
     public function store(Request $request)
     {
-    
+
     }
 
     /**
@@ -108,7 +108,7 @@ class PedagangController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit()
-    {   
+    {
         return view('pedagangs.editPedagang');
     }
 
@@ -132,12 +132,12 @@ class PedagangController extends Controller
     }
 
     public function delete($id) {
-        
+
         // $data = Pedagang::find($id);
         // $data->delete();
 
         // return redirect('/pedagangs/listPedagang');
-        
+
         $data = Pedagang::find($id);
         $data->delete();
         return redirect('/pedagangs/listPedagang');
@@ -145,7 +145,7 @@ class PedagangController extends Controller
     }
 
     public function detailPedang($id) {
-        
+
         $data_pedagang = Pedagang::find($id);
         $data_produk = Produk::all()->where('id_pedagang', $id);
         $prov = DB::select("select nama from wilayah_2020 where kode = '".substr($data_pedagang->alamat,0,2) ."' LIMIT 1");
@@ -156,7 +156,7 @@ class PedagangController extends Controller
                                                 ->with('data_produks', $data_produk)->with('prov',$prov)
                                                 ->with('kab',$kab)
                                                 ->with('kec',$kec)
-                                                ->with('kel',$kel);            
+                                                ->with('kel',$kel);
 
     }
 
@@ -170,6 +170,6 @@ class PedagangController extends Controller
 
         $data->update();
 
-        return redirect('/pedagang/produk/'.$id);    
+        return redirect('/pedagang/produk/'.$id);
     }
 }
