@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b8f47cb2-fe77-4445-bb8f-7bd80ad85e26" name="Default Changelist" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/kurirController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/kurirController.php" afterDir="false" />
@@ -18,6 +19,12 @@
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
 >>>>>>> 568a5aa17656efa01d939df1237abdfab5c46fd3
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    </list>
+>>>>>>> 3751751f48797a452388b3e4b51f4b721713035a
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,9 +32,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -137,7 +142,6 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -186,14 +190,18 @@
       <workItem from="1589857082000" duration="6720000" />
 =======
       <workItem from="1589765202079" duration="16328000" />
+<<<<<<< HEAD
       <workItem from="1589810756975" duration="11000" />
       <workItem from="1589818822519" duration="16000" />
 >>>>>>> 568a5aa17656efa01d939df1237abdfab5c46fd3
+=======
+      <workItem from="1590036096926" duration="987000" />
+>>>>>>> 3751751f48797a452388b3e4b51f4b721713035a
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -229,5 +237,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1589770390562" />
+    <state x="347" y="78" width="587" height="534" key="find.popup" timestamp="1590036821733">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="347" y="78" width="587" height="534" key="find.popup/0.0.1280.689@0.0.1280.689" timestamp="1590036821733" />
   </component>
 </project>
