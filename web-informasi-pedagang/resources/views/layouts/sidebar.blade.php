@@ -10,7 +10,7 @@
                             <li>
                                 <a href="#">Pedagang</a>
                                 <ul class="collapse">
-                                    <li><a href="/mago">Informasi Pedagang</a></li>
+                                    <li><a href="/">Informasi Pedagang</a></li>
                                     <li><a href="{{ url('kurir/requestp') }}">Request Mendaftar Pedagang</a></li>
                                 </ul>
                             </li>
