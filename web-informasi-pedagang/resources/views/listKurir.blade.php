@@ -32,9 +32,10 @@
   </tr>
 </thead>
 <tbody>
+@php $no = 1; @endphp
 @foreach($kurir as $k)
   <tr>
-    <th scope="row">1</th>
+    <th scope="row">{{$no++}}</th>
     <td>{{$k->nama_kurir}}</td>
     <td>{{$k->foto_kurir}}</td>
     <td>{{$k->nomor_telepon}}</td>
@@ -45,29 +46,30 @@
     <!-- data-toggle="modal" data-target="#editModal" -->
     <td>
       <a href="/dataKurir/{{$k->id_kurir}}/edit" class="btn btn-primary btn-flat btn-xs"><i class="fa fa-pencil"></i>Edit</a>
-      <a href="/dataKurir/hapus/{{$k->id_kurir}}"class="btn btn-danger btn-flat btn-xs"><i class="fa fa-trash"></i>Delete</a>
+      <!-- <a href="/dataKurir/hapus/{{$k->id_kurir}}" class="btn btn-danger btn-flat btn-xs"><i class="fa fa-trash"></i>Delete</a> -->
+      <a href="#modalDelete" data-toggle="modal" onclick="$('#modalDelete #formDelete').attr('action','/dataKurir/hapus/{{$k->id_kurir}}')" class="btn btn-danger btn-flat btn-xs"><i class="fa fa-trash"></i>Delete</a>
     </td>
   </tr>
   @endforeach
+        <div class="modal fade" id="modalDelete">
+              <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                              <h5 class="modal-title">Yakin akan menghapus data ini?</h5>
+                          </div>
+                          <div class="modal-footer">
+                              <form id="formDelete" action="" method="get">
+                                <button class="btn btn-default" data-dismiss="modal">Tidak</button>
+                                <button class="btn btn-danger" type="submit">Hapus</button>
+                              </form>
+                          </div>
+                    </div>
+              </div>
+        </div>
 
-
-  <!-- start edit Modal -->
-  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog" role="document">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    
-    <div class="modal-body">
-    @include('modalForm.editKurir')
-  </div>
-</div>
-</div> 
-<!-- end edit modal -->
 </tbody>
 </table>
 </body>

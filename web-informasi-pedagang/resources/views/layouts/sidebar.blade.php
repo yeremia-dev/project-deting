@@ -11,7 +11,7 @@
                     <li class="active">
                         <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
                         <ul class="collapse">
-                            <li><a href="{{ url('dataKurir') }}">Data kurir</a></li>
+                            <li><a href="{{ url('dataKurir') }}">Tambah Kurir</a></li>
                         </ul>
                         <ul class="collapse">
                             <li><a href="{{ url('listKurir') }}">List Kurir</a></li>

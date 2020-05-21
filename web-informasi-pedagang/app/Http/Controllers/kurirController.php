@@ -82,25 +82,21 @@ public function edit_function($id_kurir){
     return view('editDataKurir',['data'=>$data]);
 }
 
-public function update(Request $request,modelDataKurir $data){
+public function update(Request $request,$id_kurir){
     
-    $data::where('id_kurir',$data->id_kurir)
-    ->update([
+    DB::table('kurir')->WHERE('id_kurir',$id_kurir)->update([
         'nama_kurir' => $request->nama_kurir,
-		'alamat_kurir' => $request->alamat_kurir,
-		'nomor_telepon' => $request->nomor_telepon,
+        'alamat_kurir' => $request->alamat_kurir,
+        'nomor_telepon' => $request->nomor_telepon,
+        // 'nomor_ktp' => $request->nomor_ktp,
         'jenis_kelamin' => $request->jenis_kelamin,
         'jenis_kendaraan' => $request->jenis_kendaraan,
         'nomor_kendaraan' => $request->nomor_kendaraan,
-        
     ]);
-    // $data= DB::SELECT("SELECT * FROM kurir WHERE id_kurir=$id_kurir");
-   
-
-    // $data->update($request->all());
 
     return redirect('/listKurir')->with('sukses','Update Data Berhasil');
 }
+
 
 public function hapus($id_kurir){
     DB::table('kurir')->where('id_kurir',$id_kurir)->delete();
