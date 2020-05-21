@@ -189,7 +189,7 @@
                                                             <tr>
                                                                 <td>
                                                                     <button type="submit" @click="validation2"
-                                                                            class="btn btn-success">Submit
+                                                                            class="btn btn-success">Tambah
                                                                     </button>
                                                                     <button @click="addRow" class="btn btn-primary">
                                                                         <span class="fa fa-plus"></span> Tambah Produk
