@@ -88,14 +88,14 @@ Route::get('searchbykode/{kode}/{produk}', function ($kode, $produk) {
         $where = ' AND lower(s.nama_produk) LIKE "%' . strtolower($produk) . '%"';
     }
     $data = array();
-    $dataPedagang = DB::select('SELECT p.id_pedagang, p.nama_pedagang,p.alamat_rinci,p.no_wa,p.no_hp,p.foto_pedagang FROM pedagang p INNER JOIN produk s ON s.id_pedagang = p.id_pedagang WHERE p.alamat like "' . $kode . '%"' . $where);
+    $dataPedagang = DB::select('SELECT p.id, p.nama,p.alamat_rinci,p.no_wa,p.no_hp,p.foto_pedagang FROM pedagang p INNER JOIN produk s ON s.id_pedagang = p.id WHERE p.alamat like "' . $kode . '%"' . $where);
     $dataPedagang = array_map(function ($value) {
         return (array)$value;
     }, $dataPedagang);
     foreach ($dataPedagang as $ss) {
         $res = array();
         $res['pedagang'] = $ss;
-        $dagangan = DB::select('SELECT * from produk where id_pedagang = ' . $ss['id_pedagang']);
+        $dagangan = DB::select('SELECT * from produk where id_pedagang = ' . $ss['id']);
         $res['dagangan'] = $dagangan;
         array_push($data, $res);
     }
