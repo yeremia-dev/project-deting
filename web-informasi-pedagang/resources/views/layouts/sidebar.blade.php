@@ -49,7 +49,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="/mago">Aduan</a>
+                                    <a href="{{ url('admin/listaduan') }}">Aduan</a>
                                 </li>
                                 @endif
                         </ul>
