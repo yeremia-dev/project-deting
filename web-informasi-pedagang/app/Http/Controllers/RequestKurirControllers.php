@@ -135,7 +135,7 @@ class RequestKurirControllers extends Controller
 
             $extension = 'png';
 
-            $filename = 'kurir' . $kode . '.' . $extension;
+            $filename = $kode . '.' . $extension;
             $path = public_path() . '/storage/kurir/' . $filename;
             file_put_contents($path, $decode);
 //            $data->image = './storage/Image/' . $filename;
@@ -164,10 +164,10 @@ class RequestKurirControllers extends Controller
             'alamat_kurir' => $request['alamat_kurir'],
             'nomor_telepon' => $request['nomor_telepon'],
             'nomor_ktp' => $request['nomor_ktp'],
-            'foto_ktp' =>   './storage/KTP/' . $request['foto_ktp'],
-            'foto_stnk' =>  './storage/STNK/' . $request['foto_stnk'],
-            'foto_SIM' =>  './storage/SIM/' .$request['foto_SIM'],
-            'foto_kurir' => './storage/kurir/' .$request['foto_kurir'],
+            'foto_ktp' =>   './../storage/KTP/' . $request['foto_ktp'],
+            'foto_stnk' =>  './../storage/STNK/' . $request['foto_stnk'],
+            'foto_SIM' =>  './../storage/SIM/' .$request['foto_SIM'],
+            'foto_kurir' => './../storage/kurir/' .$request['foto_kurir'],
             'jenis_kelamin' => $request[' jenis_kelamin'],
             'status' => 'request',
         ]);
@@ -186,10 +186,10 @@ class RequestKurirControllers extends Controller
             'alamat_kurir' => $request['alamat_kurir'],
             'nomor_telepon' => $request['nomor_telepon'],
             'nomor_ktp' => $request['nomor_ktp'],
-            'foto_ktp' => './storage/KTP/' .$request['foto_ktp'],
-            'foto_stnk' => './storage/STNK/' .$request['foto_stnk'],
-            'foto_SIM' => './storage/SIM/' .$request['foto_SIM'],
-            'foto_kurir' => './storage/kurir/' .$request['foto_kurir'],
+            'foto_ktp' => './../storage/KTP/' .$request['foto_ktp'],
+            'foto_stnk' => './../storage/STNK/' .$request['foto_stnk'],
+            'foto_SIM' => './../storage/SIM/' .$request['foto_SIM'],
+            'foto_kurir' => './../storage/kurir/' .$request['foto_kurir'],
             'jenis_kelamin' => $request['jenis_kelamin'],
             'kode_wilayah' => $request['kode_wilayah'],
             'status' => 'request',

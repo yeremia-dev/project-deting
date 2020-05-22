@@ -30,7 +30,7 @@ class RequestPedagangController extends controller
         $pedagang->alamat = $request['alamat'];
         $pedagang->no_hp = $request['no_hp'];
         $pedagang->no_wa = $request['no_wa'];
-        $pedagang->foto_pedagang =   './storage/Pedagang/'.$request['foto_pedagang'];
+        $pedagang->foto_pedagang =   './../storage/Pedagang/'.$request['foto_pedagang'];
         $pedagang->status = 1;
 //        Pedagang::create([
 //            'nama' => $request['nama_pedagang'],
@@ -55,7 +55,7 @@ class RequestPedagangController extends controller
 
             $extension = 'png';
 
-            $filename = 'pedagang' . $kode . '.' . $extension;
+            $filename =   $kode . '.' . $extension;
             $path = public_path() . '/storage/Pedagang/' . $filename;
             file_put_contents($path, $decode);
 //            $data->image = './storage/Image/' . $filename;
