@@ -68,6 +68,12 @@ class RequestKurirControllers extends Controller
         return $data;
     }
 
+    public function findKelurahan($kode)
+    {
+        $data = DB::SELECT("SELECT * FROM wilayah_2020 WHERE kode LIKE '$kode%' AND CHAR_LENGTH(kode)>9 ");
+        return $data;
+    }
+
     public function addImage(Request $request, $kode)
     {
         $explode = explode(',', $request->image);
@@ -158,10 +164,10 @@ class RequestKurirControllers extends Controller
             'alamat_kurir' => $request['alamat_kurir'],
             'nomor_telepon' => $request['nomor_telepon'],
             'nomor_ktp' => $request['nomor_ktp'],
-            'foto_ktp' => $request['foto_ktp'],
-            'foto_stnk' => $request['foto_stnk'],
-            'foto_SIM' => $request['foto_SIM'],
-            'foto_kurir' => $request['foto_kurir'],
+            'foto_ktp' =>   './storage/KTP/' . $request['foto_ktp'],
+            'foto_stnk' =>  './storage/STNK/' . $request['foto_stnk'],
+            'foto_SIM' =>  './storage/SIM/' .$request['foto_SIM'],
+            'foto_kurir' => './storage/kurir/' .$request['foto_kurir'],
             'jenis_kelamin' => $request[' jenis_kelamin'],
             'status' => 'request',
         ]);
@@ -180,10 +186,10 @@ class RequestKurirControllers extends Controller
             'alamat_kurir' => $request['alamat_kurir'],
             'nomor_telepon' => $request['nomor_telepon'],
             'nomor_ktp' => $request['nomor_ktp'],
-            'foto_ktp' => $request['foto_ktp'],
-            'foto_stnk' => $request['foto_stnk'],
-            'foto_SIM' => $request['foto_SIM'],
-            'foto_kurir' => $request['foto_kurir'],
+            'foto_ktp' => './storage/KTP/' .$request['foto_ktp'],
+            'foto_stnk' => './storage/STNK/' .$request['foto_stnk'],
+            'foto_SIM' => './storage/SIM/' .$request['foto_SIM'],
+            'foto_kurir' => './storage/kurir/' .$request['foto_kurir'],
             'jenis_kelamin' => $request['jenis_kelamin'],
             'kode_wilayah' => $request['kode_wilayah'],
             'status' => 'request',

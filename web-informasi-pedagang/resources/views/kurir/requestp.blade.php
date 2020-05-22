@@ -127,6 +127,27 @@
                                                     <!--                       placeholder="Alamat Kurir"><br>-->
                                                 </div>
                                                 <br>
+                                                <div class="row form-group">
+                                                    <div class="col-md-4">
+                                                        <br>
+                                                        <p>Kelurahan : </p>
+                                                    </div>
+                                                    <div style="margin-top: -2px" class="col-md-8">
+                                                        <br>
+                                                        <b-col cols="8" col md="5" lg="11" sm="7">
+                                                            <b-select  v-model="kel" required>
+                                                                <b-select-option v-for="kelurahan in kelurahan"
+                                                                                 :key="kelurahan.kode"
+                                                                                 v-bind:value="kelurahan.kode">
+                                                                    @{{kelurahan.nama}}
+                                                                </b-select-option>
+                                                            </b-select>
+                                                        </b-col>
+                                                    </div>
+                                                    <!--                <input type="text" v-model="alamat_kurir" class="col-sm-11 form-control" id="formGroupExampleInput"-->
+                                                    <!--                       placeholder="Alamat Kurir"><br>-->
+                                                </div>
+                                                <br>
                                                 <div class="row">
                                                     <div class="col">
                                                         <div class="form-group">
@@ -252,7 +273,9 @@
                     kabupaten: [],
                     kab: '',
                     kecamatan: [],
+                    kelurahan: [],
                     kec: '',
+                    kel:'',
                     no_hp: '',
                     no_wa: '',
                     foto: '',
@@ -297,7 +320,11 @@
 
                 },
                 kecamatanBtn() {
-                    console.log(this.kec)
+                    const responses = axios.get("/api/kurirs/find/kel/" + this.kec)
+                        .then(response => {
+                            this.kelurahan = response.data
+                            console.log(response.data)
+                        })
                 },
                 test() {
                     console.log(this.no_hp)
@@ -363,7 +390,7 @@
                                 no_hp: this.no_hp,
                                 no_wa: this.no_wa,
                                 foto_pedagang: kodeKurir + '.png',
-                                alamat: this.kec
+                                alamat: this.kel
                             }).then(response => {
                                 console.log(response.data);
                                 for (let i = 0; i < this.rows.length; i++) {
