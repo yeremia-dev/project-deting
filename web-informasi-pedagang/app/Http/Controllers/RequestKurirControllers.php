@@ -55,6 +55,12 @@ class RequestKurirControllers extends Controller
         return $data;
     }
 
+    public function getDetailName($kode)
+    {
+        $data = DB::SELECT("SELECT * FROM wilayah_2020 WHERE kode LIKE'$kode'");
+        return $data;
+    }
+
     public function findKab($kode)
     {
 

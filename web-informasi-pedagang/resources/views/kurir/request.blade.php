@@ -94,7 +94,7 @@
                     <b-col cols="8" col md="5" lg="11" sm="7">
                         <b-select  v-on:change="kelBtn" v-model="kels" required>
                             <b-select-option v-for="kelurahan in kelurahan" :key="kelurahan.kode"
-                                             v-bind:value="kelurahan.kode">@{{kelurahan.nama}}
+                                             v-bind:value="kelurahan.name">@{{kelurahan.nama}}
                             </b-select-option>
                         </b-select>
                     </b-col>
@@ -138,9 +138,9 @@
                 <div style="margin-top: -2px" class="col-md-7">
                     <br>
                     <select class="col-sm-11 custom-select" required v-model="jenis_kendaraan">
-                        <option value="rodaDua">Roda Dua (2)</option>
-                        <option value="rodaTiga">Roda Dua (3)</option>
-                        <option value="rodaEmpat">Roda Dua (4)</option>
+                        <option value="spdmotor">Sepeda Motor</option>
+                        <option value="becak">Becak</option>
+                        <option value="mobil">Mobil</option>
                     </select>
                 </div>
             </div>
@@ -223,6 +223,9 @@
                 kabupaten: [],
                 kecamatan: [],
                 kelurahan: [],
+                 namaProv:'',
+                                namaKab:'',
+                                namaKec:'',
                 prov: '',
                 kab: '',
                 kec: '',
@@ -252,6 +255,11 @@
                 console.log(this.prov)
             },
             provinsiBtn() {
+               const responsess = axios.get("/api/kurir/getName/" + this.prov)
+                                            .then(responses => {
+                                            this.namaProv=responses.data[0].nama
+                                            })
+
                 const responses = axios.get("/api/kurir/test/prov/" + this.prov)
                     .then(response => {
                         this.kabupaten = response.data
@@ -261,6 +269,11 @@
                 // alert(this.prov)
             },
             kabupatenBtn() {
+              const responsess = axios.get("/api/kurir/getName/" + this.kab)
+                                                        .then(responses => {
+                                                        this.namaKab=responses.data[0].nama
+                                                        })
+
                 const responses = axios.get("/api/kurir/test/kab/" + this.kab)
                     .then(response => {
                         this.kecamatan = response.data
@@ -270,6 +283,11 @@
                 // alert(this.prov)
             },
             kecamatanBtn() {
+              const responsess = axios.get("/api/kurir/getName/" + this.kec)
+                                                                    .then(responses => {
+                                                                    this.namaKec=responses.data[0].nama
+                                                                    })
+
                 const responses = axios.get("/api/kurirs/find/kel/" + this.kec)
                     .then(response => {
                         this.kelurahan = response.data
@@ -323,6 +341,9 @@
                 };
                 reader.readAsDataURL(files[0]);
             },
+             activate() {
+                setTimeout(() => window.location.href="", 2000);
+              },
             uploadImage() {
                 if (!lat) {
                     alert("Lokasi Map Harus di isi")
@@ -366,41 +387,41 @@
                     alert("Data jenis kelamin harus Di isi");
                     return false
                 } else {
-                    let kode = 'KTP-' + this.nama_kurir + "-" + this.nomor_kendaraan;
+                    let kode =  this.nama_kurir + "-" + this.nomor_kendaraan;
                     // alert(this.image)
                     axios.post('/api/upload/' + kode, {image: this.image}).then(response => {
                         console.log(response);
                     });
-                    let kodeSim = 'SIM-' + this.nama_kurir + "-" + this.nomor_kendaraan;
+                    let kodeSim =this.nama_kurir + "-" + this.nomor_kendaraan;
                     axios.post('/api/upload/sim/' + kodeSim, {image: this.imageSIM}).then(response => {
                         console.log(response);
                     });
-                    let kodeSTNK = 'STNK-' + this.nama_kurir + "-" + this.nomor_kendaraan;
+                    let kodeSTNK = this.nama_kurir + "-" + this.nomor_kendaraan;
                     axios.post('/api/upload/stnk/' + kodeSTNK, {image: this.imageSTNK}).then(response => {
                         console.log(response);
                     });
-                    let kodeKurir = '' + this.nama_kurir + "-" + this.nomor_kendaraan;
+                    let kodeKurir =this.nama_kurir + "-" + this.nomor_kendaraan;
                     axios.post('/api/upload/kurir/' + kodeKurir, {image: this.foto_kurir}).then(response => {
-                        console.log(response);
+                         axios.post('/api/insert', {
+                                                jenis_kendaraan: this.jenis_kendaraan,
+                                                latitude: lat,
+                                                longtitude: long,
+                                                nomor_kendaraan: this.nomor_kendaraan,
+                                                nama_kurir: this.nama_kurir,
+                                                alamat_kurir:  this.namaProv + " " + this.namaKab + " " + this.namaKec + " " + this.kels,
+                                                nomor_telepon: this.nomor_telepon,
+                                                nomor_ktp: this.nomor_ktp,
+                                                foto_ktp: kode + '.png',
+                                                foto_stnk: kodeSTNK + '.png',
+                                                foto_SIM: kodeSim + '.png',
+                                                foto_kurir: kodeKurir + '.png',
+                                                jenis_kelamin: this.jenis_kelamin,
+                                                status: "request"
+                                            }).then(
+                                                 setTimeout(() => window.location.href="", 3000)
+                                            )
                     });
-                    axios.post('/api/insert', {
-                        jenis_kendaraan: this.jenis_kendaraan,
-                        latitude: lat,
-                        longtitude: long,
-                        nomor_kendaraan: this.nomor_kendaraan,
-                        nama_kurir: this.nama_kurir,
-                        alamat_kurir: this.kels,
-                        nomor_telepon: this.nomor_telepon,
-                        nomor_ktp: this.nomor_ktp,
-                        foto_ktp: kode + '.png',
-                        foto_stnk: kodeSTNK + '.png',
-                        foto_SIM: kodeSim + '.png',
-                        foto_kurir: 'kurir' + kodeKurir + '.png',
-                        jenis_kelamin: this.jenis_kelamin,
-                        status: "request"
-                    }).then(
-                        window.location.href = ""
-                    )
+
                 }
             }
         },

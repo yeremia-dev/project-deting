@@ -29,6 +29,7 @@ Route::apiResources(
 //kurir
 Route::get('/kurirs/provinsi','RequestKurirControllers@test');
 Route::get('/kurir/test/prov/{kode}','RequestKurirControllers@findKab');
+Route::get('/kurir/getName/{kode}','RequestKurirControllers@getDetailName');
 Route::get('/kurir/test/kab/{kode}','RequestKurirControllers@findKec');
 Route::get('/kurirs/find/kab/{kode}','RequestKurirControllers@findKec');
 Route::get('/kurirs/find/kel/{kode}','RequestKurirControllers@findKelurahan');
