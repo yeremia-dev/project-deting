@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Bulan Mei 2020 pada 18.34
+-- Waktu pembuatan: 24 Bulan Mei 2020 pada 14.14
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.3
 
@@ -34,7 +34,7 @@ CREATE TABLE `aduan` (
   `email_pengadu` varchar(24) NOT NULL,
   `nomor_telepon` varchar(13) NOT NULL,
   `lokasi` varchar(50) NOT NULL,
-  `isi` varchar(255) NOT NULL,
+  `isi` longtext NOT NULL,
   `foto_buktiAduan` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
