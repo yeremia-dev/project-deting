@@ -6,22 +6,24 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-7">
-                                    <table class="table">
-                    <thead>
+                    <table class="table">
+                        <thead>
                         <tr>
-                        <th scope="col">Daging Ayam</th>
-                        
+                            <th scope="col" colspan="2">@{{ kategori }}</th>
                         </tr>
-                    </thead>
-                    <tbody>
+
                         <tr>
-                    
-                        <td>Nama Toko/pedagang/nama usaha</td>
-                        
+
+                            <td><b Nama Toko/pedagang/nama usaha</b></td>
+                            <td><b>Produk</b></td>
                         </tr>
-                        
-                        
-                    </tbody>
+                        </thead>
+                        <tbody>
+                        <tr v-for="produk in allProduk">
+                            <td><b-link :href="`informasi-pedagang-detail?id=${produk.id}`">@{{ produk.nama }}</b-link></td>
+                            <td>@{{ produk.nama_produk }}</td>
+                        </tr>
+                        </tbody>
                     </table>
                 </div>
                 <div class="col-md-5">
@@ -88,7 +90,8 @@
         el: '#app',
         data: function () {
             return {
-                
+                allProduk: [],
+                kategori: null,
                 look: {
                     kab: false,
                     kec: false,
@@ -151,9 +154,29 @@
                         this.kel = res.data
                         this.look.kel = true
                     })
+            },
+            getProdukByKat() {
+                this.kategori = this.getParameterByName("kategori")
+                axios.get(`/api/getallprodbykat?kat=${this.kategori}`)
+                    .then((res) => {
+                        this.allProduk = res.data
+                    })
+                    .catch(() => {
+                        alert("Terjadi kesalahan, Refresh (F5)")
+                    })
+            },
+            getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, '\\$&');
+                var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, ' '));
             }
         },
         created() {
+            this.getProdukByKat()
             this.getProvinsi()
         }
     })

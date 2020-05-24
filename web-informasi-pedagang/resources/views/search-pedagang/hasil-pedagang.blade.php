@@ -72,7 +72,7 @@
             getUrl() {
                 var kode = this.getParameterByName('search')
                 var produk = this.getParameterByName('produk')
-                axios.get(`/api/searchbykode/${kode}/${produk}`)
+                axios.get(`/api/searchbykode?kode=${kode}&produk=${produk}`)
                     .then((res) => {
                         console.log(res.data)
                         this.datas = res.data

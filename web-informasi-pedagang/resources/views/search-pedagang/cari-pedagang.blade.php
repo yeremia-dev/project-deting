@@ -6,20 +6,17 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-7">
-                <div>
-                <b-card-group deck>
-                <b-card bg-variant="secondary" text-variant="white" footer="Secondary" class="text-center">
-                <b-card-text>gambar kategori produk .</b-card-text>
-                </b-card>
-
-                <b-card bg-variant="secondary" text-variant="white" footer="Secondary" class="text-center">
-                <b-card-text>gambar kategori produk .</b-card-text>
-                </b-card>
-
-                <b-card bg-variant="secondary" text-variant="white" footer="Secondary" class="text-center">
-                <b-card-text>gambar kategori produk .</b-card-text>                </b-card>
-                </b-card-group>
-            </div>
+                    <div v-for="res in kat">
+                        <b-card-group deck>
+                            <div v-for="ins in res.data" >
+                                <b-link :href="`/kategori-detail?kategori=${ins.kategori}`">
+                                    <b-card bg-variant="secondary" text-variant="white" :footer="ins.kategori" class="text-center">
+                                        <b-card-text>gambar kategori produk .</b-card-text>
+                                    </b-card>
+                                </b-link>
+                            </div>
+                        </b-card-group>
+                    </div>
 
                 </div>
                 <div class="col-md-5">
@@ -86,6 +83,7 @@
         el: '#app',
         data: function () {
             return {
+                kat: [],
                 look: {
                     kab: false,
                     kec: false,
@@ -148,9 +146,19 @@
                         this.kel = res.data
                         this.look.kel = true
                     })
+            },
+            getKategoriProduk() {
+                axios.get('/api/getkategoriproduk')
+                .then((res) => {
+                    this.kat = res.data
+                })
+                .catch(() => {
+                    alert("Terjadi kesalahan, Refreh(F5)")
+                })
             }
         },
         created() {
+            this.getKategoriProduk()
             this.getProvinsi()
         }
     })

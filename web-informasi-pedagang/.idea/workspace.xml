@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8f47cb2-fe77-4445-bb8f-7bd80ad85e26" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/search-pedagang/cari-pedagang.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/search-pedagang/cari-pedagang.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/search-pedagang/hasil-pedagang.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/search-pedagang/hasil-pedagang.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/search-pedagang/informasi-detail-pedagang.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/search-pedagang/informasi-detail-pedagang.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/search-pedagang/kategori-detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/search-pedagang/kategori-detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,9 +187,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1589770390562" />
-    <state x="347" y="78" width="587" height="534" key="find.popup" timestamp="1590036821733">
+    <state x="347" y="78" width="587" height="534" key="find.popup" timestamp="1590299080878">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="347" y="78" width="587" height="534" key="find.popup/0.0.1280.689@0.0.1280.689" timestamp="1590036821733" />
+    <state x="347" y="78" width="587" height="534" key="find.popup/0.0.1280.689@0.0.1280.689" timestamp="1590299080878" />
+    <state x="297" y="-1" width="672" height="676" key="search.everywhere.popup" timestamp="1590299136826">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="297" y="-1" width="672" height="676" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1590299136826" />
   </component>
 </project>
