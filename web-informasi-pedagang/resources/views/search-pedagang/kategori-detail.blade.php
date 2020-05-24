@@ -14,7 +14,7 @@
 
                         <tr>
 
-                            <td><b Nama Toko/pedagang/nama usaha</b></td>
+                            <td><b>Nama Toko/pedagang/nama usaha</b></td>
                             <td><b>Produk</b></td>
                         </tr>
                         </thead>

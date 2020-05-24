@@ -4,11 +4,7 @@
     <list default="true" id="b8f47cb2-fe77-4445-bb8f-7bd80ad85e26" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/search-pedagang/cari-pedagang.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/search-pedagang/cari-pedagang.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/search-pedagang/hasil-pedagang.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/search-pedagang/hasil-pedagang.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/search-pedagang/informasi-detail-pedagang.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/search-pedagang/informasi-detail-pedagang.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/search-pedagang/kategori-detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/search-pedagang/kategori-detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +130,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/storage/app/public/Image/kategori" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IT DEL\Semester 6\DETINK\Proyek\project-deting\web-informasi-pedagang\storage\app\public\Image\kategori" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
