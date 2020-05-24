@@ -1,26 +1,28 @@
 @extends('layouts.master')
-@section('title', 'Kategori Produk')
+@section('title', '')
 @section('content')
 <div class="col-12 mt-5" id="app">
     <div class="card">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-7">
-                <div>
-                <b-card-group deck>
-                <b-card bg-variant="secondary" text-variant="white" footer="Secondary" class="text-center">
-                <b-card-text>gambar kategori produk .</b-card-text>
-                </b-card>
-
-                <b-card bg-variant="secondary" text-variant="white" footer="Secondary" class="text-center">
-                <b-card-text>gambar kategori produk .</b-card-text>
-                </b-card>
-
-                <b-card bg-variant="secondary" text-variant="white" footer="Secondary" class="text-center">
-                <b-card-text>gambar kategori produk .</b-card-text>                </b-card>
-                </b-card-group>
-            </div>
-
+                                    <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">Daging Ayam</th>
+                        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                    
+                        <td>Nama Toko/pedagang/nama usaha</td>
+                        
+                        </tr>
+                        
+                        
+                    </tbody>
+                    </table>
                 </div>
                 <div class="col-md-5">
                     <h4>Cari Berdasarkan</h4><br><br><br>
@@ -86,6 +88,7 @@
         el: '#app',
         data: function () {
             return {
+                
                 look: {
                     kab: false,
                     kec: false,
@@ -155,5 +158,6 @@
         }
     })
 </script>
+
 @endsection
 
