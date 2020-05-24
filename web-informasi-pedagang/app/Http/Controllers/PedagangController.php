@@ -17,7 +17,8 @@ class PedagangController extends Controller
 
     public function showAll() {
 
-        $pedagangs = Pedagang::all();
+//        $pedagangs = Pedagang::all();
+        $pedagangs = Pedagang::where('status', 2)->get();
         $data = array();
         foreach($pedagangs as $pedagang){
             $prov = DB::select("select nama from wilayah_2020 where kode = '".substr($pedagang->alamat,0,2) ."' LIMIT 1");
