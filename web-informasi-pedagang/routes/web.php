@@ -14,7 +14,8 @@ use App\Pedagang;
 |
 */
 
-<<<<<<< HEAD
+
+
 //route Autentikasi
 Auth::routes(['register' => false]);
 Route::group(['middleware' => ['auth','admin']], function (){
@@ -33,7 +34,7 @@ Route::group(['middleware' => ['auth','admin']], function (){
     )->name('kurirKonfirmasi');
 
     Route::get(
-        '/kurir/viewproduk', 'RequestKurirControllers@view'
+        '/kurir/viewproduk/{id}', 'RequestKurirControllers@view'
     )->name('kurirViewproduk');
 
     Route::get(
@@ -43,9 +44,20 @@ Route::group(['middleware' => ['auth','admin']], function (){
     Route::get('admin/listaduan','AduanController@listaduan');
     Route::delete('/role-delete/{id}','AduanController@aduandelete');
 
-    Route:: get('admin/kurir','kurirController@index');
-    Route:: get('admin/dataKurir','kurirController@index');
+//    Route:: get('admin/kurir','kurirController@index');
+//    Route:: get('admin/dataKurir','kurirController@index');
+//    Route:: post('dataKurir/create','kurirController@create')->name('createkurir');
+
+    Route:: get('/dataKurir','kurirController@index');
     Route:: post('/dataKurir/create','kurirController@create');
+
+    Route:: get('/listKurir','kurirController@viewKurir');
+    Route:: get('/listKurir/dataKurir','kurirController@create');
+    Route:: get('/dataKurir/{id_kurir}/edit','kurirController@edit_function');
+    Route:: post('/dataKurir/{id_kurir}/update','kurirController@update');
+
+    Route:: get('/dataKurir/hapus/{id_kurir}','kurirController@hapus');
+
 
     Route::get('/pedagangs/index', 'PedagangController@show1');
 
@@ -96,6 +108,8 @@ Route::group(['middleware' => ['auth','admin']], function (){
 
 });
 
+
+
 Route::middleware(['user'])->group(function (){
 
     //fungsi search pedagang (Kristopel)
@@ -112,6 +126,11 @@ Route::middleware(['user'])->group(function (){
     });
     Route::get('pengaduan/aduan','AduanController@index');
     Route::post('save-aduan','AduanController@store');
+    Route::get('pengaduan/image-upload', 'AduanController@imageUpload')->name('image.upload');
+    Route::post('pengaduan/image-upload', 'AduanController@imageUploadPost')->name('image.upload.post');
+    Route::get('/verifikasi', function () {
+        return view('pengaduan.imageUpload');
+    });
 
     //route mencari kurir
     Route::get('user/kurir', 'SearchKurirController@index');
@@ -133,15 +152,6 @@ Route::middleware(['user'])->group(function (){
 
 
 });
-
-
-
-
-
-
-
-
-
 
 
 //Route::get('/', function () {
@@ -170,89 +180,3 @@ Route::middleware(['user'])->group(function (){
 Route::get('/mago', function () {
     return view('jubel.notyet');
 });
-=======
-//route pengaduan
-Route::get('/index', function () {
-    return view('pengaduan.index');
-});
-Route::get('/aduan','AduanController@index');
-Route::post('/save-aduan','AduanController@store');
-
-
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::get('/kurir', 'SearchKurirController@index');
-
-Route::get('/kurir-terdekat', 'MencariKurirTerdekatController@index');
-
-Route::post('/search-kurir', 'SearchKurirController@search');
-
-Route::get('/pedagang', function () {
-    return view('search-pedagang.cari-pedagang');
-});
-Route::get('/hasil-pedagang', function () {
-    return view('search-pedagang.hasil-pedagang');
-});
-
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::group(['middleware' => ['auth','admin']], function (){
-
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    });
-
-    Route::get('/role-register','Admin\DashboardController@registered');
-    Route::get('/role-edit/{id}','Admin\DashboardController@registeredit');
-    Route::put('/role-register-update/{id}','Admin\DashboardController@registerupdate');
-    Route::delete('/role-delete/{id}','Admin\DashboardController@registerdelete');
-
-    Route::get('/pengacara','Admin\PengacaraController@index');
-
-});
-//to index kurir
-Route::get(
-    '/kurir/index', 'RequestKurirControllers@index'
-)->name('kurirIndex');
-
-Route::get(
-    '/kurir/request', 'RequestKurirControllers@request'
-)->name('kurirRequest');
-
-Route::get(
-    '/kurir/requestp', 'RequestKurirControllers@requestp'
-)->name('kurirRequestp');
-
-Route::get(
-    '/kurir/konfirmasi', 'RequestKurirControllers@konfir'
-)->name('kurirKonfirmasi');
-
-Route::get(
-    '/kurir/viewproduk', 'RequestKurirControllers@view'
-)->name('kurirViewproduk');
-
-Route::get(
-    '/kurir/pedagang', 'RequestKurirControllers@pedagangView'
-)->name('kurirProdukd');
-
-Route::get(
-    '/kurir/konfirmasipdg', 'RequestKurirControllers@konfirpdg'
-)->name('kurirKonfirmasipdg');
-
-Route::get('/', 'MencariKurirTerdekatController@index');
-
-
-
-Route:: get('/','kurirController@index');
-
-Route:: get('/dataKurir','kurirController@index');
-Route:: post('/dataKurir/create','kurirController@create');
->>>>>>> 3efb240e383be5cbd59247ca60b51b3702a53f66

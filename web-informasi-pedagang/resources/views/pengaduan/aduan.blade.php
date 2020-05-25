@@ -55,23 +55,30 @@
                                     </div>                               
                                         <div class="form-group">
                                         <label for="nama_budaya" class="col_form-label">Foto Bukti Aduan</label>
-                                        <input type="file" name="foto_buktiAduan" id="foto" class="form-control" id="nama_budaya">
+                                            @csrf
+                                            <div>
+                                                <input type="file" name="foto_buktiAduan" class="form-control">                                   
+                                            </div>
                                         </div>
-                                    </div>
 
+                                    </div>
                                     <div class="col-md-8">
                                     <div class="form-group">
                                         <label for="nama_budaya" class="col-form-label">Isi Aduan</label>
                                         <textarea name="isi" cols="20" rows="20" class="form-control" id="nama_budaya"></textarea>
                                     </div>
+                                    <br>
+                                    <br>
+                                    <br>
                                     <div class="align-self-end ml-auto">
-                                    <button class="btn btn-primary" style="float:right">Kirim</button>
+                                        <button class="btn btn-primary" style="float:right">Kirim</button>
+                                    <div class="col-md-6">
                                     </div>
+                                </div>
                                 </form>
                             </div>
                     </div>
                 </div>
-            
         </section>
     </div>
 @endsection

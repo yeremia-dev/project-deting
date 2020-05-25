@@ -40,12 +40,12 @@
                       <td>{{ $row->nomor_telepon }}</td>
                       <td>{{ $row->lokasi }}</td>
                       <td>{{ $row->isi }}</td>
-                      <td>{{ $row->foto_buktiAduan }}</td>
+                      <td><img width="150px" src="{{ url('dataAduan/' .$row->foto_buktiAduan) }}"></td>
                       <td>
-                        <form action="/role-delete/{{ $row->id }}" method="POST">
+                        <form action="/role-delete/{{ $row->id_aduan }}" method="POST">
                           {{ csrf_field() }}
                           {{ method_field("DELETE") }}
-                          <button type="submit" class="btn btn-danger">DELETE</button> 
+                          <button type="submit" class="btn btn-danger">DELETE</button>
                         </form>
                       </td>
                     </tr>
@@ -55,7 +55,7 @@
               </div>
             </div>
           </div>
-        </div>  
+        </div>
       </div>
 @endsection
 
@@ -65,4 +65,4 @@
 
 @endsection
 
-                     
+
