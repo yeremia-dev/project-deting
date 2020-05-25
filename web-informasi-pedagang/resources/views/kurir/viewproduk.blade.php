@@ -14,20 +14,23 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nama Pedagang</th>
-                    <th scope="col">Alamat Rinci</th>
+                    <th scope="col">Alamat</th>
+                    <th scope="col">Foto</th>
                     <th scope="col">Nomor HP</th>
                     <th scope="col">Nomor WA</th>
+                    <th scope="col">Alamat Rinci</th>
                     <th scope="col">Kecamatan</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr >
-                    <th scope="row" >@{{ pedagang.id }}</th>
+                <tr ><th scope="row" >@{{ pedagang.id }}</th>
                     <td>@{{ pedagang.nama }}</td>
-                    <td>@{{ pedagang.alamat_rinci }}</td>
+                    <td>@{{ pedagang.alamat }}</td>
+                    <td><img :src="'/public/'+pedagang.foto_pedagang" class="img-thumbnail" alt="Cinque Terre" width="110"></td>
                     <td>@{{ pedagang.no_hp }}</td>
                     <td>@{{ pedagang.no_wa }}</td>
-                    <td>@{{ pedagang.alamat }}</td>
+                    <td>@{{ pedagang.alamat_rinci }}</td>
+                    <td>@{{ pedagang.name }}</td>
                 </tr>
                 </tbody>
             </table>

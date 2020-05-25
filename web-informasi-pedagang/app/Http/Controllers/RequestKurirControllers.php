@@ -44,6 +44,17 @@ class RequestKurirControllers extends Controller
         return view('kurir/viewproduk', compact('id'));
     }
 
+    public function show($id)
+    {
+        return view('kurir/view', compact('id'));
+    }
+
+    public function getDataKurir($id)
+    {
+        $data = Kurir::where('id_kurir', $id)->get();
+        return $data;
+    }
+
     public function konfirpdg()
     {
         return view('kurir/konfirmasipdg');

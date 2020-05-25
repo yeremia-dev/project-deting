@@ -11,29 +11,31 @@
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">Nama Kurir</th>
-                <th scope="col">Foto Kurir</th>
-                <th scope="col">Alamat Rinci</th>
-                <th scope="col">nomor telepon</th>
-                <th scope="col">Nomor KTP</th>
+                <th scope="col">#</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Foto</th>
+                <th scope="col">Nomor HP / WA</th>
                 <th scope="col">Jenis Kelamin</th>
-                <th scope="col">Nomor Kendaraan</th>
                 <th scope="col">Jenis Kendaraan</th>
+                <th scope="col">Plat Kendaraan</th>
+                <th scope="col">Alamat</th>
                 <th scope="col">Aksi</th>
+                <th scope="col"></th>
                 <th scope="col"></th>
             </tr>
             </thead>
             <tbody>
-            <tr v-for="request in request"
-                     :key="request.id">
-                <td>@{{request.foto_kurir}}</td>
-                <td><img src=' . request.foto_kurir . '></td>
-                <td>@{{request.alamat_kurir}}</td>
+            <tr v-for="(request,index) in request"
+                :key="request.id">
+                <td>@{{ index+1 }}</td>
+                <td>@{{request.nama_kurir}}</td>
+                <td><img :src="request.foto_kurir" class="img-thumbnail" alt="Cinque Terre" width="100"></td>
                 <td>@{{request.nomor_telepon}}</td>
-                <td>@{{request.nomor_ktp}}</td>
                 <td>@{{request.jenis_kelamin}}</td>
-                <td>@{{request.nomor_kendaraan}}</td>
                 <td>@{{request.jenis_kendaraan}}</td>
+                <td>@{{request.nomor_kendaraan}}</td>
+                <td>@{{request.alamat_kurir}}</td>
+                <td><a class="btn btn-primary" :href="'/kurir/view/'+request.id_kurir" role="button">Detail</a></td>
                 <td><a class="btn btn-primary" href="#" @click="terima(request.id_kurir)" role="button">Terima</a></td>
                 <td><a class="btn btn-danger" href="#"  @click="tolak(request.id_kurir)" role="button">Tolak</a></td>
             </tr>

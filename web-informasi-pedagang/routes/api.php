@@ -45,7 +45,7 @@ Route::get('check/', 'RequestKurirControllers@getKurir');
 Route::get('kurirRequest/', 'RequestKurirControllers@findAllKurirRequest');
 Route::get('kurirTerima/{id}', 'RequestKurirControllers@terima');
 Route::get('kurirTolak/{id}', 'RequestKurirControllers@tolak');
-
+Route::get('kurir/find/{id}', 'RequestKurirControllers@getDataKurir');
 
 //Pedagang
 Route::get('pedagang/lihat/{kode}','RequestPedagangController@lihat');
