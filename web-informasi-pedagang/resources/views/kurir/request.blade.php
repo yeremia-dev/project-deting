@@ -94,7 +94,7 @@
                     <b-col cols="8" col md="5" lg="11" sm="7">
                         <b-select  v-on:change="kelBtn" v-model="kels" required>
                             <b-select-option v-for="kelurahan in kelurahan" :key="kelurahan.kode"
-                                             v-bind:value="kelurahan.name">@{{kelurahan.nama}}
+                                             v-bind:value="kelurahan.nama">@{{kelurahan.nama}}
                             </b-select-option>
                         </b-select>
                     </b-col>

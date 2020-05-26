@@ -19,7 +19,6 @@
                     <th scope="col">Nomor HP</th>
                     <th scope="col">Nomor WA</th>
                     <th scope="col">Alamat Rinci</th>
-                    <th scope="col">Kecamatan</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -30,7 +29,6 @@
                     <td>@{{ pedagang.no_hp }}</td>
                     <td>@{{ pedagang.no_wa }}</td>
                     <td>@{{ pedagang.alamat_rinci }}</td>
-                    <td>@{{ pedagang.name }}</td>
                 </tr>
                 </tbody>
             </table>
