@@ -36,6 +36,9 @@ Route::group(['middleware' => ['auth','admin']], function (){
     Route::get(
         '/kurir/viewproduk/{id}', 'RequestKurirControllers@view'
     )->name('kurirViewproduk');
+    Route::get(
+        '/kurir/view/{id}', 'RequestKurirControllers@show'
+    )->name('kurirView');
 
     Route::get(
         '/kurir/konfirmasipdg', 'RequestKurirControllers@konfirpdg'
@@ -169,6 +172,18 @@ Route::middleware(['user'])->group(function (){
 //Route::get(
 //    '/kurir/index', 'RequestKurirControllers@index'
 //)->name('kurirIndex');
+Route::get('/hasil-kategori', function () {
+    return view('search-pedagang.hasil-kategori');
+});
+
+Route::get('/kategori-detail', function () {
+    return view('search-pedagang.kategori-detail');
+});
+Route::get('/informasi-pedagang-detail', function () {
+    return view('search-pedagang.informasi-detail-pedagang');
+});
+
+
 
 
 

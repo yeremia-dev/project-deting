@@ -44,6 +44,17 @@ class RequestKurirControllers extends Controller
         return view('kurir/viewproduk', compact('id'));
     }
 
+    public function show($id)
+    {
+        return view('kurir/view', compact('id'));
+    }
+
+    public function getDataKurir($id)
+    {
+        $data = Kurir::where('id_kurir', $id)->get();
+        return $data;
+    }
+
     public function konfirpdg()
     {
         return view('kurir/konfirmasipdg');
@@ -52,6 +63,12 @@ class RequestKurirControllers extends Controller
     public function test()
     {
         $data = DB::SELECT("SELECT * FROM wilayah_2020 WHERE CHAR_LENGTH(kode)<3");
+        return $data;
+    }
+
+    public function getDetailName($kode)
+    {
+        $data = DB::SELECT("SELECT * FROM wilayah_2020 WHERE kode LIKE'$kode'");
         return $data;
     }
 
