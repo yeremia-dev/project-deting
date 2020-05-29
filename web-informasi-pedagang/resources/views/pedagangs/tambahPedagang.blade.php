@@ -150,10 +150,16 @@
                                                             </td>
                                                             <td>
                                                                 <select v-model="row.kategori" class="bg-light custom-select">
-                                                                    <option value="Daging" selected>Daging</option>
-                                                                    <option value="Rempah-rempah">Rempah-rempah</option>
-                                                                    <option value="Telur">Telur</option>
+                                                                    <option value="Ikan" selected>Ikan</option>
+                                                                    <option value="Sayur">Sayur</option>
+                                                                    <option value="Buah">Buah</option>
+                                                                    <option value="Deging">Deging</option>
                                                                     <option value="Sembako">Sembako</option>
+                                                                    <option value="Rempah-rempah">Rempah-rempah</option>
+                                                                    <option value="Peralatan mandi">Peralatan mandi</option>
+                                                                    <option value="Aqua Galon">Aqua Galon</option>
+                                                                    <option value="Kosmetik">Kosmetik</option>
+                                                                    <option value="Tabung Gas">Tabung Gas</option>
                                                                 </select>
                                                             </td>
                                                             <td>
