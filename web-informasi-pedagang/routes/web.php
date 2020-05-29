@@ -36,6 +36,9 @@ Route::group(['middleware' => ['auth','admin']], function (){
     Route::get(
         '/kurir/viewproduk/{id}', 'RequestKurirControllers@view'
     )->name('kurirViewproduk');
+    Route::get(
+        '/kurir/view/{id}', 'RequestKurirControllers@show'
+    )->name('kurirView');
 
     Route::get(
         '/kurir/konfirmasipdg', 'RequestKurirControllers@konfirpdg'

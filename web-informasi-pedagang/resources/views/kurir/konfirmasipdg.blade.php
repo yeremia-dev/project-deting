@@ -12,6 +12,7 @@
                 <thead>
                 <tr>
                     <th scope="col">Nama Pedagang</th>
+                    <th scope="col">Foto</th>
                     <th scope="col">Nomor HP</th>
                     <th scope="col">Nomor WA</th>
                     <th scope="col">Alamat Rinci</th>
@@ -23,6 +24,7 @@
                 <tr v-for="request in request"
                     :key="request.id">
                     <td>@{{request.nama}}</td>
+                    <td><img :src="'/public/'+request.foto_pedagang" class="img-thumbnail" alt="Cinque Terre" width="100"></td>
                     <td>@{{request.no_hp}}</td>
                     <td>@{{request.no_wa}}</td>
                     <td>@{{request.alamat_rinci}}</td>

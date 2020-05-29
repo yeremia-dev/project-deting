@@ -36,6 +36,7 @@ Route::apiResources(
 
 Route::get('/kurirs/provinsi','RequestKurirControllers@test');
 Route::get('/kurir/test/prov/{kode}','RequestKurirControllers@findKab');
+Route::get('/kurir/getName/{kode}','RequestKurirControllers@getDetailName');
 Route::get('/kurir/test/kab/{kode}','RequestKurirControllers@findKec');
 Route::get('/kurirs/find/kab/{kode}','RequestKurirControllers@findKec');
 Route::get('/kurirs/find/kel/{kode}','RequestKurirControllers@findKelurahan');
@@ -52,7 +53,7 @@ Route::get('check/', 'RequestKurirControllers@getKurir');
 Route::get('kurirRequest/', 'RequestKurirControllers@findAllKurirRequest');
 Route::get('kurirTerima/{id}', 'RequestKurirControllers@terima');
 Route::get('kurirTolak/{id}', 'RequestKurirControllers@tolak');
-
+Route::get('kurir/find/{id}', 'RequestKurirControllers@getDataKurir');
 
 //Pedagang
 Route::get('pedagang/lihat/{kode}', 'RequestPedagangController@lihat');

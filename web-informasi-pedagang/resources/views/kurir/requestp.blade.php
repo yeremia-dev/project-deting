@@ -138,7 +138,7 @@
                                                         <b-select v-model="kel" required>
                                                             <b-select-option v-for="kelurahan in kelurahan"
                                                                              :key="kelurahan.kode"
-                                                                             v-bind:value="kelurahan.kode">
+                                                                             v-bind:value="kelurahan.nama">
                                                                 @{{kelurahan.nama}}
                                                             </b-select-option>
                                                         </b-select>
@@ -194,10 +194,16 @@
                                                             <td>
                                                                 <select v-model="row.kategori"
                                                                         class="bg-light custom-select">
-                                                                    <option value="Daging" selected>Daging</option>
+                                                                    <option value="Ikan" selected>Ikan</option>
                                                                     <option value="Sayuran">Sayuran</option>
+                                                                    <option value="Buah">Buah</option>
+                                                                    <option value="Daging">Daging</option>
                                                                     <option value="Sembako">Sembako</option>
-                                                                    <option value="lain-lain">lain-lain</option>
+                                                                    <option value="Rempah-rempah">Rempah-rempah</option>
+                                                                    <option value="Peralatan mandi">Peralatan mandi</option>
+                                                                    <option value="Aqua_galon">Aqua galon</option>
+                                                                    <option value="Kosmetik">Kosmetik</option>
+                                                                    <option value="Tabung_gas">Tabung gas</option>
                                                                 </select>
                                                             </td>
                                                             <td>
@@ -277,6 +283,9 @@
                 kelurahan: [],
                 kec: '',
                 kel: '',
+                namaProv:'',
+                namaKab:'',
+                namaKec:'',
                 no_hp: '',
                 no_wa: '',
                 foto: '',
@@ -305,14 +314,25 @@
                     })
             },
             provinsiBtn() {
+
+                const responsess = axios.get("/api/kurir/getName/" + this.prov)
+                                .then(responses => {
+                                this.namaProv=responses.data[0].nama
+                                })
+
                 const responses = axios.get("/api/kurir/test/prov/" + this.prov)
                     .then(response => {
                         this.kabupaten = response.data
                         console.log(response.data)
                     })
 
+
             },
             kabupatenBtn() {
+              const responsess = axios.get("/api/kurir/getName/" + this.kab)
+                                            .then(responses => {
+                                            this.namaKab=responses.data[0].nama
+                                            })
                 const responses = axios.get("/api/kurir/test/kab/" + this.kab)
                     .then(response => {
                         this.kecamatan = response.data
@@ -321,6 +341,10 @@
 
             },
             kecamatanBtn() {
+              const responsess = axios.get("/api/kurir/getName/" + this.kec)
+                                                        .then(responses => {
+                                                        this.namaKec=responses.data[0].nama
+                                                        })
                 const responses = axios.get("/api/kurirs/find/kel/" + this.kec)
                     .then(response => {
                         this.kelurahan = response.data
@@ -385,7 +409,7 @@
                     no_hp: this.no_hp,
                     no_wa: this.no_wa,
                     foto_pedagang: kodeKurir + '.png',
-                    alamat: this.kel
+                    alamat: this.namaProv + " " + this.namaKab + " " + this.namaKec + " " + this.kel
                 }).then(response => {
                     console.log(response.data);
                     for (let i = 0; i < this.rows.length; i++) {
