@@ -1,55 +1,28 @@
 @extends('layouts.master')
-@section('title', 'Kategori Produk')
+@section('title', '')
 @section('content')
 <div class="col-12 mt-5" id="app">
     <div class="card">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-7">
-                    <div v-for="res in kat">
-                        <b-card-group deck>
-                            <div v-for="ins in res.data">
-                                <b-link :href="`/kategori-detail?kategori=${ins.kategori}`">
-                                    <b-card bg-variant="secondary" text-variant="white" :footer="ins.kategori"
-                                            class="text-center">
-                                        <b-card-text style="height: 100px; width: 150px;">
-                                            <b-img v-if="ins.kategori === 'Daging'" thumbnail fluid
-                                                   src="./storage/Image/kategori/daging.jpg"
-                                                   style="max-width: 100%!important; max-height: 100%!important;"></b-img>
-                                            <b-img v-if="ins.kategori === 'Sayur'" thumbnail fluid
-                                                   src="./storage/Image/kategori/sayur.jpg"
-                                                   style="max-width: 100%!important; max-height: 100%!important;"></b-img>
-                                            <b-img v-if="ins.kategori === 'Buah'" thumbnail fluid
-                                                   src="./storage/Image/kategori/buah.jpg"
-                                                   style="max-width: 100%!important; max-height: 100%!important;"></b-img>
-                                            <b-img v-if="ins.kategori === 'Ikan'" thumbnail fluid
-                                                   src="./storage/Image/kategori/ikan.jpg"
-                                                   style="max-width: 100%!important; max-height: 100%!important;"></b-img>
-                                            <b-img v-if="ins.kategori === 'Sembako'" thumbnail fluid
-                                                   src="./storage/Image/kategori/Sembako.jpg"
-                                                   style="max-width: 100%!important; max-height: 100%!important;"></b-img>
-                                            <b-img v-if="ins.kategori === 'Rempah-rempah'" thumbnail fluid
-                                                   src="./storage/Image/kategori/rempah-rempah.jpg"
-                                                   style="max-width: 100%!important; max-height: 100%!important;"></b-img>
-                                            <b-img v-if="ins.kategori === 'Peralatan mandi'" thumbnail fluid
-                                                   src="./storage/Image/kategori/peralatan-mandi.jpg"
-                                                   style="max-width: 100%!important; max-height: 100%!important;"></b-img>
-                                            <b-img v-if="ins.kategori === 'Aqua galon'" thumbnail fluid
-                                                   src="./storage/Image/kategori/aqua.jpg"
-                                                   style="max-width: 100%!important; max-height: 100%!important;"></b-img>
-                                            <b-img v-if="ins.kategori === 'Kosmetik'" thumbnail fluid
-                                                   src="./storage/Image/kategori/kosmetik.jpg"
-                                                   style="max-width: 100%!important; max-height: 100%!important;"></b-img>
-                                            <b-img v-if="ins.kategori === 'Tabung gas'" thumbnail fluid
-                                                   src="./storage/Image/kategori/gas.jpg"
-                                                   style="max-width: 100%!important; max-height: 100%!important;"></b-img>
-                                        </b-card-text>
-                                    </b-card>
-                                </b-link>
-                            </div>
-                        </b-card-group>
-                    </div>
-
+                                    <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">Daging/Nama Kategori</th>
+                        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                    
+                        <td>Nama Produk</td>
+                        
+                        </tr>
+                        
+                        
+                    </tbody>
+                    </table>
                 </div>
                 <div class="col-md-5">
                     <h4>Cari Berdasarkan</h4><br><br><br>
@@ -115,7 +88,7 @@
         el: '#app',
         data: function () {
             return {
-                kat: [],
+                
                 look: {
                     kab: false,
                     kec: false,
@@ -178,22 +151,13 @@
                         this.kel = res.data
                         this.look.kel = true
                     })
-            },
-            getKategoriProduk() {
-                axios.get('/api/getkategoriproduk')
-                    .then((res) => {
-                        this.kat = res.data
-                    })
-                    .catch(() => {
-                        alert("Terjadi kesalahan, Refreh(F5)")
-                    })
             }
         },
         created() {
-            this.getKategoriProduk()
             this.getProvinsi()
         }
     })
 </script>
+
 @endsection
 
