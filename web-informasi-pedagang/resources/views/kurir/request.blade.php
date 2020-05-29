@@ -15,7 +15,8 @@
         </div>
         <div class="col col-md-5">
             <h6>Masukkan Data Diri</h6><br><br>
-            <br><br><p>Data Diri:</p><br>
+            <br><br>
+            <p>Data Diri:</p><br>
             <div class="row form-group">
                 <div class="col-md-4">
                     <br>
@@ -83,6 +84,24 @@
                 <!--                <input type="text" v-model="alamat_kurir" class="col-sm-11 form-control" id="formGroupExampleInput"-->
                 <!--                       placeholder="Alamat Kurir"><br>-->
             </div>
+            <div class="row form-group">
+                <div class="col-md-4">
+                    <br>
+                    <p>Kelurahan : </p>
+                </div>
+                <div style="margin-top: -2px" class="col-md-8">
+                    <br>
+                    <b-col cols="8" col md="5" lg="11" sm="7">
+                        <b-select  v-on:change="kelBtn" v-model="kels" required>
+                            <b-select-option v-for="kelurahan in kelurahan" :key="kelurahan.kode"
+                                             v-bind:value="kelurahan.kode">@{{kelurahan.nama}}
+                            </b-select-option>
+                        </b-select>
+                    </b-col>
+                </div>
+                <!--                <input type="text" v-model="alamat_kurir" class="col-sm-11 form-control" id="formGroupExampleInput"-->
+                <!--                       placeholder="Alamat Kurir"><br>-->
+            </div>
             <br>
             <div class="form-group">
                 <input type="text" class="col-sm-11 form-control" v-model="nomor_telepon" id="nomorTelepon"
@@ -97,11 +116,6 @@
                     <option value="laki-laki">Laki-laki</option>
                     <option value="perempuan">Perempuan</option>
                 </select>
-            </div>
-            <br>
-            <div class="form-group">
-                <input type="text" class="col-sm-11 form-control" v-model="alamat_rinci" id="alamatRinci"
-                       placeholder="Alamat Rinci" required><br>
             </div>
             <br>
             <br>
@@ -137,8 +151,9 @@
                     <p>Foto KTP : </p>
                 </div>
                 <div class="col-md-7">
-                    <img :src="image" class="img-responsive"  height="70" width="90">
-                    <input type="file" @change="ktp"  requiredclass="col-sm-11 form-control" v-model="foto_ktp" id="fotoKTP"
+                    <img :src="image" class="img-responsive" height="70" width="90">
+                    <input type="file" @change="ktp" requiredclass="col-sm-11 form-control" v-model="foto_ktp"
+                           id="fotoKTP"
                            placeholder="Foto KTP"><br>
                 </div>
             </div>
@@ -149,7 +164,8 @@
                 </div>
                 <div class="col-md-7">
                     <img :src="imageSTNK" class="img-responsive" height="70" width="90">
-                    <input type="file" @change="stnk"  requiredclass="col-sm-11 form-control" v-model="foto_stnk" id="fotoSTNK"
+                    <input type="file" @change="stnk" requiredclass="col-sm-11 form-control" v-model="foto_stnk"
+                           id="fotoSTNK"
                            placeholder="Foto STNK"><br>
                 </div>
             </div>
@@ -160,7 +176,8 @@
                 </div>
                 <div class="col-md-7">
                     <img :src="imageSIM" class="img-responsive" height="70" width="90">
-                    <input type="file" @change="sim"  requiredclass="col-sm-11 form-control" v-model="foto_SIM" id="fotoSIM"
+                    <input type="file" @change="sim" requiredclass="col-sm-11 form-control" v-model="foto_SIM"
+                           id="fotoSIM"
                            placeholder="Foto SIM"><br>
                 </div>
             </div>
@@ -205,13 +222,15 @@
                 provinsi: [],
                 kabupaten: [],
                 kecamatan: [],
+                kelurahan: [],
                 prov: '',
                 kab: '',
                 kec: '',
+                kels: '',
                 image: '',
                 imageSTNK: '',
                 imageSIM: '',
-                alamat_rinci : ''
+                alamat_rinci: ''
             }
         }, async mounted() {
             const response = axios.get("/api/kurirs/provinsi")
@@ -251,8 +270,14 @@
                 // alert(this.prov)
             },
             kecamatanBtn() {
-                console.log(this.kec)
+                const responses = axios.get("/api/kurirs/find/kel/" + this.kec)
+                    .then(response => {
+                        this.kelurahan = response.data
+                        console.log(response.data)
+                    })
                 // alert(this.prov)
+            },
+            kelBtn(){
             },
             ktp(e) {
                 let files = e.target.files || e.dataTransfer.files;
@@ -299,51 +324,48 @@
                 reader.readAsDataURL(files[0]);
             },
             uploadImage() {
-                if(!lat){
+                if (!lat) {
                     alert("Lokasi Map Harus di isi")
-                }else if(this.jenis_kendaraan == ''){
-                         alert("Jenis Kendaraan Harus di isi");
-                         return false
-                }else if(this.nomor_kendaraan == ''){
-                         alert("Nomor Kendaraan Harus Di isi");
-                         return false
-                }else if(this.nomor_telepon == ''){
-                         alert("Data Nomor Telepon Harus Di isi");
-                         return false
-                }else if(this.nama_kurir == '') {
-                         alert("Data Nama kurir Harus Di isi");
-                         return false
-                }else if(this.prov == '') {
-                         alert("Data Provinsi Harus Di isi");
-                         return false
-                }else if(this.kab == '') {
-                         alert("Data Kabupaten Harus Di isi");
-                         return false
-                }else if(this.kec == '') {
-                         alert("Data Kecamatan Harus Di isi");
-                         return false
-                }else if(this.alamat_rinci == '') {
-                         alert("Data Alamat rinci Harus Di isi");
-                         return false
-                }else if(this.nomor_ktp == '') {
-                         alert("Data Nomor KTP Harus Di isi");
-                         return false
-                }else if(this.foto_ktp == '') {
-                         alert("Data Foto KTP Harus Di isi");
-                         return false
-                }else if(this.foto_stnk == '') {
-                         alert("Data foto stnk Harus Di isi");
-                         return false
-                }else if(this.foto_sim == '') {
-                         alert("Data foto sim Harus Di isi");
-                         return false
-                }else if(this.foto_kurir == '') {
-                         alert("Data foto kurir Harus Di isi");
-                         return false
-                }else if(this.foto_jenis_kelamin == '') {
-                         alert("Data jenis kelamin harus Di isi");
-                         return false
-                }else {
+                } else if (this.jenis_kendaraan == '') {
+                    alert("Jenis Kendaraan Harus di isi");
+                    return false
+                } else if (this.nomor_kendaraan == '') {
+                    alert("Nomor Kendaraan Harus Di isi");
+                    return false
+                } else if (this.nomor_telepon == '') {
+                    alert("Data Nomor Telepon Harus Di isi");
+                    return false
+                } else if (this.nama_kurir == '') {
+                    alert("Data Nama kurir Harus Di isi");
+                    return false
+                } else if (this.prov == '') {
+                    alert("Data Provinsi Harus Di isi");
+                    return false
+                } else if (this.kab == '') {
+                    alert("Data Kabupaten Harus Di isi");
+                    return false
+                } else if (this.kec == '') {
+                    alert("Data Kecamatan Harus Di isi");
+                    return false
+                } else if (this.nomor_ktp == '') {
+                    alert("Data Nomor KTP Harus Di isi");
+                    return false
+                } else if (this.foto_ktp == '') {
+                    alert("Data Foto KTP Harus Di isi");
+                    return false
+                } else if (this.foto_stnk == '') {
+                    alert("Data foto stnk Harus Di isi");
+                    return false
+                } else if (this.foto_sim == '') {
+                    alert("Data foto sim Harus Di isi");
+                    return false
+                } else if (this.foto_kurir == '') {
+                    alert("Data foto kurir Harus Di isi");
+                    return false
+                } else if (this.foto_jenis_kelamin == '') {
+                    alert("Data jenis kelamin harus Di isi");
+                    return false
+                } else {
                     let kode = 'KTP-' + this.nama_kurir + "-" + this.nomor_kendaraan;
                     // alert(this.image)
                     axios.post('/api/upload/' + kode, {image: this.image}).then(response => {
@@ -367,7 +389,7 @@
                         longtitude: long,
                         nomor_kendaraan: this.nomor_kendaraan,
                         nama_kurir: this.nama_kurir,
-                        alamat_kurir: this.alamat_rinci,
+                        alamat_kurir: this.kels,
                         nomor_telepon: this.nomor_telepon,
                         nomor_ktp: this.nomor_ktp,
                         foto_ktp: kode + '.png',
@@ -375,10 +397,9 @@
                         foto_SIM: kodeSim + '.png',
                         foto_kurir: 'kurir' + kodeKurir + '.png',
                         jenis_kelamin: this.jenis_kelamin,
-                        status: 1,
-                        kode_wilayah : this.kec
+                        status: "request"
                     }).then(
-                        window.location.href="/kurir/request"
+                        window.location.href = ""
                     )
                 }
             }
@@ -388,6 +409,7 @@
     var marker;
     var lat;
     var long;
+
     function taruhMarker(peta, posisiTitik) {
         if (marker) {
             // pindahkan marker
@@ -399,8 +421,8 @@
                 map: peta
             });
         }
-        lat=posisiTitik.lat();
-        long=posisiTitik.lng();
+        lat = posisiTitik.lat();
+        long = posisiTitik.lng();
         this.latitude = posisiTitik.lat();
         this.longtitude = posisiTitik.lng();
         console.log("Posisi marker: " + this.latitude + this.longtitude);

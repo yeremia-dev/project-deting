@@ -3,7 +3,7 @@
 <div id="app">
     <div class="container">
         <nav class="navbar navbar-grey bg-light">
-            <span class="navbar-brand mb-0 h1">Request Mendaftar Informasi Pedagang</span>
+            <span class="navbar-brand mb-0 h1">Tambah Pedagang</span>
         </nav>
     </div>
     <div class="container-fluid">
@@ -39,7 +39,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
 
                                             <div class="row">
                                                 <div class="col">
@@ -61,7 +61,7 @@
                                                 </div>
                                             </div>
                                             <h6>Alamat:</h6><br>
-                                       
+
                                             <div class="row">
                                                 <div class="col">
                                                     <label for="provinsi">Provinsi</label>
@@ -289,7 +289,7 @@
                 this.rows.pop();
             },
 
-            addProduct: function() {     
+            addProduct: function() {
             	axios
             		.post("/pedagang/store", {
             			myData: this.rows,

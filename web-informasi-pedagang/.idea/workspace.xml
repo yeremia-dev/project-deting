@@ -3,6 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="b8f47cb2-fe77-4445-bb8f-7bd80ad85e26" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/storage/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/storage/app/.gitignore" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/kurirController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/kurirController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Aduan.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Aduan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dataKurir.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dataKurir.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/mencari-kurir-terdekat/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mencari-kurir-terdekat/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/mencari-kurir-terdekat/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mencari-kurir-terdekat/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pengaduan/viewaduan.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pengaduan/viewaduan.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" /
+      <change beforePath="$PROJECT_DIR$/app/Produk.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Produk.php" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,6 +151,17 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IT DEL\Semester 6\DETINK\Proyek\project-deting\web-informasi-pedagang\storage\app\public\Image\kategori" />
     </key>
+
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -158,13 +185,34 @@
       <workItem from="1589601614427" duration="10081000" />
       <workItem from="1589691840579" duration="13964000" />
       <workItem from="1589727792406" duration="798000" />
+
+      <workItem from="1589765202079" duration="18536000" />
+      <workItem from="1589857082000" duration="6720000" />
+
       <workItem from="1589765202079" duration="16328000" />
+
+      <workItem from="1589810756975" duration="11000" />
+      <workItem from="1589818822519" duration="16000" />
+
       <workItem from="1590036096926" duration="987000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1589469374009">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use App\Pedagang;
+use App\Produk;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -23,17 +24,25 @@ class RequestPedagangController extends controller
     }
     public function stores(Request $request)
     {
-        Pedagang::create([
-            'id_pedagang' => $request['id_pedagang'],
-            'nama_pedagang' => $request['nama_pedagang'],
-            'alamat_rinci'=> $request['alamat_rinci'],
-            'no_hp'=> $request['no_hp'],
-            'no_wa'=> $request['no_wa'],
-            'foto_pedagang'=> $request['foto_pedagang'],
-            'kode_wilayah'=>$request['kode_wilayah'],
-            'status' => 1
-        ]);
-        return view('kurir/requestp');
+        $pedagang = new Pedagang();
+        $pedagang->nama = $request['nama_pedagang'];
+        $pedagang->alamat_rinci = $request['alamat_rinci'];
+        $pedagang->alamat = $request['alamat'];
+        $pedagang->no_hp = $request['no_hp'];
+        $pedagang->no_wa = $request['no_wa'];
+        $pedagang->foto_pedagang =   './../storage/Pedagang/'.$request['foto_pedagang'];
+        $pedagang->status = 1;
+//        Pedagang::create([
+//            'nama' => $request['nama_pedagang'],
+//            'alamat_rinci'=> $request['alamat_rinci'],
+//            'alamat' => $request['alamat'],
+//            'no_hp'=> $request['no_hp'],
+//            'no_wa'=> $request['no_wa'],
+//            'foto_pedagang'=> $request['foto_pedagang'],
+//            'status' => 1
+//        ]);
+        $pedagang->save();
+        return $pedagang->id;
 
     }
     public function addImage(Request $request,$kode)
@@ -46,7 +55,7 @@ class RequestPedagangController extends controller
 
             $extension = 'png';
 
-            $filename = 'kurir' . $kode . '.' . $extension;
+            $filename =   $kode . '.' . $extension;
             $path = public_path() . '/storage/Pedagang/' . $filename;
             file_put_contents($path, $decode);
 //            $data->image = './storage/Image/' . $filename;
@@ -57,10 +66,35 @@ class RequestPedagangController extends controller
         $data = DB::SELECT("SELECT * FROM pedagang WHERE status =1");
         return $data;
     }
-    public function terima($id){
-        DB::SELECT("UPDATE pedagang set status=2 WHERE id_pedagang LIKE '$id' ");
+
+    public function getDataPedagang($id)
+    {
+        $data = Pedagang::find($id);
+//        $data = DB::SELECT("SELECT * FROM pedagang WHERE status =1");
+        return $data;
     }
-    public function tolak($id){
-        DB::SELECT("UPDATE pedagang set status=0 WHERE id_pedagang LIKE '$id' ");
+
+    public function getDataProduk($id)
+    {
+        $data = Produk::where('id_pedagang',$id)->get();
+//        $data = DB::SELECT("SELECT * FROM pedagang WHERE status =1");
+        return $data;
+    }
+
+    public function terima($id)
+    {
+
+        $pedagang = Pedagang::find($id);
+        $pedagang->id_admin = 1;
+        $pedagang->status =  2;
+        $pedagang->save();
+    }
+
+    public function tolak($id)
+    {
+        $pedagang = Pedagang::find($id);
+        $pedagang->id_admin = 1;
+        $pedagang->status = 0;
+        $pedagang->save();
     }
 }

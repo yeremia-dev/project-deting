@@ -15,6 +15,7 @@ use App\Pedagang;
 */
 
 
+
 //route Autentikasi
 Auth::routes(['register' => false]);
 Route::group(['middleware' => ['auth','admin']], function (){
@@ -33,7 +34,7 @@ Route::group(['middleware' => ['auth','admin']], function (){
     )->name('kurirKonfirmasi');
 
     Route::get(
-        '/kurir/viewproduk', 'RequestKurirControllers@view'
+        '/kurir/viewproduk/{id}', 'RequestKurirControllers@view'
     )->name('kurirViewproduk');
 
     Route::get(
@@ -43,9 +44,20 @@ Route::group(['middleware' => ['auth','admin']], function (){
     Route::get('admin/listaduan','AduanController@listaduan');
     Route::delete('/role-delete/{id}','AduanController@aduandelete');
 
-    Route:: get('admin/kurir','kurirController@index');
-    Route:: get('admin/dataKurir','kurirController@index');
+//    Route:: get('admin/kurir','kurirController@index');
+//    Route:: get('admin/dataKurir','kurirController@index');
+//    Route:: post('dataKurir/create','kurirController@create')->name('createkurir');
+
+    Route:: get('/dataKurir','kurirController@index');
     Route:: post('/dataKurir/create','kurirController@create');
+
+    Route:: get('/listKurir','kurirController@viewKurir');
+    Route:: get('/listKurir/dataKurir','kurirController@create');
+    Route:: get('/dataKurir/{id_kurir}/edit','kurirController@edit_function');
+    Route:: post('/dataKurir/{id_kurir}/update','kurirController@update');
+
+    Route:: get('/dataKurir/hapus/{id_kurir}','kurirController@hapus');
+
 
     Route::get('/pedagangs/index', 'PedagangController@show1');
 
@@ -95,6 +107,8 @@ Route::group(['middleware' => ['auth','admin']], function (){
     });
 
 });
+
+
 
 Route::middleware(['user'])->group(function (){
 

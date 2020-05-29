@@ -27,12 +27,21 @@ Route::apiResources(
 );
 
 //kurir
-Route::get('/kurirs/provinsi', 'RequestKurirControllers@test');
-Route::get('/kurir/test/prov/{kode}', 'RequestKurirControllers@findKab');
-Route::get('/kurir/test/kab/{kode}', 'RequestKurirControllers@findKec');
-Route::get('/kurirs/find/kab/{kode}', 'RequestKurirControllers@findKec');
-Route::post('/kurir/test/addImage/{kode}', 'RequestKurirControllers@addImage');
-Route::get('/kurirs/ktp/', 'RequestKurirControllers@addKTP');
+// Route::get('/kurirs/provinsi', 'RequestKurirControllers@test');
+// Route::get('/kurir/test/prov/{kode}', 'RequestKurirControllers@findKab');
+// Route::get('/kurir/test/kab/{kode}', 'RequestKurirControllers@findKec');
+// Route::get('/kurirs/find/kab/{kode}', 'RequestKurirControllers@findKec');
+// Route::post('/kurir/test/addImage/{kode}', 'RequestKurirControllers@addImage');
+// Route::get('/kurirs/ktp/', 'RequestKurirControllers@addKTP');
+
+Route::get('/kurirs/provinsi','RequestKurirControllers@test');
+Route::get('/kurir/test/prov/{kode}','RequestKurirControllers@findKab');
+Route::get('/kurir/test/kab/{kode}','RequestKurirControllers@findKec');
+Route::get('/kurirs/find/kab/{kode}','RequestKurirControllers@findKec');
+Route::get('/kurirs/find/kel/{kode}','RequestKurirControllers@findKelurahan');
+Route::post('/kurir/test/addImage/{kode}','RequestKurirControllers@addImage');
+Route::get('/kurirs/ktp/','RequestKurirControllers@addKTP');
+
 Route::post('upload/{kode}', 'RequestKurirControllers@addImage');
 Route::post('upload/stnk/{kode}', 'RequestKurirControllers@addImageSTNK');
 Route::post('upload/sim/{kode}', 'RequestKurirControllers@addImageSIM');
@@ -52,9 +61,11 @@ Route::post('pedagang/insert', 'RequestPedagangController@stores');
 Route::get('pedagangRequest/', 'RequestPedagangController@findAllPedagangRequest');
 Route::get('pedagangTerima/{id}', 'RequestPedagangController@terima');
 Route::get('pedagangTolak/{id}', 'RequestPedagangController@tolak');
+Route::get('pedagang/find/{id}','RequestPedagangController@getDataPedagang');
+Route::get('pedagang/find/produk/{id}','RequestPedagangController@getDataProduk');
 
 //Produk
-Route::post('produk/insert', 'RequestProdukController@stores');
+Route::post('produk/insert', 'RequestProdukController@inserts');
 
 
 Route::get('getprovinsi', function () {
